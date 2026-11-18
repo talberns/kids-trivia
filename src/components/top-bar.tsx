@@ -19,11 +19,21 @@ export function TopBar() {
           <span className="gold-text">Through Their Eyes</span>
         </Link>
 
-        <div className="ml-auto flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-2 sm:gap-3">
+          <div
+            className="flex items-center gap-1 rounded-full bg-white/5 px-3 py-1.5 text-sm font-bold tabular-nums text-gold sm:hidden"
+            data-testid="xp-total"
+            title={current.name}
+          >
+            <span aria-hidden>✦</span> {progress.xp.toLocaleString()}
+            <span className="sr-only"> XP, rank {current.name}</span>
+          </div>
           <div className="hidden min-w-32 sm:block" title={next ? `${next.minXp - progress.xp} XP to ${next.name}` : "Top rank"}>
             <div className="flex justify-between text-[11px] font-semibold uppercase tracking-wider text-white/60">
               <span>{current.name}</span>
-              <span className="tabular-nums text-gold">{progress.xp.toLocaleString()} XP</span>
+              <span className="tabular-nums text-gold" data-testid="xp-total">
+                {progress.xp.toLocaleString()} XP
+              </span>
             </div>
             <div
               className="mt-1 h-2 overflow-hidden rounded-full bg-white/10"

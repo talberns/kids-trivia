@@ -24,9 +24,9 @@ test("progress persists across reloads", async ({ page }) => {
     await page.getByRole("button", { name: /next question|see results/i }).click();
   }
   await page.goto("/");
-  await expect(page.locator("header").getByText(/XP/)).toBeVisible();
-  const xp = await page.locator("header").getByText(/\d+ XP/).textContent();
-  expect(xp).not.toBe("0 XP");
+  const xp = page.getByTestId("xp-total").filter({ visible: true });
+  await expect(xp).toBeVisible();
+  await expect(xp).not.toHaveText(/^\D*0\D*$/);
 });
 
 test("sources page explains the method", async ({ page }) => {
