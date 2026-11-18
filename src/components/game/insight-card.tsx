@@ -91,7 +91,7 @@ export function InsightCard({ question, headingRef }: InsightCardProps) {
         href={reportIssueUrl(question.id, question.prompt)}
         target="_blank"
         rel="noopener noreferrer"
-        className="focus-ring inline-block rounded text-xs font-semibold text-white/50 underline-offset-4 hover:text-white hover:underline"
+        className="focus-ring -my-2 inline-block rounded py-3 text-xs font-semibold text-white/50 underline-offset-4 hover:text-white hover:underline"
       >
         Spotted an error? Report it ↗
       </a>
