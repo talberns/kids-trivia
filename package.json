@@ -2,6 +2,7 @@
   "name": "through-their-eyes",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "description": "A trivia game that teaches the Hebrew Bible / Old Testament and the New Testament through the eyes of the people who lived them.",
   "engines": {
     "node": ">=20.9"
@@ -35,7 +36,7 @@
     "eslint-config-next": "16.4.6",
     "prettier": "3.10.1",
     "tailwindcss": "4.3.5",
-    "typescript": "7.0.2",
+    "typescript": "6.0.3",
     "vitest": "5.1.1"
   }
 }

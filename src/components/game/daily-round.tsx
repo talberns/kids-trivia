@@ -13,7 +13,7 @@ export function DailyRound({ pool }: { pool: readonly Question[] }) {
   const questions = useMemo(() => (today ? pickDailyQuestions(pool, today) : []), [pool, today]);
 
   if (!today || questions.length === 0) {
-    return <p className="py-20 text-center text-white/60">Preparing today's challenge…</p>;
+    return <p className="py-20 text-center text-white/60">Preparing today&apos;s challenge…</p>;
   }
 
   return (

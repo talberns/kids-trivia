@@ -81,7 +81,7 @@ export function RoundSummary({ mode, outcome, update, bestCombo, nextLevelHref, 
 
       {longSession && (
         <p className="mx-auto max-w-md rounded-xl bg-white/5 p-3 text-sm text-white/70">
-          You've been exploring for a while — a great moment for a break. Your progress is saved.
+          You&apos;ve been exploring for a while — a great moment for a break. Your progress is saved.
         </p>
       )}
 
