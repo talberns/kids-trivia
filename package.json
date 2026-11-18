@@ -1,0 +1,21 @@
+{
+  "name": "through-their-eyes",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A trivia game that teaches the Hebrew Bible / Old Testament and the New Testament through the eyes of the people who lived them.",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "format": "prettier --write .",
+    "check": "npm run typecheck && npm run lint && npm run test"
+  }
+}
