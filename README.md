@@ -28,6 +28,7 @@ Engagement comes from a journey map, stars, combos, XP ranks, daily streaks, a d
 
 ```bash
 npm install
+cp .env.example .env.local   # then fill in the values (see "Login and activity log")
 npm run dev          # http://localhost:3000
 npm run check        # typecheck + lint + unit tests
 npm run build && npm run test:e2e
@@ -68,6 +69,25 @@ Design principles:
 ## Adding content
 
 Read [`docs/CONTENT_GUIDE.md`](docs/CONTENT_GUIDE.md). In short, write from sources, have the question checked independently, then set `review.status` to `"published"` with a `reviewedOn` date. Each playable level needs exactly five published questions; a test enforces this.
+
+## Login and activity log
+
+Every page sits behind a login (first name, last name, shared password), enforced in `src/proxy.ts`.
+The organiser's activity page is `/admin`, behind a separate admin password.
+
+| Variable | Purpose |
+| --- | --- |
+| `SITE_PASSWORD` | Shared password players type |
+| `ADMIN_PASSWORD` | Password for `/admin` |
+| `SESSION_SECRET` | Random key (32+ characters) that signs login cookies |
+| `DATABASE_URL` | Neon Postgres, added by the Vercel Marketplace integration |
+
+These live only in Vercel's environment variables. **Never commit them: this repository is public.**
+If a password or the secret is missing, nobody can log in (the site fails closed). Without `DATABASE_URL`,
+activity is printed to the server log instead of stored.
+
+Recorded events: login, wrong password, logout, page views, round start, every answer, and round results.
+No IP addresses are stored. The table (`activity_events`) is created automatically on first use.
 
 ## Deployment
 
