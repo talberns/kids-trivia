@@ -85,7 +85,7 @@ export const patriarchs: QuestionInput[] = [
         "For a family of herders moving through Canaan, the sign marked who belonged to this household and its promise, wherever the tents were pitched.",
       tradition: {
         jewish:
-          "Jesus was circumcised on the eighth day (Luke 2:21), as was John the Baptist (Luke 1:59). Two centuries earlier, under Antiochus IV, mothers were put to death for circumcising their sons (1 Maccabees 1:60–61), so for Jews of Jesus' day it was a mark of loyalty to the covenant.",
+          "Jesus was circumcised on the eighth day (Luke 2:21), as was John the Baptist (Luke 1:59). About 160 years earlier, under Antiochus IV, mothers were put to death for circumcising their sons (1 Maccabees 1:60–61), so for Jews of Jesus' day it was a mark of loyalty to the covenant.",
         christian:
           "The early church debated whether non-Jewish believers had to be circumcised and decided they did not (Acts 15).",
       },
@@ -231,7 +231,7 @@ export const patriarchs: QuestionInput[] = [
       theirEyes:
         "Hagar, a foreigner in the household, had no say in the arrangement — which makes it striking that the story gives her her own meeting with God.",
       tradition: {
-        jewish: "Philo of Alexandria, a Jewish contemporary of Jesus, read Hagar as an allegory of the “preliminary studies” — grammar, geometry, music — that prepare the soul for wisdom, symbolised by Sarah (On the Preliminary Studies).",
+        jewish: "Philo of Alexandria, a Jewish contemporary of Jesus, read Hagar as an allegory of the “preliminary studies” — grammar, geometry, music — that prepare the soul for wisdom, symbolised by Sarah (On the Preliminary Studies 9–24).",
         christian: "Paul turns Hagar and Sarah into an allegory of two covenants (Galatians 4:21–31).",
       },
     },
@@ -241,7 +241,7 @@ export const patriarchs: QuestionInput[] = [
       scripture,
       { kind: "primary", citation: "Laws of Hammurabi §§144–147" },
       { kind: "primary", citation: "Old Assyrian marriage contract from Kanesh (Kültepe), 19th century BCE" },
-      { kind: "primary", citation: "Philo, On Mating with the Preliminary Studies (De Congressu)" },
+      { kind: "primary", citation: "Philo, On Mating with the Preliminary Studies (De Congressu) 9–24" },
     ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
@@ -262,7 +262,7 @@ export const patriarchs: QuestionInput[] = [
       theirEyes:
         "To an Israelite, Edom was the “brother” nation: close enough to share a family story, close enough to be a bitter rival.",
       tradition: {
-        jewish: "For Jews of Jesus' day, Esau's descendants had become fellow Jews: around 125 BCE John Hyrcanus made the Idumeans accept circumcision and the Law (Josephus, Antiquities 13.9.1). Even so, Herod's rival Antigonus mocked him as a “half-Jew” (Antiquities 14.15.2).",
+        jewish: "For Jews of Jesus' day, Esau's descendants had become fellow Jews: in the late 2nd century BCE John Hyrcanus made the Idumeans accept circumcision and the Law (Josephus, Antiquities 13.9.1). Even so, Herod's rival Antigonus mocked him as a “half-Jew” (Antiquities 14.15.2).",
         christian:
           "Paul quotes “Jacob I loved, but Esau I hated” (Malachi 1:2–3) in Romans 9:13 when discussing God's choice.",
       },
@@ -330,7 +330,7 @@ export const patriarchs: QuestionInput[] = [
         "Household images were part of everyday life in the region — even in a family that knew the God of Abraham.",
       tradition: {
         jewish:
-          "Josephus suggests Rachel did not worship the images but took them as a safeguard — something to bargain with for her father's pardon if they were caught (Antiquities 1.19.8).",
+          "Josephus suggests Rachel did not worship the images but took them as a safeguard — something to bargain with for her father's pardon if they were caught (Antiquities 1.19.9).",
       },
       debate:
         "Earlier scholars argued from texts found at Nuzi that holding the household gods gave a claim to inheritance. Many scholars now doubt that parallel, and why Rachel took them is still debated.",
@@ -339,7 +339,7 @@ export const patriarchs: QuestionInput[] = [
     references: ["Genesis 31:19", "Genesis 31:34"],
     sources: [
       scripture,
-      { kind: "primary", citation: "Josephus, Antiquities of the Jews 1.19.8" },
+      { kind: "primary", citation: "Josephus, Antiquities of the Jews 1.19.9" },
       { kind: "scholarship", citation: "M. Greenberg, “Another Look at Rachel's Theft of the Teraphim,” Journal of Biblical Literature 81 (1962)" },
     ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
@@ -449,7 +449,7 @@ export const patriarchs: QuestionInput[] = [
         "Readers in that world knew of gods who demanded children. A story in which God stops the knife spoke loudly to them.",
       tradition: {
         jewish:
-          "Josephus says Isaac was twenty-five and went to the altar willingly (Antiquities 1.13.2–4). The book of 4 Maccabees holds Isaac up as a model for Jewish martyrs who faced death rather than abandon the Law (4 Maccabees 13:12; 16:20).",
+          "Josephus says Isaac was twenty-five and went to the altar willingly (Antiquities 1.13.2–4). The book of 4 Maccabees (1st century CE) holds Isaac up as a model for Jewish martyrs who faced death rather than abandon the Law (4 Maccabees 13:12; 16:20).",
         christian:
           "Christians have long read it as a foreshadowing of Jesus' sacrifice; Hebrews 11:17–19 praises Abraham's faith that God could raise the dead.",
       },

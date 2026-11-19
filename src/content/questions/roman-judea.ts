@@ -130,7 +130,7 @@ export const romanJudea: QuestionInput[] = [
         "Asking about the afterlife in Jerusalem would get you very different answers depending on whether you asked a Temple priest or a Pharisee teacher.",
       tradition: {
         jewish:
-          "The Pharisees — and many ordinary Jews — expected the resurrection of the dead (Josephus, Jewish War 2.8.14), a hope voiced by the martyrs of 2 Maccabees 7 and rooted in Daniel 12:2.",
+          "The Pharisees — and, Josephus says, many ordinary people who followed their teaching — believed in the resurrection of the dead (Antiquities 18.1.3), a hope voiced by the martyrs of 2 Maccabees 7 and rooted in Daniel 12:2.",
       },
     },
     confidence: "settled",
@@ -138,6 +138,7 @@ export const romanJudea: QuestionInput[] = [
     sources: [
       scripture,
       { kind: "primary", citation: "Josephus, Antiquities of the Jews 13.10.6; 18.1.4; 20.9.1; Jewish War 2.162–166" },
+      { kind: "primary", citation: "Josephus, Antiquities of the Jews 18.1.3; 2 Maccabees 7" },
     ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
@@ -218,13 +219,17 @@ export const romanJudea: QuestionInput[] = [
       theirEyes:
         "Pilgrims arriving for festivals saw gleaming white stone and gold — one of the most famous buildings in the Roman world.",
       tradition: {
-        jewish: "Jews across the Roman world sent a yearly half-shekel tax to the Temple (compare Matthew 17:24), and pilgrims crowded Jerusalem for Passover, Shavuot and Sukkot.",
+        jewish: "Jews across the Roman world sent a yearly half-shekel tax to the Temple (compare Matthew 17:24; Josephus, Antiquities 18.9.1; Philo, Special Laws 1.76–78), and pilgrims crowded Jerusalem for Passover, Shavuot and Sukkot.",
         christian: "Jesus taught in the Temple courts and foretold its destruction (Mark 13:1–2).",
       },
     },
     confidence: "settled",
     references: ["John 2:20", "Mark 13:1–2"],
-    sources: [scripture, { kind: "primary", citation: "Josephus, Antiquities of the Jews 15.11.1; Jewish War 1.21.1" }],
+    sources: [
+      scripture,
+      { kind: "primary", citation: "Josephus, Antiquities of the Jews 15.11.1; Jewish War 1.21.1" },
+      { kind: "primary", citation: "Josephus, Antiquities of the Jews 18.9.1; Philo, Special Laws 1.76–78" },
+    ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
   {
@@ -405,12 +410,16 @@ export const romanJudea: QuestionInput[] = [
         "For Jews in Rome, the parade of their Temple's treasures through the streets was a deep humiliation.",
       tradition: {
         jewish:
-          "Long before 70 CE, Jews already fasted in the fifth month to mourn the First Temple's destruction by Babylon (Zechariah 7:3–5; 8:19). After 70 the same season came to mourn both Temples.",
+          "Already in Zechariah's time (around 518 BCE) Jews fasted in the fifth month to mourn the First Temple's destruction by Babylon (Zechariah 7:3–5; 8:19). After 70 CE the fast came to mourn both Temples (Mishnah Taanit 4:6, a later record).",
       },
     },
     confidence: "settled",
     references: ["Mark 13:1–2"],
-    sources: [scripture, { kind: "primary", citation: "Josephus, Jewish War 7.5.5" }],
+    sources: [
+      scripture,
+      { kind: "primary", citation: "Josephus, Jewish War 7.5.5" },
+      { kind: "primary", citation: "Mishnah Taanit 4:6 (later record, c. 200 CE)" },
+    ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
   // ───────────── Level 4 ─────────────
@@ -577,7 +586,7 @@ export const romanJudea: QuestionInput[] = [
         "Phylacteries (Hebrew tefillin) from around the time of Jesus have been found among the Dead Sea Scrolls at Qumran.",
       theirEyes: "Wearing scripture on your body was a sign of devotion — the criticism was of showing off, not of the practice itself.",
       tradition: {
-        jewish: "Josephus describes Jews wearing God's commands on the head and arm (Antiquities 4.8.13), and the Letter of Aristeas mentions the practice too.",
+        jewish: "Josephus restates the command to bear God's words on the forehead and arm (Antiquities 4.8.13), the Letter of Aristeas mentions the practice, and tefillin from this period have been found at Qumran; Jesus' remark in Matthew 23:5 shows they were worn in his day.",
       },
     },
     confidence: "settled",
@@ -586,6 +595,7 @@ export const romanJudea: QuestionInput[] = [
       scripture,
       { kind: "reference", citation: "“Tefillin,” Encyclopaedia Britannica" },
       { kind: "primary", citation: "Josephus, Antiquities of the Jews 4.8.13; Letter of Aristeas 159" },
+      { kind: "archaeology", citation: "Tefillin from Qumran (Dead Sea Scrolls)" },
     ],
     review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },

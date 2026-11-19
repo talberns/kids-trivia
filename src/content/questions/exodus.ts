@@ -23,7 +23,7 @@ export const exodus: QuestionInput[] = [
         "To an Egyptian farmer, a river turned foul meant no water to drink, no fish and no harvest — the Nile was everything.",
       tradition: {
         jewish:
-          "The Wisdom of Solomon, a Jewish book written shortly before Jesus' time, reflects on the plagues as fitting punishments: “by what things a man sins, by these he is punished” (Wisdom 11:16).",
+          "The Wisdom of Solomon, a Jewish book written around Jesus' time, reflects on the plagues as fitting punishments: “by what things a man sins, by these he is punished” (Wisdom 11:16).",
         christian: "The plagues in the Book of Revelation (chapters 8–16) echo the plagues of Egypt.",
       },
     },
@@ -54,7 +54,7 @@ export const exodus: QuestionInput[] = [
         "A family eating in a hurry, sandals on and staff in hand (Exodus 12:11), knowing that by morning everything could change.",
       tradition: {
         jewish:
-          "In Jesus' day Passover was a pilgrimage feast: lambs were slaughtered in the Temple courts and eaten in Jerusalem in household groups. Josephus reports a count of 255,600 lambs in a single year (Jewish War 6.9.3).",
+          "In Jesus' day Passover was a pilgrimage feast: lambs were slaughtered in the Temple courts and eaten in Jerusalem in household groups. Josephus reports about 256,000 sacrifices at a single Passover — a figure historians think exaggerated, but a sign of the crowds (Jewish War 6.9.3).",
         christian: "Paul calls Christ “our Passover” lamb (1 Corinthians 5:7).",
       },
     },
@@ -81,7 +81,7 @@ export const exodus: QuestionInput[] = [
       theirEyes:
         "Imagine waking in the desert, finding the ground covered with something white and flaky — and having no word for it.",
       tradition: {
-        jewish: "The Wisdom of Solomon says the manna adapted itself to every taste (16:20–21), and some Jews of the 1st century expected manna to fall again in the age to come (2 Baruch 29:8) — which is why the crowd raises it with Jesus in John 6:30–31.",
+        jewish: "The Wisdom of Solomon says the manna adapted itself to every taste (16:20–21), and a Jewish apocalypse written soon after 70 CE expects the treasury of manna to fall again in the age to come (2 Baruch 29:8). Hopes like this may lie behind the crowd's question to Jesus in John 6:30–31.",
         christian: "Jesus calls himself “the bread of life,” contrasting himself with the manna (John 6:31–35).",
       },
       debate:
@@ -91,7 +91,7 @@ export const exodus: QuestionInput[] = [
     references: ["Exodus 16:14–31", "John 6:31–35"],
     sources: [
       scripture,
-      { kind: "primary", citation: "Wisdom of Solomon 16:20–21; 2 Baruch 29:8" },
+      { kind: "primary", citation: "Wisdom of Solomon 16:20–21; 2 Baruch 29:8 (written after 70 CE)" },
     ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
@@ -113,7 +113,7 @@ export const exodus: QuestionInput[] = [
       theirEyes: "A child who left Egypt would be middle-aged before seeing the Promised Land.",
       tradition: {
         jewish:
-          "The Dead Sea Scroll community expected about forty years between the death of its “Teacher of Righteousness” and the end of the wicked (Damascus Document 20:13–15) — an echo of the wilderness generation.",
+          "The Dead Sea Scroll community expected about forty years between the death of its “Teacher of Righteousness” and the end of the men of war who followed the “Man of the Lie” (Damascus Document 20:13–15) — probably echoing the wilderness generation.",
         christian: "Jesus' forty days of testing in the wilderness (Matthew 4:1–2) echo Israel's forty years.",
       },
     },
@@ -243,7 +243,7 @@ export const exodus: QuestionInput[] = [
         "In a world of many named gods, each with a city and a statue, a God who answers “I am” would have sounded utterly different.",
       tradition: {
         jewish:
-          "By Jesus' day the name was already treated as too holy to say aloud: the Greek Septuagint renders it Kyrios, “Lord,” some Dead Sea Scrolls write it in old Hebrew letters, and Josephus says he is not permitted to speak of it (Antiquities 2.12.4).",
+          "By Jesus' day the name was already treated as too holy to say aloud. Some Greek copies of the scriptures keep it in Hebrew letters, while others (and later Christian copies) render it Kyrios, “Lord”; some Dead Sea Scrolls write it in old Hebrew script; and Josephus says it is not lawful for him to say more about it (Antiquities 2.12.4).",
         christian:
           "When Jesus says “before Abraham came into existence, I AM” (John 8:58), many Christians hear an echo of this verse.",
       },
@@ -301,7 +301,7 @@ export const exodus: QuestionInput[] = [
         "Trapped between chariots and water, the escaping slaves had nowhere left to run.",
       tradition: {
         jewish:
-          "Philo describes a Jewish community near Alexandria, the Therapeutae, who on feast nights sang in two choirs, men and women, imitating Moses and Miriam at the sea (On the Contemplative Life 83–88).",
+          "Philo describes a Jewish community near Alexandria, the Therapeutae, who at the all-night vigil of their chief festival sang in two choirs, men and women, imitating Moses and Miriam at the sea (On the Contemplative Life 83–88).",
         christian: "Paul compares the crossing of the sea to baptism (1 Corinthians 10:1–2).",
       },
       debate:
@@ -367,7 +367,7 @@ export const exodus: QuestionInput[] = [
       theirEyes: "The Ark went ahead of the camp as the people travelled — God's presence on the move with them.",
       tradition: {
         jewish:
-          "Jews of Jesus' day knew the Ark was gone: Josephus says the Holy of Holies in Herod's Temple held nothing at all (Jewish War 5.5.5), and 2 Maccabees 2:4–8 tells that Jeremiah hid the Ark in a cave on Mount Nebo.",
+          "Jews of Jesus' day knew the Ark was gone: Josephus says the Holy of Holies in Herod's Temple held nothing at all (Jewish War 5.5.5), and 2 Maccabees 2:4–8 tells that Jeremiah hid the Ark in a cave on the mountain where Moses viewed the land (Nebo).",
         christian: "Hebrews 9 describes the Tabernacle and its furnishings as a pattern pointing to Christ.",
       },
     },
@@ -390,12 +390,12 @@ export const exodus: QuestionInput[] = [
       textSays:
         "The Torah commands Shavuot as a harvest festival seven weeks after Passover (Leviticus 23:15–21) without mentioning Sinai. Exodus 19:1 places the arrival at Sinai in the third month.",
       world:
-        "The link between Shavuot and Sinai is developed in later Jewish tradition; the Talmud dates the giving of the Torah to early in the month of Sivan (Shabbat 86b).",
+        "The link between Shavuot and Sinai already appears in Jubilees in the 2nd century BCE; later rabbinic tradition dates the giving of the Torah to early in the month of Sivan (Talmud, Shabbat 86b).",
       theirEyes:
         "For farmers, Shavuot was the joy of the first wheat harvest; tradition added the joy of receiving the Torah.",
       tradition: {
         jewish:
-          "The Book of Jubilees links the Feast of Weeks to the renewal of God's covenant (Jubilees 6:17–21), and the Dead Sea Scroll community appears to have held its yearly covenant-renewal ceremony at this festival.",
+          "The Book of Jubilees (2nd century BCE) already ties the covenant at Sinai to the Feast of Weeks (Jubilees 1:1; 6:17–21), and a Dead Sea Scroll suggests the community there held its yearly covenant-renewal ceremony at this festival (4QDa, 4Q266 fragment 11).",
         christian:
           "Pentecost (Acts 2) took place when crowds were in Jerusalem for this festival, called Pentecost (“fiftieth”) in Greek.",
       },
@@ -405,7 +405,7 @@ export const exodus: QuestionInput[] = [
     sources: [
       scripture,
       { kind: "primary", citation: "Babylonian Talmud, Shabbat 86b" },
-      { kind: "primary", citation: "Jubilees 6:17–21" },
+      { kind: "primary", citation: "Jubilees 1:1; 6:17–21; Dead Sea Scrolls, 4QDa (4Q266) frag. 11 lines 16–18" },
     ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
@@ -462,12 +462,12 @@ export const exodus: QuestionInput[] = [
         "The sister who once watched her baby brother's basket in the reeds (unnamed in Exodus 2, traditionally identified as Miriam) now leads a whole people in a victory song.",
       tradition: {
         jewish:
-          "A 1st-century retelling of the Bible (Pseudo-Philo, Biblical Antiquities 20:8) says the well that followed Israel was given for Miriam's sake. Paul's phrase about the rock that “followed them” (1 Corinthians 10:4) shows such traditions were known in his day.",
+          "A 1st-century retelling of the Bible (Pseudo-Philo, Biblical Antiquities) says the well that followed Israel through the desert was given for Miriam's sake (10:7; 11:15; 20:8). Paul's phrase about the rock that “followed them” (1 Corinthians 10:4) suggests such traditions were known in his day.",
       },
     },
     confidence: "settled",
     references: ["Exodus 2:4–8", "Exodus 15:20–21", "Numbers 26:59"],
-    sources: [scripture, { kind: "primary", citation: "Pseudo-Philo, Biblical Antiquities (Liber Antiquitatum Biblicarum) 20:8" }],
+    sources: [scripture, { kind: "primary", citation: "Pseudo-Philo, Biblical Antiquities (Liber Antiquitatum Biblicarum) 10:7; 11:15; 20:8" }],
     review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
@@ -604,7 +604,7 @@ export const exodus: QuestionInput[] = [
         "The attackers went for the stragglers at the back of the column — the tired and the weak (Deuteronomy 25:18).",
       tradition: {
         jewish:
-          "Josephus calls Haman an Amalekite by descent (Antiquities 11.6.5), and 2 Maccabees 15:36 mentions “Mordecai's day,” showing Purim was already being kept.",
+          "Josephus calls Haman an Amalekite by birth (Antiquities 11.6.5), and 2 Maccabees 15:36 mentions “the day of Mordecai,” showing Purim was already being kept.",
       },
     },
     confidence: "settled",
@@ -684,7 +684,7 @@ export const exodus: QuestionInput[] = [
         "Shiphrah's name appears as a Semitic servant's name on an Egyptian papyrus of about 1745 BCE (Papyrus Brooklyn 35.1446); Puah has been compared with Pughat, a heroine in texts from Ugarit.",
       theirEyes: "Two women with no power at all quietly refused the most powerful man in the world.",
       tradition: {
-        jewish: "Josephus retells the story with Pharaoh choosing Egyptian midwives, expecting them to have no pity on Hebrew babies (Antiquities 2.9.2).",
+        jewish: "Josephus retells the story with Pharaoh choosing Egyptian midwives, who as the king's own people would not disobey his orders (Antiquities 2.9.2).",
       },
       debate:
         "The Hebrew can mean either “Hebrew midwives” or “midwives to the Hebrews.” Josephus and some later commentators thought they were Egyptians.",
@@ -715,7 +715,7 @@ export const exodus: QuestionInput[] = [
         "Sukkot was also the autumn harvest festival of ingathering (Exodus 23:16). Many scholars think the booths also echo the field shelters farmers used during the harvest.",
       theirEyes: "A week of eating under a roof of branches, where you can see the stars — remembering when home was a tent.",
       tradition: {
-        jewish: "Josephus calls it the holiest and greatest feast (Antiquities 8.4.1) and tells how worshippers pelted King Alexander Jannaeus with their citrons (13.13.5). Later sources recall torch-lit nights and water-pouring at the Temple — the backdrop to Jesus' words about “living water” (John 7:37–38).",
+        jewish: "Josephus calls it the most holy and most eminent feast (Antiquities 8.4.1) and tells how worshippers pelted King Alexander Jannaeus with their citrons (13.13.5). The Mishnah, written down around 200 CE, recalls torch-lit nights and water-pouring at the Temple — the backdrop to Jesus' words about “living water” (John 7:37–38).",
         christian: "John 7 sets Jesus' teaching at the Feast of Tabernacles in Jerusalem.",
       },
     },
@@ -724,6 +724,7 @@ export const exodus: QuestionInput[] = [
     sources: [
       scripture,
       { kind: "primary", citation: "Josephus, Antiquities of the Jews 8.4.1; 13.13.5" },
+      { kind: "primary", citation: "Mishnah Sukkah 4:9; 5:2–4 (later record, c. 200 CE)" },
     ],
     review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
