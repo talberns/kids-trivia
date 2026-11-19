@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cinzel, EB_Garamond, Inter } from "next/font/google";
 import { BottomNav } from "@/components/bottom-nav";
+import { PageViewTracker } from "@/components/page-view-tracker";
 import { TopBar } from "@/components/top-bar";
 import "./globals.css";
 
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {children}
         </main>
         <BottomNav />
+        <PageViewTracker />
       </body>
     </html>
   );

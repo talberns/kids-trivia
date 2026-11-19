@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CONFIDENCE_LABEL } from "@/components/game/labels";
 import { PUBLISHED_QUESTIONS } from "@/content/index";
+import { getPlayer } from "@/lib/auth/current";
 import { REPO_URL } from "@/lib/report";
 
 export const metadata: Metadata = {
@@ -8,7 +9,8 @@ export const metadata: Metadata = {
   description: "How every question is researched, checked and labelled — and how to report an error.",
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const player = await getPlayer();
   return (
     <article className="space-y-6 pt-4">
       <header className="text-center">
@@ -100,8 +102,26 @@ export default function AboutPage() {
         <h2 className="font-display text-xl font-extrabold text-white">Fair play</h2>
         <p>
           This is a free, educational project. There are no purchases, no ads and no chance-based rewards — everything
-          is earned by learning. Your progress is stored only on your device.
+          is earned by learning. Your points and stars are stored on your device. While the site is in private
+          testing, your name and game activity are also recorded so the organiser can improve the game.
         </p>
+      </section>
+
+      <section className="panel flex flex-wrap items-center gap-3 p-5 text-sm">
+        <p className="text-white/70">
+          {player ? (
+            <>
+              Signed in as <strong className="text-white">{player.firstName} {player.lastName}</strong>
+            </>
+          ) : (
+            "Signed in"
+          )}
+        </p>
+        <form method="post" action="/api/logout" className="ml-auto">
+          <button type="submit" className="focus-ring rounded-full bg-white/10 px-4 py-2 font-bold hover:bg-white/15">
+            Sign out
+          </button>
+        </form>
       </section>
     </article>
   );

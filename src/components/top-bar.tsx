@@ -1,16 +1,21 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { currentStreak, rankFor, withSound } from "@/game/progress";
+import { isChromeless } from "@/lib/chromeless";
 import { setProgress, useProgress, useToday } from "@/lib/progress-store";
 import { playSound } from "@/lib/sound";
 
 export function TopBar() {
+  const pathname = usePathname();
   const progress = useProgress();
   const today = useToday();
   const { current, next, progress: rankProgress } = rankFor(progress.xp);
   const streak = today ? currentStreak(progress, today) : 0;
   const soundOn = progress.settings.sound;
+
+  if (isChromeless(pathname)) return null;
 
   return (
     <header className="sticky top-0 z-30 border-b border-white/5 bg-night/80 backdrop-blur-md">

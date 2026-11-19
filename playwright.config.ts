@@ -1,4 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
+import { E2E_AUTH } from "./e2e/credentials";
 
 const PORT = Number(process.env.PORT ?? 3000);
 
@@ -21,5 +22,6 @@ export default defineConfig({
         command: `npm run start -- -p ${PORT}`,
         port: PORT,
         reuseExistingServer: !process.env.CI,
+        env: { ...E2E_AUTH, DATABASE_URL: "" },
       },
 });

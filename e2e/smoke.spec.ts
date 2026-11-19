@@ -1,4 +1,9 @@
 import { expect, test } from "@playwright/test";
+import { signIn } from "./auth";
+
+test.beforeEach(async ({ page }) => {
+  await signIn(page);
+});
 
 test("journey map shows playable eras", async ({ page }) => {
   await page.goto("/");

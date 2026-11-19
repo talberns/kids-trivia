@@ -20,6 +20,7 @@ import {
   type ProgressUpdate,
   type RoundOutcome,
 } from "@/game/progress";
+import { track } from "@/lib/activity/track";
 import { getProgress, setProgress, useProgress } from "@/lib/progress-store";
 import { playSound } from "@/lib/sound";
 import { CoinBurst } from "../coin-burst";
@@ -102,6 +103,12 @@ function Round({ config, seed, onReplay }: { config: RoundConfig; seed: number; 
   const { question } = item;
   const total = state.items.length;
   const category = CATEGORY_LABEL[question.category];
+  const where = { mode: config.mode, era: config.era, level: config.level };
+
+  // Activity log: one "started" event per attempt.
+  useEffect(() => {
+    track({ type: "round_start", mode: config.mode, era: config.era, level: config.level });
+  }, [config.mode, config.era, config.level]);
 
   function answer(choice: number) {
     if (state.phase !== "answering" || state.eliminated.includes(choice)) return;
@@ -115,6 +122,7 @@ function Round({ config, seed, onReplay }: { config: RoundConfig; seed: number; 
     } else {
       playSound("wrong", sound);
     }
+    track({ type: "answer", ...where, questionId: question.id, correct, usedFiftyFifty: state.eliminated.length > 0 });
     dispatch({ type: "answer", choice });
     // Move focus to the explanation once it renders, for keyboard and screen-reader users.
     window.setTimeout(() => insightRef.current?.focus({ preventScroll: true }), 60);
@@ -139,6 +147,7 @@ function Round({ config, seed, onReplay }: { config: RoundConfig; seed: number; 
             })
           : applyDailyResult(getProgress(), outcome, today);
       setProgress(update.progress);
+      track({ type: "round_complete", ...where, score: state.score, stars, correct, total });
       setSummary({ outcome, update, longSession: isLongSession() });
       playSound(stars === 3 ? "jackpot" : stars >= 1 ? "levelUp" : "wrong", sound);
       if (stars >= 1) setBurst((b) => ({ n: b.n + 1, intensity: stars === 3 ? 2.6 : 1.4 }));

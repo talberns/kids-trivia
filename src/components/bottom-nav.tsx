@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { isChromeless } from "@/lib/chromeless";
 
 const ITEMS = [
   { href: "/", label: "Journey", icon: "🗺️" },
@@ -13,7 +14,7 @@ const ITEMS = [
 export function BottomNav() {
   const pathname = usePathname();
   // Keep play screens (levels and the daily challenge) distraction-free.
-  if (pathname.startsWith("/play") || pathname.startsWith("/daily")) return null;
+  if (pathname.startsWith("/play") || pathname.startsWith("/daily") || isChromeless(pathname)) return null;
 
   return (
     <nav
