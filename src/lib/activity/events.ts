@@ -26,6 +26,17 @@ export const clientEventSchema = z.discriminatedUnion("type", [
     usedFiftyFifty: z.boolean(),
   }),
   z.object({
+    type: z.literal("insight_read"),
+    mode,
+    era: shortText.optional(),
+    level: z.number().int().min(1).max(20).optional(),
+    questionId: z.string().regex(/^[a-z]{3}-\d{3}$/),
+    /** Seconds between seeing the explanation and moving on. */
+    seconds: z.number().int().min(0).max(3600),
+    /** Whether the reader scrolled to the end of the explanation. */
+    reachedEnd: z.boolean(),
+  }),
+  z.object({
     type: z.literal("round_complete"),
     mode,
     era: shortText.optional(),
@@ -48,6 +59,7 @@ export const EVENT_LABEL: Record<ActivityEvent["type"], string> = {
   page_view: "Opened page",
   round_start: "Started",
   answer: "Answered",
+  insight_read: "Read explanation",
   round_complete: "Finished",
 };
 
@@ -66,6 +78,8 @@ export function describeEvent(type: string, data: Record<string, unknown>): stri
       return where;
     case "answer":
       return `${where} · ${String(data.questionId ?? "")} · ${data.correct ? "✓ correct" : "✗ wrong"}${data.usedFiftyFifty ? " (50/50)" : ""}`;
+    case "insight_read":
+      return `${where} · ${String(data.questionId ?? "")} · ${String(data.seconds)}s${data.reachedEnd ? " · read to the end" : " · skipped ahead"}`;
     case "round_complete":
       return `${where} · ${String(data.correct)}/${String(data.total)} correct · ${String(data.stars)}★ · ${String(data.score)} pts`;
     default:

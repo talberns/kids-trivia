@@ -81,6 +81,10 @@ export interface PlayerSummary {
   readonly rounds: number;
   readonly answers: number;
   readonly correct: number;
+  /** Median seconds spent on explanations, or null if none recorded. */
+  readonly medianReadSeconds: number | null;
+  /** Share of explanations read to the end (0–1), or null. */
+  readonly readShare: number | null;
 }
 
 export interface EventRow {
@@ -117,7 +121,11 @@ export async function loadActivity(options: { player?: string; limit?: number } 
                  count(*) FILTER (WHERE type = 'login_failed') AS failed_logins,
                  count(*) FILTER (WHERE type = 'round_complete') AS rounds,
                  count(*) FILTER (WHERE type = 'answer') AS answers,
-                 count(*) FILTER (WHERE type = 'answer' AND data->>'correct' = 'true') AS correct
+                 count(*) FILTER (WHERE type = 'answer' AND data->>'correct' = 'true') AS correct,
+                 percentile_cont(0.5) WITHIN GROUP (ORDER BY (data->>'seconds')::numeric)
+                   FILTER (WHERE type = 'insight_read') AS median_read,
+                 avg(CASE WHEN data->>'reachedEnd' = 'true' THEN 1.0 ELSE 0.0 END)
+                   FILTER (WHERE type = 'insight_read') AS read_share
           FROM activity_events
           GROUP BY player_key
           ORDER BY max(created_at) DESC`,
@@ -139,6 +147,8 @@ export async function loadActivity(options: { player?: string; limit?: number } 
         rounds: Number(r.rounds),
         answers: Number(r.answers),
         correct: Number(r.correct),
+        medianReadSeconds: r.median_read == null ? null : Math.round(Number(r.median_read)),
+        readShare: r.read_share == null ? null : Number(r.read_share),
       })),
       events: (events as Record<string, unknown>[]).map((r) => ({
         id: String(r.id),

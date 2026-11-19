@@ -26,6 +26,7 @@ import { playSound } from "@/lib/sound";
 import { CoinBurst } from "../coin-burst";
 import { ChoiceButton, type ChoiceStatus } from "./choice-button";
 import { InsightCard } from "./insight-card";
+import { InsightFooter } from "./insight-footer";
 import { CATEGORY_LABEL } from "./labels";
 import { RoundSummary } from "./round-summary";
 
@@ -98,6 +99,7 @@ function Round({ config, seed, onReplay }: { config: RoundConfig; seed: number; 
   const [lastGain, setLastGain] = useState({ n: 0, points: 0 });
   const [summary, setSummary] = useState<Summary | null>(null);
   const insightRef = useRef<HTMLHeadingElement>(null);
+  const revealedAt = useRef(0);
 
   const item = currentItem(state);
   const { question } = item;
@@ -124,12 +126,26 @@ function Round({ config, seed, onReplay }: { config: RoundConfig; seed: number; 
     }
     track({ type: "answer", ...where, questionId: question.id, correct, usedFiftyFifty: state.eliminated.length > 0 });
     dispatch({ type: "answer", choice });
-    // Move focus to the explanation once it renders, for keyboard and screen-reader users.
-    window.setTimeout(() => insightRef.current?.focus({ preventScroll: true }), 60);
+    revealedAt.current = Date.now();
+    // Bring the explanation into view once it renders: learning is the point of each question.
+    window.setTimeout(() => {
+      const heading = insightRef.current;
+      if (!heading) return;
+      heading.focus({ preventScroll: true });
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.getElementById("round-verdict")?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    }, 120);
   }
 
-  function next() {
+  function next(reachedEnd = false) {
     if (state.phase !== "revealed") return;
+    track({
+      type: "insight_read",
+      ...where,
+      questionId: question.id,
+      seconds: Math.min(3600, Math.max(0, Math.round((Date.now() - revealedAt.current) / 1000))),
+      reachedEnd,
+    });
     const isLast = state.index + 1 >= total;
     if (isLast) {
       const correct = correctCount(state);
@@ -319,7 +335,8 @@ function Round({ config, seed, onReplay }: { config: RoundConfig; seed: number; 
       {revealed && (
         <>
           <p
-            className={`animate-pop-in text-center font-display text-3xl font-extrabold ${
+            id="round-verdict"
+            className={`animate-pop-in scroll-mt-20 text-center font-display text-3xl font-extrabold ${
               answeredCorrectly ? "text-jade" : "text-ruby"
             }`}
             aria-hidden
@@ -327,11 +344,11 @@ function Round({ config, seed, onReplay }: { config: RoundConfig; seed: number; 
             {answeredCorrectly ? (state.combo >= 3 ? "On fire! 🔥" : "Correct!") : "Not quite"}
           </p>
           <InsightCard question={question} headingRef={insightRef} />
-          <div className="sticky bottom-0 z-20 -mx-4 flex justify-center bg-gradient-to-t from-night via-night/95 to-transparent px-4 pb-4 pt-10">
-            <button type="button" onClick={next} className="btn-gold focus-ring w-full max-w-sm text-lg">
-              {state.index + 1 >= total ? "See results" : "Next question →"}
-            </button>
-          </div>
+          <InsightFooter
+            key={question.id}
+            label={state.index + 1 >= total ? "See results" : "Next question →"}
+            onNext={next}
+          />
         </>
       )}
     </div>

@@ -44,3 +44,14 @@ test("daily challenge hides the bottom navigation", async ({ page }) => {
   await expect(page.getByRole("group", { name: "Answers" })).toBeVisible();
   await expect(page.getByRole("navigation", { name: "Main" })).toHaveCount(0);
 });
+
+test("after answering, the explanation comes into view before the next button", async ({ page }) => {
+  await page.goto("/play/roman-judea/1");
+  await page.getByRole("group", { name: "Answers" }).getByRole("button").first().click();
+  const heading = page.getByRole("heading", { name: /window into the time/i });
+  await expect(heading).toBeInViewport();
+  const next = page.getByRole("button", { name: /next question/i });
+  const headingBox = await heading.boundingBox();
+  const nextBox = await next.boundingBox();
+  expect(headingBox && nextBox && nextBox.y > headingBox.y).toBe(true);
+});

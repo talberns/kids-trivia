@@ -23,13 +23,13 @@ export function InsightCard({ question, headingRef }: InsightCardProps) {
   ].filter((s): s is typeof s & { body: string } => s.body !== undefined);
 
   return (
-    <section aria-labelledby={`insight-${question.id}`} className="panel animate-rise-in space-y-4 p-5">
+    <section aria-labelledby={`insight-${question.id}`} className="panel animate-rise-in space-y-5 p-5 ring-1 ring-gold/30 sm:p-7">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3
           id={`insight-${question.id}`}
           ref={headingRef}
           tabIndex={-1}
-          className="font-display text-xl font-extrabold outline-none"
+          className="font-display text-2xl font-extrabold outline-none sm:text-3xl"
         >
           <span className="gold-text">Window into the time</span>
         </h3>
@@ -45,17 +45,17 @@ export function InsightCard({ question, headingRef }: InsightCardProps) {
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold">
           <span aria-hidden>👁️ </span>Through their eyes
         </p>
-        <p className="mt-1.5 font-serif text-xl italic leading-relaxed text-parchment">{e.theirEyes}</p>
+        <p className="mt-2 font-serif text-xl italic leading-relaxed text-parchment sm:text-2xl">{e.theirEyes}</p>
       </div>
 
-      <dl className="space-y-3">
+      <dl className="space-y-5">
         {sections.map((s) => (
           <div key={s.key}>
             <dt className="text-xs font-bold uppercase tracking-[0.18em] text-cyan">
               <span aria-hidden>{s.icon} </span>
               {s.title}
             </dt>
-            <dd className="mt-1 leading-relaxed text-white/85">{s.body}</dd>
+            <dd className="mt-1.5 font-serif text-lg leading-relaxed text-white/90 sm:text-xl">{s.body}</dd>
           </div>
         ))}
       </dl>

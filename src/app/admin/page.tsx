@@ -88,7 +88,7 @@ export default async function AdminPage({ searchParams }: PageProps) {
           Players ({report.players.length})
         </h2>
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[640px] text-left text-sm">
+          <table className="w-full min-w-[820px] text-left text-sm">
             <thead className="text-xs uppercase tracking-wider text-white/50">
               <tr>
                 <th className="px-5 py-2">Name</th>
@@ -97,13 +97,15 @@ export default async function AdminPage({ searchParams }: PageProps) {
                 <th className="px-3 py-2 text-right">Logins</th>
                 <th className="px-3 py-2 text-right">Rounds</th>
                 <th className="px-3 py-2 text-right">Answers</th>
-                <th className="px-5 py-2 text-right">Correct</th>
+                <th className="px-3 py-2 text-right">Correct</th>
+                <th className="px-3 py-2 text-right" title="Median time spent on each explanation">Reading time</th>
+                <th className="px-5 py-2 text-right" title="Explanations scrolled to the end">Read to end</th>
               </tr>
             </thead>
             <tbody>
               {report.players.length === 0 && (
                 <tr>
-                  <td colSpan={7} className="px-5 py-4 text-white/60">
+                  <td colSpan={9} className="px-5 py-4 text-white/60">
                     No activity yet.
                   </td>
                 </tr>
@@ -125,8 +127,14 @@ export default async function AdminPage({ searchParams }: PageProps) {
                   <td className="px-3 py-2 text-right tabular-nums">{p.logins}</td>
                   <td className="px-3 py-2 text-right tabular-nums">{p.rounds}</td>
                   <td className="px-3 py-2 text-right tabular-nums">{p.answers}</td>
-                  <td className="px-5 py-2 text-right tabular-nums">
+                  <td className="px-3 py-2 text-right tabular-nums">
                     {p.answers > 0 ? `${Math.round((p.correct / p.answers) * 100)}%` : "—"}
+                  </td>
+                  <td className="px-3 py-2 text-right tabular-nums">
+                    {p.medianReadSeconds == null ? "—" : `${p.medianReadSeconds}s`}
+                  </td>
+                  <td className="px-5 py-2 text-right tabular-nums">
+                    {p.readShare == null ? "—" : `${Math.round(p.readShare * 100)}%`}
                   </td>
                 </tr>
               ))}
