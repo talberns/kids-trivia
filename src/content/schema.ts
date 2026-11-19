@@ -79,7 +79,7 @@ export const questionSchema = z
   .object({
     id: z.string().regex(/^[a-z]{3}-\d{3}$/, "id must look like 'pat-001'"),
     era: eraIdSchema,
-    level: z.number().int().min(1).max(3),
+    level: z.number().int().min(1).max(5),
     category: categorySchema,
     difficulty: z.union([z.literal(1), z.literal(2), z.literal(3)]),
     format: z.enum(["multiple-choice", "true-false"]),
