@@ -268,7 +268,7 @@ function Round({ config, seed, onReplay }: { config: RoundConfig; seed: number; 
           )}
         </div>
 
-        <h2 id="question-prompt" className="font-display text-2xl font-extrabold leading-snug">
+        <h2 id="question-prompt" className="font-serif text-[1.65rem] font-semibold leading-snug text-white">
           {question.prompt}
         </h2>
 
@@ -318,7 +318,7 @@ function Round({ config, seed, onReplay }: { config: RoundConfig; seed: number; 
             {answeredCorrectly ? (state.combo >= 3 ? "On fire! 🔥" : "Correct!") : "Not quite"}
           </p>
           <InsightCard question={question} headingRef={insightRef} />
-          <div className="sticky bottom-4 z-20 flex justify-center">
+          <div className="sticky bottom-0 z-20 -mx-4 flex justify-center bg-gradient-to-t from-night via-night/95 to-transparent px-4 pb-4 pt-10">
             <button type="button" onClick={next} className="btn-gold focus-ring w-full max-w-sm text-lg">
               {state.index + 1 >= total ? "See results" : "Next question →"}
             </button>

@@ -11,7 +11,7 @@ export interface Era {
   readonly playable: boolean;
 }
 
-export const LEVELS_PER_ERA = 3;
+export const LEVELS_PER_ERA = 5;
 
 /** In story order. Dates for the early eras are traditional or debated and labelled as such. */
 export const ERAS: readonly Era[] = [

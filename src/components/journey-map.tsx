@@ -70,11 +70,11 @@ export function JourneyMap({ eras }: JourneyMapProps) {
                             className={`h-1 flex-1 rounded-full ${unlocked ? "bg-gold/50" : "bg-white/10"}`}
                           />
                         )}
-                        <div className="flex flex-col items-center gap-1.5 px-2">
+                        <div className="flex flex-col items-center gap-1.5 px-1 sm:px-2">
                           {unlocked ? (
                             <Link
                               href={`/play/${era.id}/${level}`}
-                              className={`coin focus-ring grid size-16 place-items-center font-display text-2xl font-extrabold text-[#3b2600] transition-transform hover:scale-110 ${
+                              className={`coin focus-ring grid size-12 place-items-center font-display text-xl sm:size-16 sm:text-2xl font-extrabold text-[#3b2600] transition-transform hover:scale-110 ${
                                 stars === 0 ? "animate-pulse-glow" : ""
                               }`}
                               aria-label={`Play ${era.name}, level ${level}${stars ? `, ${stars} stars earned` : ""}`}
@@ -83,7 +83,7 @@ export function JourneyMap({ eras }: JourneyMapProps) {
                             </Link>
                           ) : (
                             <span
-                              className="coin-locked grid size-16 place-items-center text-xl"
+                              className="coin-locked grid size-12 place-items-center text-base sm:size-16 sm:text-xl"
                               aria-label={`Level ${level} locked — earn a star on level ${level - 1}`}
                               role="img"
                             >

@@ -33,3 +33,9 @@ test("sources page explains the method", async ({ page }) => {
   await page.goto("/about");
   await expect(page.getByRole("heading", { name: /how we check every answer/i })).toBeVisible();
 });
+
+test("daily challenge hides the bottom navigation", async ({ page }) => {
+  await page.goto("/daily");
+  await expect(page.getByRole("group", { name: "Answers" })).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "Main" })).toHaveCount(0);
+});

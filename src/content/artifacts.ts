@@ -101,6 +101,65 @@ export const ARTIFACTS: readonly Artifact[] = [
       "Vessels carved from soft chalk stone were popular in Judea because stone was considered not to become ritually impure. John mentions six stone jars at the wedding in Cana.",
     reference: "John 2:6",
   },
+  {
+    id: "water-jar",
+    era: "patriarchs",
+    level: 4,
+    name: "Clay Water Jar",
+    emoji: "🏺",
+    blurb:
+      "Women carried clay jars on their shoulders to the town well, usually in the evening. Rebekah's water jar is how Abraham's servant found Isaac's wife.",
+    reference: "Genesis 24:15–20",
+  },
+  {
+    id: "canopic-jar",
+    era: "patriarchs",
+    level: 5,
+    name: "Canopic Jar",
+    emoji: "⚱️",
+    blurb:
+      "During mummification Egyptians removed internal organs and stored them in four jars, often with lids shaped like the heads of protective gods. Genesis says Jacob and Joseph were embalmed in Egypt.",
+    reference: "Genesis 50:2–3, 26",
+  },
+  {
+    id: "papyrus-basket",
+    era: "exodus",
+    level: 4,
+    name: "Papyrus Basket",
+    emoji: "🧺",
+    blurb:
+      "Papyrus reeds grew thick along the Nile and were woven into baskets, mats and even boats. Moses' mother sealed his basket with tar and pitch.",
+    reference: "Exodus 2:3",
+  },
+  {
+    id: "bronze-serpent",
+    era: "exodus",
+    level: 5,
+    name: "Bronze Serpent",
+    emoji: "🐍",
+    blurb:
+      "Moses lifted a bronze serpent on a pole for healing. Centuries later King Hezekiah destroyed it, because it had become an object of worship called Nehushtan.",
+    reference: "Numbers 21:8–9; 2 Kings 18:4",
+  },
+  {
+    id: "fishing-net",
+    era: "roman-judea",
+    level: 4,
+    name: "Fishing Net",
+    emoji: "🎣",
+    blurb:
+      "Galilee fishermen cast hand nets from the shore and dragged large nets between boats, often working at night. Several of Jesus' first followers were fishermen.",
+    reference: "Mark 1:16–20",
+  },
+  {
+    id: "ossuary",
+    era: "roman-judea",
+    level: 5,
+    name: "Stone Ossuary",
+    emoji: "🪦",
+    blurb:
+      "A carved limestone box for the bones of the dead, gathered about a year after burial. Ossuaries were used in Jerusalem roughly from the late 1st century BCE until 70 CE.",
+  },
 ];
 
 export function getArtifactForLevel(era: string, level: number): Artifact | undefined {

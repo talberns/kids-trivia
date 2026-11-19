@@ -45,7 +45,7 @@ export function InsightCard({ question, headingRef }: InsightCardProps) {
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold">
           <span aria-hidden>👁️ </span>Through their eyes
         </p>
-        <p className="mt-1.5 font-display text-[1.05rem] leading-relaxed text-parchment">{e.theirEyes}</p>
+        <p className="mt-1.5 font-serif text-xl italic leading-relaxed text-parchment">{e.theirEyes}</p>
       </div>
 
       <dl className="space-y-3">

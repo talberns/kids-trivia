@@ -425,4 +425,274 @@ export const exodus: QuestionInput[] = [
     ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
+  // ───────────── Level 4 ─────────────
+  {
+    id: "exo-016",
+    era: "exodus",
+    level: 4,
+    category: "story",
+    difficulty: 2,
+    format: "multiple-choice",
+    prompt: "Who was Moses' sister, called a prophetess, who led the women in song after the crossing of the sea?",
+    choices: ["Miriam", "Zipporah", "Deborah", "Rahab"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Exodus 15:20–21: “Miriam the prophetess, the sister of Aaron, took a tambourine in her hand,” and the women followed her in song and dance. Numbers 26:59 names Miriam as the sister of Aaron and Moses.",
+      world:
+        "Women singing and drumming to celebrate a victory appears elsewhere in the Bible too (1 Samuel 18:6–7), and frame drums are well known from the region's art and figurines.",
+      theirEyes:
+        "The girl who once watched her baby brother's basket in the reeds now leads a whole people in a victory song.",
+      tradition: {
+        jewish:
+          "The Talmud teaches that a well accompanied Israel in the desert in Miriam's merit (Taanit 9a); some families today place a “Miriam's cup” of water on the Seder table.",
+      },
+    },
+    confidence: "settled",
+    references: ["Exodus 2:4–8", "Exodus 15:20–21", "Numbers 26:59"],
+    sources: [scripture, { kind: "primary", citation: "Babylonian Talmud, Taanit 9a" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "exo-017",
+    era: "exodus",
+    level: 4,
+    category: "neighbours",
+    difficulty: 2,
+    format: "multiple-choice",
+    prompt: "Baby Moses was hidden in a papyrus basket sealed with tar. A Mesopotamian legend tells a similar story about which king?",
+    choices: ["Sargon of Akkad", "Nebuchadnezzar of Babylon", "Cyrus of Persia", "Hammurabi of Babylon"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Exodus 2:3: his mother made “a papyrus basket, and coated it with tar and with pitch.” The Hebrew word for the basket, tevah, is the same word used for Noah's ark.",
+      world:
+        "The Sargon Birth Legend, known from Neo-Assyrian copies, says the infant Sargon was set in a reed basket sealed with bitumen on the Euphrates and rescued to rise to power.",
+      theirEyes:
+        "For a desperate mother, a sealed basket in the reeds was a last hope — and the riverbank was where Egyptian royal women came to bathe.",
+      debate:
+        "Scholars debate how the two stories are related: whether the Exodus account draws on a familiar “rescued foundling” pattern, or the similarity reflects a common motif about future leaders.",
+    },
+    confidence: "mainstream",
+    references: ["Exodus 2:1–10"],
+    sources: [scripture, { kind: "primary", citation: "Sargon Birth Legend (Neo-Assyrian copies); “Sargon,” Encyclopaedia Britannica" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "exo-018",
+    era: "exodus",
+    level: 4,
+    category: "tradition",
+    difficulty: 2,
+    format: "multiple-choice",
+    prompt: "When Moses came down from Mount Sinai with the second tablets, what had happened to his face?",
+    choices: ["It shone", "It had aged suddenly", "It had turned pale", "It was burned"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Exodus 34:29–35: the skin of Moses' face shone, the people were afraid to come near, and he put a veil over his face.",
+      world:
+        "The Hebrew verb for “shone” (karan) is related to the word for “horn” (keren). The Latin Vulgate translated it as “horned,” which is why Michelangelo's famous statue of Moses has horns.",
+      theirEyes: "Imagine your leader returning from the mountain with a face so bright you couldn't look at it.",
+      tradition: {
+        christian: "Paul contrasts Moses' fading glow and veil with the glory of the new covenant (2 Corinthians 3:7–18).",
+      },
+    },
+    confidence: "settled",
+    references: ["Exodus 34:29–35", "2 Corinthians 3:7–18"],
+    sources: [scripture, { kind: "reference", citation: "“Moses (Michelangelo),” Encyclopaedia Britannica" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "exo-019",
+    era: "exodus",
+    level: 4,
+    category: "daily-life",
+    difficulty: 2,
+    format: "multiple-choice",
+    prompt: "What advice did Moses' father-in-law Jethro give him?",
+    choices: [
+      "Appoint capable leaders to judge the smaller cases",
+      "Return to Egypt and make peace with Pharaoh",
+      "Build a temple before entering Canaan",
+      "Choose a king to rule the tribes",
+    ],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Exodus 18:13–26: seeing Moses judging the people from morning till evening, Jethro tells him to appoint leaders over thousands, hundreds, fifties and tens, and bring only the hard cases to him.",
+      world:
+        "Courts in the ancient Near East were often local, run by elders at the town gate, with difficult cases sent up to the king or a high official.",
+      theirEyes: "One man hearing every dispute in a nation of tents — the queue must have stretched across the camp.",
+      tradition: {
+        shared: "Jethro, a Midianite priest, is honoured in both Jewish and Christian tradition as a wise outsider; a Torah portion bears his name (Yitro).",
+      },
+    },
+    confidence: "settled",
+    references: ["Exodus 18:13–26"],
+    sources: [scripture],
+    review: { status: "draft" },
+  },
+  {
+    id: "exo-020",
+    era: "exodus",
+    level: 4,
+    category: "faith-practice",
+    difficulty: 2,
+    format: "true-false",
+    prompt: "True or false: the Ten Commandments appear twice in the Torah.",
+    choices: ["True", "False"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "They appear in Exodus 20:1–17 and Deuteronomy 5:6–21. One difference: Exodus grounds the Sabbath in creation (20:11), while Deuteronomy grounds it in the release from slavery in Egypt (5:15).",
+      world:
+        "Ancient treaties were often written in two copies, one for each party — some scholars suggest this is why the commandments were on two tablets.",
+      theirEyes:
+        "For a generation that had worked without rest under Pharaoh, a weekly day off for everyone — even servants and animals — was revolutionary.",
+      tradition: {
+        shared:
+          "Jews, Catholics and Lutherans, and most Protestant and Orthodox churches divide and number the commandments in different ways.",
+      },
+    },
+    confidence: "settled",
+    references: ["Exodus 20:1–17", "Deuteronomy 5:6–21"],
+    sources: [scripture, { kind: "reference", citation: "“Ten Commandments,” Encyclopaedia Britannica" }],
+    review: { status: "draft" },
+  },
+
+  // ───────────── Level 5 ─────────────
+  {
+    id: "exo-021",
+    era: "exodus",
+    level: 5,
+    category: "neighbours",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "Which people attacked the Israelites at Rephidim, where Moses' raised hands were held up by Aaron and Hur?",
+    choices: ["The Amalekites", "The Philistines", "The Egyptians", "The Babylonians"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Exodus 17:8–16: Amalek attacks at Rephidim. While Moses' hands are raised Israel prevails; Aaron and Hur hold them up until sunset.",
+      world:
+        "The Amalekites are described as a nomadic people of the Negev and Sinai. No inscription outside the Bible clearly mentions them.",
+      theirEyes:
+        "Deuteronomy 25:18 remembers that Amalek struck the stragglers at the rear — the tired and the weak.",
+      tradition: {
+        jewish:
+          "On the Sabbath before Purim, Jews read the command to “remember Amalek” (Deuteronomy 25:17–19); Haman in the Book of Esther is called an Agagite, linked by tradition to Amalek's king Agag.",
+      },
+    },
+    confidence: "settled",
+    references: ["Exodus 17:8–16", "Deuteronomy 25:17–19", "Esther 3:1"],
+    sources: [scripture],
+    review: { status: "draft" },
+  },
+  {
+    id: "exo-022",
+    era: "exodus",
+    level: 5,
+    category: "archaeology",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "Centuries later, which king destroyed the bronze serpent Moses had made, because people were burning incense to it?",
+    choices: ["Hezekiah", "Josiah", "Solomon", "David"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Numbers 21:8–9 tells how Moses made a bronze serpent on a pole. 2 Kings 18:4 says Hezekiah broke it in pieces, “for in those days the children of Israel burned incense to it; and he called it Nehushtan.”",
+      world:
+        "At Timna, an ancient copper-mining site in the Arava, archaeologist Beno Rothenberg found a small copper serpent in a shrine from the 12th century BCE.",
+      theirEyes:
+        "A symbol of healing had, over generations, become something people worshipped — Hezekiah saw it as an idol.",
+      tradition: {
+        christian: "Jesus says, “As Moses lifted up the serpent in the wilderness, even so must the Son of Man be lifted up” (John 3:14).",
+      },
+    },
+    confidence: "settled",
+    references: ["Numbers 21:8–9", "2 Kings 18:4", "John 3:14"],
+    sources: [scripture, { kind: "archaeology", citation: "B. Rothenberg, Timna: Valley of the Biblical Copper Mines (1972)" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "exo-023",
+    era: "exodus",
+    level: 5,
+    category: "faith-practice",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "How many lamps did the golden lampstand (menorah) of the Tabernacle hold?",
+    choices: ["Seven", "Nine", "Five", "Twelve"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Exodus 25:31–37: a central shaft with six branches, three on each side, and seven lamps.",
+      world:
+        "The nine-branched lamp lit on Hanukkah (a hanukkiah) is a later development, commemorating the rededication of the Temple in 164 BCE.",
+      theirEyes: "In a tent sanctuary with no windows, the menorah's flames were the only light in the Holy Place.",
+      tradition: {
+        shared:
+          "The seven-branched menorah is one of Judaism's oldest symbols; it appears on the Arch of Titus and is the emblem of the State of Israel.",
+      },
+    },
+    confidence: "settled",
+    references: ["Exodus 25:31–40"],
+    sources: [scripture],
+    review: { status: "draft" },
+  },
+  {
+    id: "exo-024",
+    era: "exodus",
+    level: 5,
+    category: "story",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "Which two midwives defied Pharaoh's order to kill Hebrew baby boys?",
+    choices: ["Shiphrah and Puah", "Miriam and Zipporah", "Rachel and Leah", "Deborah and Jael"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Exodus 1:15–21: the midwives Shiphrah and Puah fear God and let the boys live; God rewards them with families of their own.",
+      world:
+        "Their names have parallels in Northwest Semitic names of the second millennium BCE, such as a list of servants on an Egyptian papyrus (Papyrus Brooklyn 35.1446).",
+      theirEyes: "Two women with no power at all quietly refused the most powerful man in the world.",
+      debate:
+        "The Hebrew can mean either “Hebrew midwives” or “midwives to the Hebrews.” Josephus and some later commentators thought they were Egyptians.",
+    },
+    confidence: "settled",
+    references: ["Exodus 1:15–21"],
+    sources: [
+      scripture,
+      { kind: "primary", citation: "Josephus, Antiquities of the Jews 2.9.2" },
+      { kind: "primary", citation: "Papyrus Brooklyn 35.1446 (servant list)" },
+    ],
+    review: { status: "draft" },
+  },
+  {
+    id: "exo-025",
+    era: "exodus",
+    level: 5,
+    category: "tradition",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "Which festival recalls the Israelites living in temporary shelters in the wilderness?",
+    choices: ["Sukkot (Tabernacles)", "Shavuot (Weeks)", "Passover", "Yom Kippur"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Leviticus 23:42–43: “You shall dwell in booths seven days… that your generations may know that I made the children of Israel to dwell in booths, when I brought them out of the land of Egypt.”",
+      world:
+        "Sukkot was also the autumn harvest festival of ingathering (Exodus 23:16), when farmers lived in field shelters during the harvest.",
+      theirEyes: "A week of eating under a roof of branches, where you can see the stars — remembering when home was a tent.",
+      tradition: {
+        jewish: "Families build a sukkah and wave the four species (palm, myrtle, willow and citron).",
+        christian: "John 7 sets Jesus' teaching at the Feast of Tabernacles in Jerusalem.",
+      },
+    },
+    confidence: "settled",
+    references: ["Leviticus 23:39–43", "Exodus 23:16", "John 7:2"],
+    sources: [scripture],
+    review: { status: "draft" },
+  },
 ];

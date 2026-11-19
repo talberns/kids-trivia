@@ -409,4 +409,254 @@ export const romanJudea: QuestionInput[] = [
     sources: [scripture, { kind: "primary", citation: "Josephus, Jewish War 7.5.5" }],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
+  // ───────────── Level 4 ─────────────
+  {
+    id: "rom-016",
+    era: "roman-judea",
+    level: 4,
+    category: "story",
+    difficulty: 2,
+    format: "multiple-choice",
+    prompt: "In John's Gospel, where does Jesus perform his first sign, turning water into wine?",
+    choices: ["At a wedding in Cana", "In the synagogue at Capernaum", "At the Jordan River", "In the Temple courts"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "John 2:1–11: at a wedding in Cana of Galilee the wine runs out, and Jesus has six stone water jars filled. John calls it “the beginning of his signs.”",
+      world:
+        "Village weddings could last several days, and running out of wine would shame the host family. The stone jars were for Jewish purification rites (John 2:6) — stone was considered not to become ritually impure.",
+      theirEyes: "For a poor family, a wedding was the biggest feast of their lives — and the whole village was watching.",
+    },
+    confidence: "settled",
+    references: ["John 2:1–11"],
+    sources: [scripture],
+    review: { status: "draft" },
+  },
+  {
+    id: "rom-017",
+    era: "roman-judea",
+    level: 4,
+    category: "world",
+    difficulty: 2,
+    format: "multiple-choice",
+    prompt: "Which ruler had John the Baptist executed?",
+    choices: ["Herod Antipas", "Herod the Great", "Pontius Pilate", "Caiaphas"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Mark 6:14–29: Herod Antipas, ruler of Galilee, has John beheaded after John condemns his marriage to Herodias.",
+      world:
+        "Josephus also reports that Herod Antipas executed John, at the fortress of Machaerus east of the Dead Sea. He gives a political reason: Herod feared John's influence might spark an uprising.",
+      theirEyes:
+        "Crowds flocked to the Jordan to hear John. To a nervous ruler, a popular preacher talking about judgment sounded dangerous.",
+      debate: "Historians generally see the Gospels' moral reason and Josephus' political one as complementary rather than contradictory.",
+    },
+    confidence: "settled",
+    references: ["Mark 6:14–29", "Luke 3:19–20"],
+    sources: [scripture, { kind: "primary", citation: "Josephus, Antiquities of the Jews 18.5.2" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "rom-018",
+    era: "roman-judea",
+    level: 4,
+    category: "world",
+    difficulty: 2,
+    format: "multiple-choice",
+    prompt: "Luke calls the Sea of Galilee by another name. What is it?",
+    choices: ["The Lake of Gennesaret", "The Salt Sea", "The Great Sea", "The Sea of Reeds"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Luke 5:1 says Jesus was standing “by the lake of Gennesaret.” John 6:1 and 21:1 call it the Sea of Tiberias. In the Hebrew Bible it is Kinneret (Numbers 34:11).",
+      world:
+        "It is a freshwater lake, about 21 km long. In 1986 a fishing boat from around the 1st century was found in the mud near Ginosar, on its shore.",
+      theirEyes: "Fishermen worked through the night with nets, and sudden storms could whip the lake into dangerous waves.",
+    },
+    confidence: "settled",
+    references: ["Luke 5:1", "John 6:1", "John 21:1", "Numbers 34:11"],
+    sources: [scripture, { kind: "archaeology", citation: "The Ancient Galilee Boat, Yigal Allon Centre, Ginosar (discovered 1986)" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "rom-019",
+    era: "roman-judea",
+    level: 4,
+    category: "story",
+    difficulty: 2,
+    format: "multiple-choice",
+    prompt: "Who was made to carry Jesus' cross?",
+    choices: ["Simon of Cyrene", "Simon Peter", "Joseph of Arimathea", "Nicodemus"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Mark 15:21: the soldiers compel a passer-by, “Simon of Cyrene, coming from the country, the father of Alexander and Rufus,” to carry the cross.",
+      world:
+        "Cyrene, in today's Libya, had a large Jewish community. Roman soldiers could force civilians to carry loads for them.",
+      theirEyes: "A man coming into the city for the festival, pulled out of the crowd by a soldier — and his name never forgotten.",
+      debate:
+        "Mark names Simon's sons as if readers knew them, which many scholars take to mean they were known in the early Christian community.",
+    },
+    confidence: "settled",
+    references: ["Mark 15:21", "Luke 23:26"],
+    sources: [scripture],
+    review: { status: "draft" },
+  },
+  {
+    id: "rom-020",
+    era: "roman-judea",
+    level: 4,
+    category: "archaeology",
+    difficulty: 2,
+    format: "true-false",
+    prompt: "True or false: the 1st-century Jewish historian Josephus mentions James, the brother of Jesus.",
+    choices: ["True", "False"],
+    answer: 0,
+    explanation: {
+      world:
+        "Josephus describes how in 62 CE the high priest Ananus had “the brother of Jesus who was called Christ, whose name was James” put to death (Antiquities 20.9.1).",
+      theirEyes: "The execution was controversial even then: Josephus says fair-minded people in Jerusalem were offended and complained.",
+      tradition: {
+        christian: "James led the church in Jerusalem (Acts 15; Galatians 1:19) and is traditionally linked to the Letter of James.",
+      },
+      debate:
+        "Most scholars accept this passage as authentic. A longer passage about Jesus himself (Antiquities 18.3.3, the “Testimonium Flavianum”) is widely thought to have been expanded by later Christian copyists.",
+    },
+    confidence: "mainstream",
+    references: ["Galatians 1:19"],
+    sources: [scripture, { kind: "primary", citation: "Josephus, Antiquities of the Jews 20.9.1; 18.3.3" }],
+    review: { status: "draft" },
+  },
+
+  // ───────────── Level 5 ─────────────
+  {
+    id: "rom-021",
+    era: "roman-judea",
+    level: 5,
+    category: "archaeology",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "According to the Gospels, which lakeside town became Jesus' home base during his ministry in Galilee?",
+    choices: ["Capernaum", "Jericho", "Caesarea Maritima", "Bethlehem"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Matthew 4:13: leaving Nazareth, Jesus “came and lived in Capernaum, which is by the sea.” Mark 2:1 says he was “at home” there.",
+      world:
+        "Excavations at Capernaum uncovered a white limestone synagogue from the late Roman or Byzantine period built over an earlier basalt foundation, and a house venerated as Peter's, later enclosed by an octagonal church.",
+      theirEyes: "A fishing town on a trade road, with a customs post — the kind of place where fishermen and tax collectors met.",
+    },
+    confidence: "settled",
+    references: ["Matthew 4:13", "Mark 2:1"],
+    sources: [scripture, { kind: "reference", citation: "“Capernaum,” Encyclopaedia Britannica" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "rom-022",
+    era: "roman-judea",
+    level: 5,
+    category: "faith-practice",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "In Matthew 23:5, Jesus criticizes those who make their “phylacteries” broad. What are phylacteries?",
+    choices: [
+      "Small leather boxes holding scripture verses, worn on the arm and head",
+      "Clay lamps lit in the synagogue",
+      "Bronze coins given to the Temple",
+      "Scrolls of the Prophets read on the Sabbath",
+    ],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Matthew 23:5: “they make their phylacteries broad and enlarge the fringes of their garments.” The practice comes from Deuteronomy 6:8: “bind them for a sign on your hand.”",
+      world:
+        "Phylacteries (Hebrew tefillin) from around the time of Jesus have been found among the Dead Sea Scrolls at Qumran.",
+      theirEyes: "Wearing scripture on your body was a sign of devotion — the criticism was of showing off, not of the practice itself.",
+      tradition: {
+        jewish: "Observant Jewish men put on tefillin for weekday morning prayers.",
+      },
+    },
+    confidence: "settled",
+    references: ["Matthew 23:5", "Deuteronomy 6:8"],
+    sources: [scripture, { kind: "reference", citation: "“Tefillin,” Encyclopaedia Britannica" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "rom-023",
+    era: "roman-judea",
+    level: 5,
+    category: "world",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "What was the Sanhedrin before which Jesus, and later Peter and Paul, were brought?",
+    choices: [
+      "The Jewish high council in Jerusalem",
+      "The Roman governor's bodyguard",
+      "The Temple treasury",
+      "Herod's royal palace",
+    ],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Mark 14:55 speaks of “the chief priests and the whole council”; Acts 5 and 22–23 bring the apostles and Paul before the same council.",
+      world:
+        "The council was led by the high priest and included priests, elders and scribes, with Sadducees and Pharisees among its members (Acts 23:6).",
+      theirEyes:
+        "Under Roman rule, the council handled religious and local matters — but the power to execute lay with the Roman governor (John 18:31).",
+      debate:
+        "The Mishnah describes a Great Sanhedrin of 71 members with detailed procedures; historians debate how far this reflects the council of Jesus' time or later rabbinic ideals.",
+    },
+    confidence: "mainstream",
+    references: ["Mark 14:55", "Acts 5:27", "Acts 23:6", "John 18:31"],
+    sources: [scripture, { kind: "primary", citation: "Mishnah Sanhedrin 1:6" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "rom-024",
+    era: "roman-judea",
+    level: 5,
+    category: "archaeology",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "Who asked Pilate for Jesus' body and laid it in a rock-cut tomb?",
+    choices: ["Joseph of Arimathea", "Simon of Cyrene", "Lazarus of Bethany", "Barabbas"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Mark 15:43–46: Joseph of Arimathea, a respected council member, asks Pilate for the body, wraps it in linen and lays it in a tomb cut out of rock, rolling a stone against the entrance.",
+      world:
+        "Wealthy Jerusalem families used rock-cut tombs. After about a year the bones were often gathered into a stone box, an ossuary. In 1990 an ornate ossuary inscribed “Joseph son of Caiaphas” was found in Jerusalem.",
+      theirEyes: "Burial had to happen before the Sabbath began at sunset — there was very little time.",
+      debate: "Most scholars identify the Caiaphas ossuary with the high priest of the Gospels, though a minority question the reading of the inscription.",
+    },
+    confidence: "settled",
+    references: ["Mark 15:42–46", "John 19:38–42"],
+    sources: [scripture, { kind: "archaeology", citation: "Caiaphas ossuary, Israel Museum (discovered 1990)" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "rom-025",
+    era: "roman-judea",
+    level: 5,
+    category: "tradition",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "In John 10:22, Jesus walks in the Temple in winter during which festival?",
+    choices: ["The Feast of Dedication (Hanukkah)", "Purim", "Sukkot", "Yom Kippur"],
+    answer: 0,
+    explanation: {
+      textSays: "John 10:22–23: “It was the Feast of the Dedication at Jerusalem. It was winter, and Jesus was walking in the temple, in Solomon's porch.”",
+      world:
+        "Hanukkah (“dedication”) remembers the Maccabees rededicating the Temple in 164 BCE after it was defiled under the Seleucid king Antiochus IV (1 Maccabees 4:52–59).",
+      theirEyes: "Two centuries after the Maccabees, the Temple's rededication was still a living memory of resisting a foreign empire.",
+      tradition: {
+        shared:
+          "The Books of Maccabees are in the Catholic and Orthodox Bibles but not in the Jewish or most Protestant canons — yet the festival itself appears in the New Testament.",
+      },
+    },
+    confidence: "settled",
+    references: ["John 10:22–23", "1 Maccabees 4:52–59"],
+    sources: [scripture],
+    review: { status: "draft" },
+  },
 ];

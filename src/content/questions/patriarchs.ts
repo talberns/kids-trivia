@@ -452,4 +452,271 @@ export const patriarchs: QuestionInput[] = [
     sources: [scripture],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
+  // ───────────── Level 4 ─────────────
+  {
+    id: "pat-016",
+    era: "patriarchs",
+    level: 4,
+    category: "story",
+    difficulty: 2,
+    format: "multiple-choice",
+    prompt: "Which relative of Abraham chose to settle in the Jordan plain near Sodom?",
+    choices: ["Lot, his nephew", "Laban, his great-nephew", "Eliezer, his servant", "Ishmael, his son"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Genesis 13:10–12: Lot saw that the plain of the Jordan was well-watered “like the garden of Yahweh” and moved his tents as far as Sodom, while Abram stayed in Canaan.",
+      world:
+        "Herders needed water and grazing, and quarrels between rival herdsmen over wells and pasture were common — the dispute in Genesis 13:7 starts exactly that way.",
+      theirEyes:
+        "Two herds had grown too big for one hillside. Splitting up was the peaceful option; choosing the green valley looked like the smart one.",
+      debate:
+        "The location of Sodom is unknown. Suggestions include the area south of the Dead Sea and sites north-east of it such as Tall el-Hammam; none is generally accepted.",
+    },
+    confidence: "settled",
+    references: ["Genesis 13:5–12"],
+    sources: [scripture, { kind: "reference", citation: "“Sodom and Gomorrah,” Encyclopaedia Britannica" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "pat-017",
+    era: "patriarchs",
+    level: 4,
+    category: "daily-life",
+    difficulty: 2,
+    format: "multiple-choice",
+    prompt: "Abraham's servant found a wife for Isaac when she offered water to him and his camels at a well. Who was she?",
+    choices: ["Rebekah", "Rachel", "Leah", "Zipporah"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Genesis 24:15–20: Rebekah comes out with her water jar, gives the servant a drink and draws water for all his camels.",
+      world:
+        "Wells were social hubs, and drawing water was usually women's work, done in the evening (Genesis 24:11). Watering ten thirsty camels meant hauling a great deal of water by hand.",
+      theirEyes:
+        "A stranger's test was simple: who would show kindness without being asked twice? Rebekah's generosity was her introduction.",
+      debate:
+        "Archaeological studies (for example Sapir-Hen and Ben-Yosef, 2013) suggest domesticated camels became common in the southern Levant only around the 10th century BCE. Some scholars therefore see the camels as details from the storytellers' own time; others argue for earlier, limited use.",
+    },
+    confidence: "settled",
+    references: ["Genesis 24:10–20"],
+    sources: [
+      scripture,
+      { kind: "scholarship", citation: "L. Sapir-Hen and E. Ben-Yosef, “The Introduction of Domestic Camels to the Southern Levant,” Tel Aviv 40 (2013)" },
+    ],
+    review: { status: "draft" },
+  },
+  {
+    id: "pat-018",
+    era: "patriarchs",
+    level: 4,
+    category: "story",
+    difficulty: 2,
+    format: "true-false",
+    prompt: "True or false: Jacob worked seven years to marry Rachel, but on the wedding night he was given her sister Leah instead.",
+    choices: ["True", "False"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Genesis 29:18–25: Jacob serves seven years for Rachel, but Laban gives him Leah. Jacob then marries Rachel too and works another seven years (29:27–30).",
+      world:
+        "A wedding feast lasted a week (Genesis 29:27). A bride who was veiled and brought in after dark made Laban's trick possible.",
+      theirEyes:
+        "The trickster who once disguised himself to fool his blind father (Genesis 27) woke up to find he had been tricked the same way.",
+      tradition: {
+        jewish:
+          "At many Jewish weddings the groom veils the bride himself (the bedeken). The custom is often linked to Rebekah veiling herself (Genesis 24:65) — and to making sure there is no repeat of Jacob's mistake.",
+      },
+    },
+    confidence: "settled",
+    references: ["Genesis 29:15–30", "Genesis 24:65"],
+    sources: [scripture],
+    review: { status: "draft" },
+  },
+  {
+    id: "pat-019",
+    era: "patriarchs",
+    level: 4,
+    category: "story",
+    difficulty: 2,
+    format: "multiple-choice",
+    prompt: "How many sons did Jacob have?",
+    choices: ["Twelve", "Ten", "Seven", "Thirteen"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Genesis 35:22–26 lists Jacob's twelve sons. He also had a daughter, Dinah (Genesis 30:21).",
+      world:
+        "The twelve sons became the names of the tribes of Israel. Jacob later adopts Joseph's sons Ephraim and Manasseh as his own (Genesis 48:5), so different tribal lists in the Bible vary slightly.",
+      theirEyes:
+        "Four mothers, twelve brothers, one favourite — the rivalries in this tent explain much of what happens next.",
+    },
+    confidence: "settled",
+    references: ["Genesis 35:22–26", "Genesis 30:21", "Genesis 48:5"],
+    sources: [scripture],
+    review: { status: "draft" },
+  },
+  {
+    id: "pat-020",
+    era: "patriarchs",
+    level: 4,
+    category: "daily-life",
+    difficulty: 2,
+    format: "multiple-choice",
+    prompt: "What gift from Jacob made Joseph's brothers jealous?",
+    choices: ["A special tunic", "A signet ring", "A gold chain", "A flock of sheep"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Genesis 37:3–4: Jacob made Joseph “a tunic of many colors,” and his brothers hated him for it. (The signet ring and gold chain come later, from Pharaoh — Genesis 41:42.)",
+      world:
+        "Clothing showed status. The same Hebrew phrase, ketonet passim, describes the robe of a king's daughter in 2 Samuel 13:18.",
+      theirEyes:
+        "Working clothes were plain and practical. A fine robe on the younger brother announced who the heir-in-waiting was.",
+      debate:
+        "The meaning of passim is uncertain. “Many colours” comes from the ancient Greek and Latin translations; many scholars think it meant a long robe with sleeves reaching the hands or feet.",
+    },
+    confidence: "settled",
+    references: ["Genesis 37:3–4", "Genesis 41:42", "2 Samuel 13:18"],
+    sources: [scripture],
+    review: { status: "draft" },
+  },
+
+  // ───────────── Level 5 ─────────────
+  {
+    id: "pat-021",
+    era: "patriarchs",
+    level: 5,
+    category: "neighbours",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "What did Joseph interpret for Pharaoh?",
+    choices: [
+      "Two dreams about cows and ears of grain",
+      "Writing on a palace wall",
+      "A dream of a statue with feet of clay",
+      "A vision of a burning bush",
+    ],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Genesis 41: seven fat cows eaten by seven thin ones, and seven full ears of grain swallowed by seven thin ones — seven years of plenty followed by seven of famine. (The writing on the wall and the statue are from Daniel 5 and Daniel 2.)",
+      world:
+        "Egyptians took dreams seriously. A Ramesside papyrus known as the Dream Book (Papyrus Chester Beatty III, in the British Museum) lists dreams and what they were thought to mean.",
+      theirEyes:
+        "Egypt's harvest depended on the Nile flood. A warning of seven bad years was a matter of national survival.",
+      tradition: {
+        shared:
+          "Joseph and Daniel are often compared: both are Hebrew exiles who rise in a foreign court by interpreting a king's dreams.",
+      },
+    },
+    confidence: "settled",
+    references: ["Genesis 41:1–36", "Daniel 2", "Daniel 5"],
+    sources: [scripture, { kind: "primary", citation: "Papyrus Chester Beatty III (the “Dream Book”), British Museum EA 10683" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "pat-022",
+    era: "patriarchs",
+    level: 5,
+    category: "neighbours",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "After Jacob died in Egypt, what was done to his body before burial?",
+    choices: ["It was embalmed", "It was cremated", "It was buried at sea", "It was left in the desert"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Genesis 50:2–3: Joseph's physicians embalm Jacob; embalming takes forty days and the Egyptians mourn seventy. Joseph is also embalmed and placed in a coffin in Egypt (50:26).",
+      world:
+        "Mummification preserved the body for the afterlife. Herodotus described the process and said the body was kept in natron for seventy days (Histories 2.86).",
+      theirEyes:
+        "Jacob was buried as an Egyptian grandee — but he insisted on being carried home to the cave of Machpelah.",
+      tradition: {
+        shared:
+          "Joseph's bones were later carried out of Egypt and buried at Shechem (Exodus 13:19; Joshua 24:32).",
+      },
+    },
+    confidence: "settled",
+    references: ["Genesis 50:1–14", "Genesis 50:26", "Exodus 13:19", "Joshua 24:32"],
+    sources: [scripture, { kind: "primary", citation: "Herodotus, Histories 2.86" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "pat-023",
+    era: "patriarchs",
+    level: 5,
+    category: "daily-life",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "Before Isaac was born, who did Abram say would inherit his household?",
+    choices: ["Eliezer of Damascus, his servant", "Lot, his nephew", "Melchizedek, king of Salem", "Ishmael, his son"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Genesis 15:2–3: “the one who will inherit my estate is Eliezer of Damascus… one born in my house is my heir.” Ishmael is not yet born at this point (Genesis 16).",
+      world:
+        "Childless couples in the ancient Near East could adopt an heir, sometimes even a servant, so that someone would inherit the estate and care for them in old age.",
+      theirEyes:
+        "For a nomadic chief, dying without a son meant everything — flocks, servants, the family name — passing to someone else's line.",
+      debate:
+        "Scholars once linked this to adoption contracts found at Nuzi (in modern Iraq). Many now think those parallels were overstated, though adoption of heirs is well attested in the region.",
+    },
+    confidence: "settled",
+    references: ["Genesis 15:1–6"],
+    sources: [scripture, { kind: "reference", citation: "“Nuzi,” Encyclopaedia Britannica" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "pat-024",
+    era: "patriarchs",
+    level: 5,
+    category: "faith-practice",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "In Genesis 15, Abram cuts animals in half to seal a covenant. What passes between the pieces?",
+    choices: ["A smoking furnace and a flaming torch", "A dove and a raven", "A pillar of cloud", "Abram's servants"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Genesis 15:17: “a smoking furnace and a flaming torch passed between these pieces,” and God makes a covenant with Abram.",
+      world:
+        "Hebrew speaks of “cutting” a covenant (karat brit). Jeremiah 34:18–19 describes the same rite: those who walk between the halves call the animals' fate on themselves if they break their word. Texts from Mari describe killing a donkey to seal treaties.",
+      theirEyes:
+        "Everyone watching knew what walking between the pieces meant: “may this happen to me if I break my promise.” Here, only God passes through.",
+    },
+    confidence: "settled",
+    references: ["Genesis 15:9–18", "Jeremiah 34:18–19"],
+    sources: [scripture, { kind: "reference", citation: "“Covenant,” Encyclopaedia Britannica (ancient Near Eastern treaty rites)" }],
+    review: { status: "draft" },
+  },
+  {
+    id: "pat-025",
+    era: "patriarchs",
+    level: 5,
+    category: "tradition",
+    difficulty: 3,
+    format: "multiple-choice",
+    prompt: "Where did Jacob dream of a stairway reaching to heaven?",
+    choices: ["Bethel", "Beersheba", "Hebron", "Shechem"],
+    answer: 0,
+    explanation: {
+      textSays:
+        "Genesis 28:10–19: travelling from Beersheba towards Harran, Jacob dreams of angels going up and down a stairway. He names the place Bethel, “house of God”; it was formerly called Luz.",
+      world:
+        "Many scholars compare the “stairway” (Hebrew sullam) to the stepped ramps of Mesopotamian temple towers (ziggurats), seen as links between earth and heaven.",
+      theirEyes:
+        "A young man alone, running from his brother, sleeping on a stone — and suddenly told he is not alone at all.",
+      tradition: {
+        jewish:
+          "The midrash (Genesis Rabbah 68:12) offers many readings of the angels ascending and descending, including that they stood for nations rising and falling.",
+        christian:
+          "Jesus tells Nathanael he will see “angels of God ascending and descending on the Son of Man” (John 1:51).",
+      },
+    },
+    confidence: "settled",
+    references: ["Genesis 28:10–19", "John 1:51"],
+    sources: [scripture, { kind: "primary", citation: "Genesis Rabbah 68:12" }],
+    review: { status: "draft" },
+  },
 ];

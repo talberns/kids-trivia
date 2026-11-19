@@ -12,8 +12,8 @@ const ITEMS = [
 
 export function BottomNav() {
   const pathname = usePathname();
-  // Keep the play screen distraction-free.
-  if (pathname.startsWith("/play")) return null;
+  // Keep play screens (levels and the daily challenge) distraction-free.
+  if (pathname.startsWith("/play") || pathname.startsWith("/daily")) return null;
 
   return (
     <nav
