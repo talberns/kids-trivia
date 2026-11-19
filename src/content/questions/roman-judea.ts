@@ -422,7 +422,7 @@ export const romanJudea: QuestionInput[] = [
     answer: 0,
     explanation: {
       textSays:
-        "John 2:1–11: at a wedding in Cana of Galilee the wine runs out, and Jesus has six stone water jars filled. John calls it “the beginning of his signs.”",
+        "John 2:1–11: at a wedding in Cana of Galilee the wine runs out, and Jesus has six stone water jars filled. John calls it the “beginning of his signs.”",
       world:
         "Village weddings could last several days, and running out of wine would shame the host family. The stone jars were for Jewish purification rites (John 2:6) — stone was considered not to become ritually impure.",
       theirEyes: "For a poor family, a wedding was the biggest feast of their lives — and the whole village was watching.",
@@ -430,7 +430,7 @@ export const romanJudea: QuestionInput[] = [
     confidence: "settled",
     references: ["John 2:1–11"],
     sources: [scripture],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "rom-017",
@@ -454,7 +454,7 @@ export const romanJudea: QuestionInput[] = [
     confidence: "settled",
     references: ["Mark 6:14–29", "Luke 3:19–20"],
     sources: [scripture, { kind: "primary", citation: "Josephus, Antiquities of the Jews 18.5.2" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "rom-018",
@@ -476,7 +476,7 @@ export const romanJudea: QuestionInput[] = [
     confidence: "settled",
     references: ["Luke 5:1", "John 6:1", "John 21:1", "Numbers 34:11"],
     sources: [scripture, { kind: "archaeology", citation: "The Ancient Galilee Boat, Yigal Allon Centre, Ginosar (discovered 1986)" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "rom-019",
@@ -490,23 +490,23 @@ export const romanJudea: QuestionInput[] = [
     answer: 0,
     explanation: {
       textSays:
-        "Mark 15:21: the soldiers compel a passer-by, “Simon of Cyrene, coming from the country, the father of Alexander and Rufus,” to carry the cross.",
+        "Mark 15:21: “They compelled one passing by, coming from the country, Simon of Cyrene, the father of Alexander and Rufus,” to carry the cross.",
       world:
         "Cyrene, in today's Libya, had a large Jewish community. Roman soldiers could force civilians to carry loads for them.",
       theirEyes: "A man coming into the city for the festival, pulled out of the crowd by a soldier — and his name never forgotten.",
       debate:
-        "Mark names Simon's sons as if readers knew them, which many scholars take to mean they were known in the early Christian community.",
+        "Mark names Simon's sons as if readers knew them, which many scholars take to mean they were known in the early Christian community. John's Gospel instead says Jesus carried the cross himself (John 19:17).",
     },
     confidence: "settled",
-    references: ["Mark 15:21", "Luke 23:26"],
+    references: ["Mark 15:21", "Matthew 27:32", "Luke 23:26", "John 19:17"],
     sources: [scripture],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "rom-020",
     era: "roman-judea",
     level: 4,
-    category: "archaeology",
+    category: "world",
     difficulty: 2,
     format: "true-false",
     prompt: "True or false: the 1st-century Jewish historian Josephus mentions James, the brother of Jesus.",
@@ -515,17 +515,17 @@ export const romanJudea: QuestionInput[] = [
     explanation: {
       world:
         "Josephus describes how in 62 CE the high priest Ananus had “the brother of Jesus who was called Christ, whose name was James” put to death (Antiquities 20.9.1).",
-      theirEyes: "The execution was controversial even then: Josephus says fair-minded people in Jerusalem were offended and complained.",
+      theirEyes: "For Jerusalemites in 62 CE, the stoning was a scandal: Josephus says the city's most fair-minded people were offended and complained.",
       tradition: {
-        christian: "James led the church in Jerusalem (Acts 15; Galatians 1:19) and is traditionally linked to the Letter of James.",
+        christian: "James led the church in Jerusalem (Acts 15; Galatians 1:19) and is traditionally linked to the Letter of James. Catholic and Orthodox traditions understand “brother” as a close relative or step-brother.",
       },
       debate:
-        "Most scholars accept this passage as authentic. A longer passage about Jesus himself (Antiquities 18.3.3, the “Testimonium Flavianum”) is widely thought to have been expanded by later Christian copyists.",
+        "Most scholars accept this passage as authentic, though a minority think the words “who was called Christ” were added later. A longer passage about Jesus himself (Antiquities 18.3.3, the “Testimonium Flavianum”) is widely thought to have been expanded by later Christian copyists.",
     },
     confidence: "mainstream",
     references: ["Galatians 1:19"],
     sources: [scripture, { kind: "primary", citation: "Josephus, Antiquities of the Jews 20.9.1; 18.3.3" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
 
   // ───────────── Level 5 ─────────────
@@ -549,7 +549,7 @@ export const romanJudea: QuestionInput[] = [
     confidence: "settled",
     references: ["Matthew 4:13", "Mark 2:1"],
     sources: [scripture, { kind: "reference", citation: "“Capernaum,” Encyclopaedia Britannica" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "rom-022",
@@ -568,7 +568,7 @@ export const romanJudea: QuestionInput[] = [
     answer: 0,
     explanation: {
       textSays:
-        "Matthew 23:5: “they make their phylacteries broad and enlarge the fringes of their garments.” The practice comes from Deuteronomy 6:8: “bind them for a sign on your hand.”",
+        "Matthew 23:5: “they make their phylacteries broad and enlarge the fringes of their garments.” The practice is based on the traditional literal reading of Deuteronomy 6:8 — “bind them for a sign on your hand” — and related verses (Exodus 13:9, 16; Deuteronomy 11:18).",
       world:
         "Phylacteries (Hebrew tefillin) from around the time of Jesus have been found among the Dead Sea Scrolls at Qumran.",
       theirEyes: "Wearing scripture on your body was a sign of devotion — the criticism was of showing off, not of the practice itself.",
@@ -579,7 +579,7 @@ export const romanJudea: QuestionInput[] = [
     confidence: "settled",
     references: ["Matthew 23:5", "Deuteronomy 6:8"],
     sources: [scripture, { kind: "reference", citation: "“Tefillin,” Encyclopaedia Britannica" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "rom-023",
@@ -602,14 +602,14 @@ export const romanJudea: QuestionInput[] = [
       world:
         "The council was led by the high priest and included priests, elders and scribes, with Sadducees and Pharisees among its members (Acts 23:6).",
       theirEyes:
-        "Under Roman rule, the council handled religious and local matters — but the power to execute lay with the Roman governor (John 18:31).",
+        "Under Roman rule, the council handled religious and local matters. According to John 18:31, only the Roman governor could order an execution — a claim historians still debate.",
       debate:
         "The Mishnah describes a Great Sanhedrin of 71 members with detailed procedures; historians debate how far this reflects the council of Jesus' time or later rabbinic ideals.",
     },
     confidence: "mainstream",
     references: ["Mark 14:55", "Acts 5:27", "Acts 23:6", "John 18:31"],
     sources: [scripture, { kind: "primary", citation: "Mishnah Sanhedrin 1:6" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "rom-024",
@@ -632,7 +632,7 @@ export const romanJudea: QuestionInput[] = [
     confidence: "settled",
     references: ["Mark 15:42–46", "John 19:38–42"],
     sources: [scripture, { kind: "archaeology", citation: "Caiaphas ossuary, Israel Museum (discovered 1990)" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "rom-025",
@@ -657,6 +657,6 @@ export const romanJudea: QuestionInput[] = [
     confidence: "settled",
     references: ["John 10:22–23", "1 Maccabees 4:52–59"],
     sources: [scripture],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
 ];

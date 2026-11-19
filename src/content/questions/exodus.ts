@@ -442,7 +442,7 @@ export const exodus: QuestionInput[] = [
       world:
         "Women singing and drumming to celebrate a victory appears elsewhere in the Bible too (1 Samuel 18:6–7), and frame drums are well known from the region's art and figurines.",
       theirEyes:
-        "The girl who once watched her baby brother's basket in the reeds now leads a whole people in a victory song.",
+        "The sister who once watched her baby brother's basket in the reeds (unnamed in Exodus 2, traditionally identified as Miriam) now leads a whole people in a victory song.",
       tradition: {
         jewish:
           "The Talmud teaches that a well accompanied Israel in the desert in Miriam's merit (Taanit 9a); some families today place a “Miriam's cup” of water on the Seder table.",
@@ -451,7 +451,7 @@ export const exodus: QuestionInput[] = [
     confidence: "settled",
     references: ["Exodus 2:4–8", "Exodus 15:20–21", "Numbers 26:59"],
     sources: [scripture, { kind: "primary", citation: "Babylonian Talmud, Taanit 9a" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "exo-017",
@@ -461,11 +461,11 @@ export const exodus: QuestionInput[] = [
     difficulty: 2,
     format: "multiple-choice",
     prompt: "Baby Moses was hidden in a papyrus basket sealed with tar. A Mesopotamian legend tells a similar story about which king?",
-    choices: ["Sargon of Akkad", "Nebuchadnezzar of Babylon", "Cyrus of Persia", "Hammurabi of Babylon"],
+    choices: ["Sargon of Akkad", "Nebuchadnezzar of Babylon", "Ashurbanipal of Assyria", "Hammurabi of Babylon"],
     answer: 0,
     explanation: {
       textSays:
-        "Exodus 2:3: his mother made “a papyrus basket, and coated it with tar and with pitch.” The Hebrew word for the basket, tevah, is the same word used for Noah's ark.",
+        "Exodus 2:3: his mother “took a papyrus basket for him, and coated it with tar and with pitch.” The Hebrew word for the basket, tevah, is the same word used for Noah's ark.",
       world:
         "The Sargon Birth Legend, known from Neo-Assyrian copies, says the infant Sargon was set in a reed basket sealed with bitumen on the Euphrates and rescued to rise to power.",
       theirEyes:
@@ -473,10 +473,14 @@ export const exodus: QuestionInput[] = [
       debate:
         "Scholars debate how the two stories are related: whether the Exodus account draws on a familiar “rescued foundling” pattern, or the similarity reflects a common motif about future leaders.",
     },
-    confidence: "mainstream",
+    confidence: "settled",
     references: ["Exodus 2:1–10"],
-    sources: [scripture, { kind: "primary", citation: "Sargon Birth Legend (Neo-Assyrian copies); “Sargon,” Encyclopaedia Britannica" }],
-    review: { status: "draft" },
+    sources: [
+      scripture,
+      { kind: "primary", citation: "Sargon Birth Legend (Neo-Assyrian copies)" },
+      { kind: "reference", citation: "“Sargon,” Encyclopaedia Britannica" },
+    ],
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "exo-018",
@@ -501,7 +505,7 @@ export const exodus: QuestionInput[] = [
     confidence: "settled",
     references: ["Exodus 34:29–35", "2 Corinthians 3:7–18"],
     sources: [scripture, { kind: "reference", citation: "“Moses (Michelangelo),” Encyclopaedia Britannica" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "exo-019",
@@ -531,7 +535,7 @@ export const exodus: QuestionInput[] = [
     confidence: "settled",
     references: ["Exodus 18:13–26"],
     sources: [scripture],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "exo-020",
@@ -540,25 +544,27 @@ export const exodus: QuestionInput[] = [
     category: "faith-practice",
     difficulty: 2,
     format: "true-false",
-    prompt: "True or false: the Ten Commandments appear twice in the Torah.",
+    prompt: "True or false: the familiar list of the Ten Commandments appears twice in the Torah.",
     choices: ["True", "False"],
     answer: 0,
     explanation: {
       textSays:
-        "They appear in Exodus 20:1–17 and Deuteronomy 5:6–21. One difference: Exodus grounds the Sabbath in creation (20:11), while Deuteronomy grounds it in the release from slavery in Egypt (5:15).",
+        "They appear in Exodus 20:1–17 and Deuteronomy 5:6–21 (Exodus 20:1–14 and Deuteronomy 5:6–18 in Hebrew numbering). One difference: Exodus grounds the Sabbath in creation (20:11), while Deuteronomy grounds it in the release from slavery in Egypt (5:15).",
       world:
         "Ancient treaties were often written in two copies, one for each party — some scholars suggest this is why the commandments were on two tablets.",
       theirEyes:
         "For a generation that had worked without rest under Pharaoh, a weekly day off for everyone — even servants and animals — was revolutionary.",
       tradition: {
         shared:
-          "Jews, Catholics and Lutherans, and most Protestant and Orthodox churches divide and number the commandments in different ways.",
+          "Jewish tradition; Catholics and Lutherans; and the Orthodox and most other Protestants each divide and number the commandments differently.",
       },
+      debate:
+        "Exodus 34:28 also uses the phrase “the ten commandments” for a different list (34:10–26), which some scholars call a third, “ritual” decalogue.",
     },
     confidence: "settled",
     references: ["Exodus 20:1–17", "Deuteronomy 5:6–21"],
     sources: [scripture, { kind: "reference", citation: "“Ten Commandments,” Encyclopaedia Britannica" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
 
   // ───────────── Level 5 ─────────────
@@ -578,7 +584,7 @@ export const exodus: QuestionInput[] = [
       world:
         "The Amalekites are described as a nomadic people of the Negev and Sinai. No inscription outside the Bible clearly mentions them.",
       theirEyes:
-        "Deuteronomy 25:18 remembers that Amalek struck the stragglers at the rear — the tired and the weak.",
+        "The attackers went for the stragglers at the back of the column — the tired and the weak (Deuteronomy 25:18).",
       tradition: {
         jewish:
           "On the Sabbath before Purim, Jews read the command to “remember Amalek” (Deuteronomy 25:17–19); Haman in the Book of Esther is called an Agagite, linked by tradition to Amalek's king Agag.",
@@ -587,7 +593,7 @@ export const exodus: QuestionInput[] = [
     confidence: "settled",
     references: ["Exodus 17:8–16", "Deuteronomy 25:17–19", "Esther 3:1"],
     sources: [scripture],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "exo-022",
@@ -601,9 +607,9 @@ export const exodus: QuestionInput[] = [
     answer: 0,
     explanation: {
       textSays:
-        "Numbers 21:8–9 tells how Moses made a bronze serpent on a pole. 2 Kings 18:4 says Hezekiah broke it in pieces, “for in those days the children of Israel burned incense to it; and he called it Nehushtan.”",
+        "Numbers 21:8–9 tells how Moses made a bronze serpent on a pole. 2 Kings 18:4 says Hezekiah broke it in pieces, “because in those days the children of Israel burned incense to it; and he called it Nehushtan.”",
       world:
-        "At Timna, an ancient copper-mining site in the Arava, archaeologist Beno Rothenberg found a small copper serpent in a shrine from the 12th century BCE.",
+        "At Timna, an ancient copper-mining site in the Arava, archaeologist Beno Rothenberg found a small copper serpent with gilded head in a shrine from the 12th century BCE — from the Midianite phase of a site that began as an Egyptian shrine to the goddess Hathor.",
       theirEyes:
         "A symbol of healing had, over generations, become something people worshipped — Hezekiah saw it as an idol.",
       tradition: {
@@ -613,7 +619,7 @@ export const exodus: QuestionInput[] = [
     confidence: "settled",
     references: ["Numbers 21:8–9", "2 Kings 18:4", "John 3:14"],
     sources: [scripture, { kind: "archaeology", citation: "B. Rothenberg, Timna: Valley of the Biblical Copper Mines (1972)" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "exo-023",
@@ -629,17 +635,17 @@ export const exodus: QuestionInput[] = [
       textSays:
         "Exodus 25:31–37: a central shaft with six branches, three on each side, and seven lamps.",
       world:
-        "The nine-branched lamp lit on Hanukkah (a hanukkiah) is a later development, commemorating the rededication of the Temple in 164 BCE.",
+        "The nine-branched lamp lit on Hanukkah (a hanukkiah) is a later development, commemorating the rededication of the Temple in 164 BCE. The seven-branched menorah appears on the Arch of Titus in Rome and is the emblem of the State of Israel.",
       theirEyes: "In a tent sanctuary with no windows, the menorah's flames were the only light in the Holy Place.",
       tradition: {
         shared:
-          "The seven-branched menorah is one of Judaism's oldest symbols; it appears on the Arch of Titus and is the emblem of the State of Israel.",
+          "The seven-branched menorah is one of Judaism's oldest and most important symbols.",
       },
     },
     confidence: "settled",
     references: ["Exodus 25:31–40"],
     sources: [scripture],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "exo-024",
@@ -649,14 +655,17 @@ export const exodus: QuestionInput[] = [
     difficulty: 3,
     format: "multiple-choice",
     prompt: "Which two midwives defied Pharaoh's order to kill Hebrew baby boys?",
-    choices: ["Shiphrah and Puah", "Miriam and Zipporah", "Rachel and Leah", "Deborah and Jael"],
+    choices: ["Shiphrah and Puah", "Hannah and Peninnah", "Rachel and Leah", "Deborah and Jael"],
     answer: 0,
     explanation: {
       textSays:
         "Exodus 1:15–21: the midwives Shiphrah and Puah fear God and let the boys live; God rewards them with families of their own.",
       world:
-        "Their names have parallels in Northwest Semitic names of the second millennium BCE, such as a list of servants on an Egyptian papyrus (Papyrus Brooklyn 35.1446).",
+        "Shiphrah's name appears as a Semitic servant's name on an Egyptian papyrus of about 1745 BCE (Papyrus Brooklyn 35.1446); Puah has been compared with Pughat, a heroine in texts from Ugarit.",
       theirEyes: "Two women with no power at all quietly refused the most powerful man in the world.",
+      tradition: {
+        jewish: "The Talmud identifies Shiphrah with Moses' mother Jochebed and Puah with Miriam (Sotah 11b).",
+      },
       debate:
         "The Hebrew can mean either “Hebrew midwives” or “midwives to the Hebrews.” Josephus and some later commentators thought they were Egyptians.",
     },
@@ -666,8 +675,9 @@ export const exodus: QuestionInput[] = [
       scripture,
       { kind: "primary", citation: "Josephus, Antiquities of the Jews 2.9.2" },
       { kind: "primary", citation: "Papyrus Brooklyn 35.1446 (servant list)" },
+      { kind: "primary", citation: "Babylonian Talmud, Sotah 11b" },
     ],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "exo-025",
@@ -681,9 +691,9 @@ export const exodus: QuestionInput[] = [
     answer: 0,
     explanation: {
       textSays:
-        "Leviticus 23:42–43: “You shall dwell in booths seven days… that your generations may know that I made the children of Israel to dwell in booths, when I brought them out of the land of Egypt.”",
+        "Leviticus 23:42–43: “You shall dwell in temporary shelters for seven days… that I made the children of Israel to dwell in temporary shelters when I brought them out of the land of Egypt.” (The traditional English word is “booths”; Hebrew sukkot.)",
       world:
-        "Sukkot was also the autumn harvest festival of ingathering (Exodus 23:16), when farmers lived in field shelters during the harvest.",
+        "Sukkot was also the autumn harvest festival of ingathering (Exodus 23:16). Many scholars think the booths also echo the field shelters farmers used during the harvest.",
       theirEyes: "A week of eating under a roof of branches, where you can see the stars — remembering when home was a tent.",
       tradition: {
         jewish: "Families build a sukkah and wave the four species (palm, myrtle, willow and citron).",
@@ -693,6 +703,6 @@ export const exodus: QuestionInput[] = [
     confidence: "settled",
     references: ["Leviticus 23:39–43", "Exodus 23:16", "John 7:2"],
     sources: [scripture],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
 ];

@@ -476,7 +476,7 @@ export const patriarchs: QuestionInput[] = [
     confidence: "settled",
     references: ["Genesis 13:5–12"],
     sources: [scripture, { kind: "reference", citation: "“Sodom and Gomorrah,” Encyclopaedia Britannica" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "pat-017",
@@ -496,15 +496,15 @@ export const patriarchs: QuestionInput[] = [
       theirEyes:
         "A stranger's test was simple: who would show kindness without being asked twice? Rebekah's generosity was her introduction.",
       debate:
-        "Archaeological studies (for example Sapir-Hen and Ben-Yosef, 2013) suggest domesticated camels became common in the southern Levant only around the 10th century BCE. Some scholars therefore see the camels as details from the storytellers' own time; others argue for earlier, limited use.",
+        "Archaeological studies (for example Sapir-Hen and Ben-Yosef, 2013) found that domesticated camels appear in the Aravah valley only from the late 10th century BCE. Some scholars therefore see the camels as details from the storytellers' own time; others argue for earlier, limited use.",
     },
     confidence: "settled",
     references: ["Genesis 24:10–20"],
     sources: [
       scripture,
-      { kind: "scholarship", citation: "L. Sapir-Hen and E. Ben-Yosef, “The Introduction of Domestic Camels to the Southern Levant,” Tel Aviv 40 (2013)" },
+      { kind: "scholarship", citation: "L. Sapir-Hen and E. Ben-Yosef, “The Introduction of Domestic Camels to the Southern Levant: Evidence from the Aravah Valley,” Tel Aviv 40 (2013): 277–285" },
     ],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "pat-018",
@@ -520,7 +520,7 @@ export const patriarchs: QuestionInput[] = [
       textSays:
         "Genesis 29:18–25: Jacob serves seven years for Rachel, but Laban gives him Leah. Jacob then marries Rachel too and works another seven years (29:27–30).",
       world:
-        "A wedding feast lasted a week (Genesis 29:27). A bride who was veiled and brought in after dark made Laban's trick possible.",
+        "A wedding feast lasted a week (Genesis 29:27). Leah was brought to Jacob in the evening (29:23) — after dark, and probably veiled (compare Genesis 24:65) — which made Laban's trick possible.",
       theirEyes:
         "The trickster who once disguised himself to fool his blind father (Genesis 27) woke up to find he had been tricked the same way.",
       tradition: {
@@ -531,7 +531,7 @@ export const patriarchs: QuestionInput[] = [
     confidence: "settled",
     references: ["Genesis 29:15–30", "Genesis 24:65"],
     sources: [scripture],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "pat-019",
@@ -541,7 +541,7 @@ export const patriarchs: QuestionInput[] = [
     difficulty: 2,
     format: "multiple-choice",
     prompt: "How many sons did Jacob have?",
-    choices: ["Twelve", "Ten", "Seven", "Thirteen"],
+    choices: ["Twelve", "Ten", "Seven", "Eight"],
     answer: 0,
     explanation: {
       textSays:
@@ -554,7 +554,7 @@ export const patriarchs: QuestionInput[] = [
     confidence: "settled",
     references: ["Genesis 35:22–26", "Genesis 30:21", "Genesis 48:5"],
     sources: [scripture],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "pat-020",
@@ -579,7 +579,7 @@ export const patriarchs: QuestionInput[] = [
     confidence: "settled",
     references: ["Genesis 37:3–4", "Genesis 41:42", "2 Samuel 13:18"],
     sources: [scripture],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
 
   // ───────────── Level 5 ─────────────
@@ -613,7 +613,7 @@ export const patriarchs: QuestionInput[] = [
     confidence: "settled",
     references: ["Genesis 41:1–36", "Daniel 2", "Daniel 5"],
     sources: [scripture, { kind: "primary", citation: "Papyrus Chester Beatty III (the “Dream Book”), British Museum EA 10683" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "pat-022",
@@ -627,20 +627,16 @@ export const patriarchs: QuestionInput[] = [
     answer: 0,
     explanation: {
       textSays:
-        "Genesis 50:2–3: Joseph's physicians embalm Jacob; embalming takes forty days and the Egyptians mourn seventy. Joseph is also embalmed and placed in a coffin in Egypt (50:26).",
+        "Genesis 50:2–3: Joseph's physicians embalm Jacob; embalming takes forty days and the Egyptians mourn seventy. Joseph is also embalmed and placed in a coffin in Egypt (50:26); his bones are later carried out of Egypt and buried at Shechem (Exodus 13:19; Joshua 24:32).",
       world:
-        "Mummification preserved the body for the afterlife. Herodotus described the process and said the body was kept in natron for seventy days (Histories 2.86).",
+        "Mummification preserved the body for the afterlife. Herodotus described the process and gives seventy days (Histories 2.86); Egyptologists think the seventy days covered the whole process, with the drying in natron taking around forty — close to Genesis 50:3.",
       theirEyes:
         "Jacob was buried as an Egyptian grandee — but he insisted on being carried home to the cave of Machpelah.",
-      tradition: {
-        shared:
-          "Joseph's bones were later carried out of Egypt and buried at Shechem (Exodus 13:19; Joshua 24:32).",
-      },
     },
     confidence: "settled",
     references: ["Genesis 50:1–14", "Genesis 50:26", "Exodus 13:19", "Joshua 24:32"],
     sources: [scripture, { kind: "primary", citation: "Herodotus, Histories 2.86" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "pat-023",
@@ -650,11 +646,11 @@ export const patriarchs: QuestionInput[] = [
     difficulty: 3,
     format: "multiple-choice",
     prompt: "Before Isaac was born, who did Abram say would inherit his household?",
-    choices: ["Eliezer of Damascus, his servant", "Lot, his nephew", "Melchizedek, king of Salem", "Ishmael, his son"],
+    choices: ["Eliezer of Damascus, his steward", "Lot, his nephew", "Melchizedek, king of Salem", "Ishmael, his son"],
     answer: 0,
     explanation: {
       textSays:
-        "Genesis 15:2–3: “the one who will inherit my estate is Eliezer of Damascus… one born in my house is my heir.” Ishmael is not yet born at this point (Genesis 16).",
+        "Genesis 15:2–3: “he who will inherit my estate is Eliezer of Damascus?… one born in my house is my heir.” Ishmael is not yet born at this point (Genesis 16).",
       world:
         "Childless couples in the ancient Near East could adopt an heir, sometimes even a servant, so that someone would inherit the estate and care for them in old age.",
       theirEyes:
@@ -665,7 +661,7 @@ export const patriarchs: QuestionInput[] = [
     confidence: "settled",
     references: ["Genesis 15:1–6"],
     sources: [scripture, { kind: "reference", citation: "“Nuzi,” Encyclopaedia Britannica" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "pat-024",
@@ -683,12 +679,12 @@ export const patriarchs: QuestionInput[] = [
       world:
         "Hebrew speaks of “cutting” a covenant (karat brit). Jeremiah 34:18–19 describes the same rite: those who walk between the halves call the animals' fate on themselves if they break their word. Texts from Mari describe killing a donkey to seal treaties.",
       theirEyes:
-        "Everyone watching knew what walking between the pieces meant: “may this happen to me if I break my promise.” Here, only God passes through.",
+        "Anyone in Abram's world knew what walking between the pieces meant: “may this happen to me if I break my promise.” Here, only the fire representing God passes through.",
     },
     confidence: "settled",
     references: ["Genesis 15:9–18", "Jeremiah 34:18–19"],
     sources: [scripture, { kind: "reference", citation: "“Covenant,” Encyclopaedia Britannica (ancient Near Eastern treaty rites)" }],
-    review: { status: "draft" },
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
     id: "pat-025",
@@ -702,21 +698,21 @@ export const patriarchs: QuestionInput[] = [
     answer: 0,
     explanation: {
       textSays:
-        "Genesis 28:10–19: travelling from Beersheba towards Harran, Jacob dreams of angels going up and down a stairway. He names the place Bethel, “house of God”; it was formerly called Luz.",
+        "Genesis 28:10–19: travelling from Beersheba towards Haran, Jacob dreams of angels going up and down a stairway. He names the place Bethel, “house of God”; it was formerly called Luz.",
       world:
         "Many scholars compare the “stairway” (Hebrew sullam) to the stepped ramps of Mesopotamian temple towers (ziggurats), seen as links between earth and heaven.",
       theirEyes:
         "A young man alone, running from his brother, sleeping on a stone — and suddenly told he is not alone at all.",
       tradition: {
         jewish:
-          "The midrash (Genesis Rabbah 68:12) offers many readings of the angels ascending and descending, including that they stood for nations rising and falling.",
+          "The midrash (Genesis Rabbah 68:12–14) offers many readings of the angels ascending and descending; Midrash Tanchuma (Vayetze 2) sees them as the guardian angels of empires that rise and fall.",
         christian:
           "Jesus tells Nathanael he will see “angels of God ascending and descending on the Son of Man” (John 1:51).",
       },
     },
     confidence: "settled",
     references: ["Genesis 28:10–19", "John 1:51"],
-    sources: [scripture, { kind: "primary", citation: "Genesis Rabbah 68:12" }],
-    review: { status: "draft" },
+    sources: [scripture, { kind: "primary", citation: "Genesis Rabbah 68:12–14; Midrash Tanchuma, Vayetze 2" }],
+    review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
 ];
