@@ -7,7 +7,8 @@ Every answer opens a **“Window into the time”** card:
 - 📜 **The text says**: the verse, quoted from the World English Bible (public domain)
 - 🏛️ **The world around it**: history, archaeology and ancient sources
 - 👁️ **Through their eyes**: the moment from inside the ancient world
-- ✡️ ✝️ **Tradition**: Jewish and Christian readings, side by side
+- ✡️ **Jewish tradition in Jesus' day**: how Jews of the late Second Temple period read the story
+- ✝️ **Christian tradition**: the New Testament and church reading
 - ⚖️ **Scholars debate**: shown wherever there's no consensus
 - **Sources**: a citation for every claim, plus a button to report errors
 

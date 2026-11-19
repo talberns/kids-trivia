@@ -130,7 +130,7 @@ export const romanJudea: QuestionInput[] = [
         "Asking about the afterlife in Jerusalem would get you very different answers depending on whether you asked a Temple priest or a Pharisee teacher.",
       tradition: {
         jewish:
-          "Rabbinic Judaism grew from the Pharisaic tradition; belief in the resurrection of the dead is one of Maimonides' Thirteen Principles of Faith.",
+          "The Pharisees — and many ordinary Jews — expected the resurrection of the dead (Josephus, Jewish War 2.8.14), a hope voiced by the martyrs of 2 Maccabees 7 and rooted in Daniel 12:2.",
       },
     },
     confidence: "settled",
@@ -218,7 +218,7 @@ export const romanJudea: QuestionInput[] = [
       theirEyes:
         "Pilgrims arriving for festivals saw gleaming white stone and gold — one of the most famous buildings in the Roman world.",
       tradition: {
-        jewish: "The Western Wall (the Kotel) is today the most important place of Jewish prayer.",
+        jewish: "Jews across the Roman world sent a yearly half-shekel tax to the Temple (compare Matthew 17:24), and pilgrims crowded Jerusalem for Passover, Shavuot and Sukkot.",
         christian: "Jesus taught in the Temple courts and foretold its destruction (Mark 13:1–2).",
       },
     },
@@ -270,12 +270,16 @@ export const romanJudea: QuestionInput[] = [
         "In a village synagogue, everyone knew the young man who stood up to read — which is exactly why his words caused such a stir.",
       tradition: {
         jewish:
-          "Reading a passage from the Prophets (the haftarah) after the Torah reading is an ancient custom still followed in synagogues.",
+          "Acts 13:15 describes the same pattern in a synagogue in Asia Minor — “the reading of the law and the prophets” — and the Theodotus inscription from Jerusalem says its synagogue was built for reading the Law and teaching the commandments.",
       },
     },
     confidence: "settled",
     references: ["Luke 4:16–21", "Isaiah 61:1–2", "Isaiah 58:6"],
-    sources: [scripture, { kind: "archaeology", citation: "Magdala synagogue, excavated by the Israel Antiquities Authority (2009)" }],
+    sources: [
+      scripture,
+      { kind: "archaeology", citation: "Magdala synagogue, excavated by the Israel Antiquities Authority (2009)" },
+      { kind: "archaeology", citation: "Theodotus inscription, Jerusalem (1st century CE), Israel Museum" },
+    ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
 
@@ -401,7 +405,7 @@ export const romanJudea: QuestionInput[] = [
         "For Jews in Rome, the parade of their Temple's treasures through the streets was a deep humiliation.",
       tradition: {
         jewish:
-          "The fast of Tisha B'Av mourns the destruction of both Temples; the menorah became the emblem of the modern State of Israel.",
+          "Long before 70 CE, Jews already fasted in the fifth month to mourn the First Temple's destruction by Babylon (Zechariah 7:3–5; 8:19). After 70 the same season came to mourn both Temples.",
       },
     },
     confidence: "settled",
@@ -573,12 +577,16 @@ export const romanJudea: QuestionInput[] = [
         "Phylacteries (Hebrew tefillin) from around the time of Jesus have been found among the Dead Sea Scrolls at Qumran.",
       theirEyes: "Wearing scripture on your body was a sign of devotion — the criticism was of showing off, not of the practice itself.",
       tradition: {
-        jewish: "Observant Jewish men put on tefillin for weekday morning prayers.",
+        jewish: "Josephus describes Jews wearing God's commands on the head and arm (Antiquities 4.8.13), and the Letter of Aristeas mentions the practice too.",
       },
     },
     confidence: "settled",
     references: ["Matthew 23:5", "Deuteronomy 6:8"],
-    sources: [scripture, { kind: "reference", citation: "“Tefillin,” Encyclopaedia Britannica" }],
+    sources: [
+      scripture,
+      { kind: "reference", citation: "“Tefillin,” Encyclopaedia Britannica" },
+      { kind: "primary", citation: "Josephus, Antiquities of the Jews 4.8.13; Letter of Aristeas 159" },
+    ],
     review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {

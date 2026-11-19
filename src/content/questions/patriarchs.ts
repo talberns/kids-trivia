@@ -23,7 +23,7 @@ export const patriarchs: QuestionInput[] = [
         "Growing up in Ur meant living in the shadow of a towering ziggurat dedicated to the moon god Nanna, in one of the oldest and most literate cities on earth.",
       tradition: {
         jewish:
-          "A well-known midrash (Genesis Rabbah 38:13) tells of young Abraham smashing the idols in his father's shop — a story not found in the Bible itself.",
+          "In the Book of Jubilees (2nd century BCE), young Abram burns his father's house of idols (Jubilees 12:12). Josephus says Abraham was the first to proclaim one Creator, reasoning from the irregular movements of the heavens (Antiquities 1.7.1).",
         christian:
           "The New Testament holds up Abraham's departure as a model of faith: he went out “not knowing where he went” (Hebrews 11:8).",
       },
@@ -34,7 +34,7 @@ export const patriarchs: QuestionInput[] = [
     references: ["Genesis 11:31", "Hebrews 11:8"],
     sources: [
       scripture,
-      { kind: "primary", citation: "Genesis Rabbah 38:13" },
+      { kind: "primary", citation: "Jubilees 12:12; Josephus, Antiquities of the Jews 1.7.1" },
       { kind: "archaeology", citation: "C. L. Woolley, excavations at Ur (1922–1934); “Ur,” Encyclopaedia Britannica" },
     ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
@@ -85,7 +85,7 @@ export const patriarchs: QuestionInput[] = [
         "For a family of herders moving through Canaan, the sign marked who belonged to this household and its promise, wherever the tents were pitched.",
       tradition: {
         jewish:
-          "Brit milah is performed on the eighth day after birth (Genesis 17:12) and remains one of Judaism's central rites.",
+          "Jesus was circumcised on the eighth day (Luke 2:21), as was John the Baptist (Luke 1:59). Two centuries earlier, under Antiochus IV, mothers were put to death for circumcising their sons (1 Maccabees 1:60–61), so for Jews of Jesus' day it was a mark of loyalty to the covenant.",
         christian:
           "The early church debated whether non-Jewish believers had to be circumcised and decided they did not (Acts 15).",
       },
@@ -96,6 +96,7 @@ export const patriarchs: QuestionInput[] = [
       scripture,
       { kind: "primary", citation: "Herodotus, Histories 2.104" },
       { kind: "archaeology", citation: "Tomb of Ankhmahor, Saqqara (Sixth Dynasty) — circumcision relief" },
+      { kind: "primary", citation: "1 Maccabees 1:60–61" },
     ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
@@ -176,14 +177,14 @@ export const patriarchs: QuestionInput[] = [
         "A wandering herdsman honoured by a city's priest-king was a striking scene: it showed even settled kings had to reckon with Abram.",
       tradition: {
         jewish:
-          "Some rabbinic sources identify Melchizedek with Noah's son Shem (Babylonian Talmud, Nedarim 32b).",
+          "Josephus explains the name Melchizedek as “righteous king” and identifies Salem with Jerusalem (Antiquities 1.10.2). A Dead Sea Scroll (11QMelchizedek) pictures Melchizedek as a heavenly figure who brings liberation at the end of days.",
         christian:
           "Hebrews 5–7 presents Jesus as “a priest forever after the order of Melchizedek,” quoting Psalm 110:4.",
       },
     },
     confidence: "settled",
     references: ["Genesis 14:18–20", "Psalm 76:2", "Psalm 110:4", "Hebrews 7"],
-    sources: [scripture, { kind: "primary", citation: "Babylonian Talmud, Nedarim 32b" }],
+    sources: [scripture, { kind: "primary", citation: "Josephus, Antiquities of the Jews 1.10.2; Dead Sea Scrolls, 11QMelchizedek (11Q13)" }],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
   {
@@ -230,7 +231,7 @@ export const patriarchs: QuestionInput[] = [
       theirEyes:
         "Hagar, a foreigner in the household, had no say in the arrangement — which makes it striking that the story gives her her own meeting with God.",
       tradition: {
-        jewish: "One midrash makes Hagar a daughter of Pharaoh (Genesis Rabbah 45:1).",
+        jewish: "Philo of Alexandria, a Jewish contemporary of Jesus, read Hagar as an allegory of the “preliminary studies” — grammar, geometry, music — that prepare the soul for wisdom, symbolised by Sarah (On the Preliminary Studies).",
         christian: "Paul turns Hagar and Sarah into an allegory of two covenants (Galatians 4:21–31).",
       },
     },
@@ -240,7 +241,7 @@ export const patriarchs: QuestionInput[] = [
       scripture,
       { kind: "primary", citation: "Laws of Hammurabi §§144–147" },
       { kind: "primary", citation: "Old Assyrian marriage contract from Kanesh (Kültepe), 19th century BCE" },
-      { kind: "primary", citation: "Genesis Rabbah 45:1" },
+      { kind: "primary", citation: "Philo, On Mating with the Preliminary Studies (De Congressu)" },
     ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
@@ -261,14 +262,18 @@ export const patriarchs: QuestionInput[] = [
       theirEyes:
         "To an Israelite, Edom was the “brother” nation: close enough to share a family story, close enough to be a bitter rival.",
       tradition: {
-        jewish: "In later rabbinic literature, “Edom” became a code name for Rome.",
+        jewish: "For Jews of Jesus' day, Esau's descendants had become fellow Jews: around 125 BCE John Hyrcanus made the Idumeans accept circumcision and the Law (Josephus, Antiquities 13.9.1). Even so, Herod's rival Antigonus mocked him as a “half-Jew” (Antiquities 14.15.2).",
         christian:
           "Paul quotes “Jacob I loved, but Esau I hated” (Malachi 1:2–3) in Romans 9:13 when discussing God's choice.",
       },
     },
     confidence: "settled",
     references: ["Genesis 25:25–30", "Genesis 36:1", "Malachi 1:2–3", "Romans 9:13"],
-    sources: [scripture, { kind: "primary", citation: "Josephus, Antiquities of the Jews 14.1.3" }],
+    sources: [
+      scripture,
+      { kind: "primary", citation: "Josephus, Antiquities of the Jews 14.1.3" },
+      { kind: "primary", citation: "Josephus, Antiquities of the Jews 13.9.1; 14.15.2" },
+    ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
   {
@@ -290,14 +295,18 @@ export const patriarchs: QuestionInput[] = [
         "Jacob was on his way home to face Esau, the brother he had cheated. The struggle at the Jabbok river came the night before that dreaded meeting.",
       tradition: {
         jewish:
-          "The Torah links the custom of not eating the sciatic nerve (gid hanasheh) to this story (Genesis 32:32; 32:33 in Hebrew Bibles, where the whole episode is 32:23–33).",
+          "The custom was already kept in Jesus' day: Josephus explains that Jews do not eat this sinew because of Jacob's wrestling (Antiquities 1.20.2).",
         christian:
           "Charles Wesley's hymn “Come, O Thou Traveller Unknown” reads the wrestling as a picture of persistent prayer.",
       },
     },
     confidence: "settled",
     references: ["Genesis 32:22–32"],
-    sources: [scripture, { kind: "archaeology", citation: "Merneptah Stele (Cairo, Egyptian Museum), c. 1208 BCE" }],
+    sources: [
+      scripture,
+      { kind: "archaeology", citation: "Merneptah Stele (Cairo, Egyptian Museum), c. 1208 BCE" },
+      { kind: "primary", citation: "Josephus, Antiquities of the Jews 1.20.2" },
+    ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
 
@@ -321,7 +330,7 @@ export const patriarchs: QuestionInput[] = [
         "Household images were part of everyday life in the region — even in a family that knew the God of Abraham.",
       tradition: {
         jewish:
-          "The medieval commentator Rashi suggests Rachel took them to wean her father away from idolatry (Rashi on Genesis 31:19).",
+          "Josephus suggests Rachel did not worship the images but took them as a safeguard — something to bargain with for her father's pardon if they were caught (Antiquities 1.19.8).",
       },
       debate:
         "Earlier scholars argued from texts found at Nuzi that holding the household gods gave a claim to inheritance. Many scholars now doubt that parallel, and why Rachel took them is still debated.",
@@ -330,7 +339,7 @@ export const patriarchs: QuestionInput[] = [
     references: ["Genesis 31:19", "Genesis 31:34"],
     sources: [
       scripture,
-      { kind: "primary", citation: "Rashi on Genesis 31:19" },
+      { kind: "primary", citation: "Josephus, Antiquities of the Jews 1.19.8" },
       { kind: "scholarship", citation: "M. Greenberg, “Another Look at Rachel's Theft of the Teraphim,” Journal of Biblical Literature 81 (1962)" },
     ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
@@ -440,7 +449,7 @@ export const patriarchs: QuestionInput[] = [
         "Readers in that world knew of gods who demanded children. A story in which God stops the knife spoke loudly to them.",
       tradition: {
         jewish:
-          "Called the Akedah (“binding”), it is read on Rosh Hashanah, and the shofar recalls the ram caught in the thicket.",
+          "Josephus says Isaac was twenty-five and went to the altar willingly (Antiquities 1.13.2–4). The book of 4 Maccabees holds Isaac up as a model for Jewish martyrs who faced death rather than abandon the Law (4 Maccabees 13:12; 16:20).",
         christian:
           "Christians have long read it as a foreshadowing of Jesus' sacrifice; Hebrews 11:17–19 praises Abraham's faith that God could raise the dead.",
       },
@@ -449,7 +458,10 @@ export const patriarchs: QuestionInput[] = [
     },
     confidence: "settled",
     references: ["Genesis 22:1–19", "2 Chronicles 3:1", "2 Kings 3:27", "Hebrews 11:17–19"],
-    sources: [scripture],
+    sources: [
+      scripture,
+      { kind: "primary", citation: "Josephus, Antiquities of the Jews 1.13.2–4; 4 Maccabees 13:12; 16:20" },
+    ],
     review: { status: "published", reviewedOn: "2026-11-18", notes: "Independent fact-check pass; corrections applied." },
   },
   // ───────────── Level 4 ─────────────
@@ -525,12 +537,15 @@ export const patriarchs: QuestionInput[] = [
         "The trickster who once disguised himself to fool his blind father (Genesis 27) woke up to find he had been tricked the same way.",
       tradition: {
         jewish:
-          "At many Jewish weddings the groom veils the bride himself (the bedeken). The custom is often linked to Rebekah veiling herself (Genesis 24:65) — and to making sure there is no repeat of Jacob's mistake.",
+          "The Book of Jubilees (2nd century BCE) treats Laban's excuse as a real law, written on the “heavenly tablets,” that a younger daughter should not be given in marriage before the elder (Jubilees 28:6).",
       },
     },
     confidence: "settled",
     references: ["Genesis 29:15–30", "Genesis 24:65"],
-    sources: [scripture],
+    sources: [
+      scripture,
+      { kind: "primary", citation: "Jubilees 28:6" },
+    ],
     review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
   {
@@ -705,14 +720,14 @@ export const patriarchs: QuestionInput[] = [
         "A young man alone, running from his brother, sleeping on a stone — and suddenly told he is not alone at all.",
       tradition: {
         jewish:
-          "The midrash (Genesis Rabbah 68:12–14) offers many readings of the angels ascending and descending; Midrash Tanchuma (Vayetze 2) sees them as the guardian angels of empires that rise and fall.",
+          "Philo of Alexandria read the stairway as the air between earth and heaven, filled with souls and angels moving up and down — and as a picture of the ups and downs of human life (On Dreams 1.133–156).",
         christian:
           "Jesus tells Nathanael he will see “angels of God ascending and descending on the Son of Man” (John 1:51).",
       },
     },
     confidence: "settled",
     references: ["Genesis 28:10–19", "John 1:51"],
-    sources: [scripture, { kind: "primary", citation: "Genesis Rabbah 68:12–14; Midrash Tanchuma, Vayetze 2" }],
+    sources: [scripture, { kind: "primary", citation: "Philo, On Dreams 1.133–156" }],
     review: { status: "published", reviewedOn: "2026-11-19", notes: "Independent fact-check pass; corrections applied." },
   },
 ];

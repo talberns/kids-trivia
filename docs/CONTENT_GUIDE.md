@@ -6,7 +6,7 @@ Players include Jews, Christians, atheists and academic scholars checking our fa
 
 - Use a neutral, academic voice that respects faith. The game teaches what the text says and the world it came from. It never tells players what to believe.
 - Faith claims (miracles, the Resurrection) are presented as *what the text says* and *what each tradition believes*. They are neither affirmed nor denied as historical fact.
-- Where Jewish and Christian readings differ, give **both**, labelled, without ranking them.
+- Where Jewish and Christian readings differ, give **both**, labelled, without ranking them. The Jewish reading is the one from Jesus' own time (see `tradition.jewish` below).
 - Use BCE / CE. Write "Hebrew Bible / Old Testament" where the distinction matters.
 - Content must suit ages 13+. Handle violence factually and briefly.
 
@@ -16,7 +16,8 @@ Players include Jews, Christians, atheists and academic scholars checking our fa
 |---|---|
 | `textSays` | What the biblical text states, with the reference. Quotes must match the **World English Bible** word for word. |
 | `world` | External history, archaeology and ancient sources. |
-| `tradition.jewish` / `.christian` / `.shared` | Interpretation, attributed to its source (e.g., Rashi, Genesis Rabbah, Hebrews). |
+| `tradition.jewish` | **Jewish tradition in Jesus' day**: how Jews of the late Second Temple period (about 200 BCE – 70 CE), the world of Jesus and the apostles, understood the passage. Use sources from that period: Josephus, Philo, the Dead Sea Scrolls, Jubilees, the Apocrypha and Pseudepigrapha, the Septuagint, inscriptions, and the New Testament's descriptions of Jewish practice. Do **not** use later rabbinic or modern material here (Talmud, midrash, Rashi, today's customs). The Mishnah may be cited only for Temple-era practice, and must be labelled as a later record. |
+| `tradition.christian` / `.shared` | Christian interpretation, or notes shared across traditions, attributed to their source. |
 | `debate` | Where scholars disagree. **Required** when `confidence` is `"debated"`. |
 
 `theirEyes` is required. It's one or two vivid sentences from the viewpoint of someone living at the time.

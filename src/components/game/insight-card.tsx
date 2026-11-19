@@ -16,7 +16,7 @@ export function InsightCard({ question, headingRef }: InsightCardProps) {
   const sections = [
     { key: "text", icon: "📜", title: "The text says", body: e.textSays },
     { key: "world", icon: "🏛️", title: "The world around it", body: e.world },
-    { key: "jewish", icon: "✡️", title: "Jewish tradition", body: e.tradition?.jewish },
+    { key: "jewish", icon: "✡️", title: "Jewish tradition in Jesus' day", body: e.tradition?.jewish },
     { key: "christian", icon: "✝️", title: "Christian tradition", body: e.tradition?.christian },
     { key: "shared", icon: "🤝", title: "Shared tradition", body: e.tradition?.shared },
     { key: "debate", icon: "⚖️", title: "Scholars debate", body: e.debate },

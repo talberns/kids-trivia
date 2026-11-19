@@ -35,8 +35,12 @@ export default function AboutPage() {
             🏛️ <strong>The world around it</strong> — history, archaeology and ancient sources outside the Bible.
           </li>
           <li>
-            ✡️ ✝️ <strong>Tradition holds</strong> — how Jewish and Christian traditions have understood it, side by
-            side and labelled.
+            ✡️ <strong>Jewish tradition in Jesus&apos; day</strong> — how Jews of the late Second Temple period (about
+            200 BCE – 70 CE), the world of Jesus and the apostles, read the story: Josephus, Philo, the Dead Sea
+            Scrolls, Jubilees and the Apocrypha.
+          </li>
+          <li>
+            ✝️ <strong>Christian tradition</strong> — how the New Testament and the church have understood it.
           </li>
           <li>
             ⚖️ <strong>Scholars debate</strong> — where there is no consensus, we say so and give the main positions.
