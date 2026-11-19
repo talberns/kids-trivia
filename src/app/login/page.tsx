@@ -80,12 +80,6 @@ export default async function LoginPage({ searchParams }: PageProps) {
           Enter
         </button>
       </form>
-
-      <p className="px-2 text-center text-xs leading-relaxed text-white/55">
-        While this site is in testing, we record your name and what you do in the game (pages opened, levels played,
-        answers and scores) so the organiser can improve it. We don&apos;t record your IP address. Ask the organiser if
-        you&apos;d like your activity deleted.
-      </p>
     </div>
   );
 }
