@@ -16,7 +16,7 @@ test("a wrong password is refused and keeps the typed name", async ({ page }) =>
   await page.getByLabel("Last name").fill("Levi");
   await page.getByLabel("Password").fill("not-the-password");
   await page.getByRole("button", { name: "Enter" }).click();
-  await expect(page.getByRole("alert")).toContainText(/password isn't right/i);
+  await expect(page.getByRole("alert").filter({ hasText: /password isn't right/i })).toBeVisible();
   await expect(page.getByLabel("First name")).toHaveValue("Dana");
 });
 
@@ -42,7 +42,7 @@ test("the admin page needs its own password", async ({ page }) => {
   await expect(page).toHaveURL(/\/admin\/login/);
   await page.getByLabel("Admin password").fill("wrong");
   await page.getByRole("button", { name: "Open" }).click();
-  await expect(page.getByRole("alert")).toBeVisible();
+  await expect(page.getByRole("alert").filter({ hasText: /wrong admin password/i })).toBeVisible();
   await page.getByLabel("Admin password").fill(E2E_AUTH.ADMIN_PASSWORD);
   await page.getByRole("button", { name: "Open" }).click();
   await expect(page).toHaveURL(/\/admin$/);
