@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { ARTIFACTS } from "./artifacts";
+import { LEVEL_THEMES } from "./levels";
 import { ERAS, PLAYABLE_ERAS } from "./eras";
 import { DAILY_QUESTION_COUNT, pickDailyQuestions } from "@/game/daily";
 import { findCoverageGaps, loadQuestionBank, PUBLISHED_QUESTIONS, QUESTION_BANK } from "./index";
@@ -104,5 +105,20 @@ describe("pickDailyQuestions", () => {
     expect(a).toEqual(b);
     expect(a).toHaveLength(DAILY_QUESTION_COUNT);
     expect(a).not.toEqual(c);
+  });
+});
+
+describe("level themes", () => {
+  it.each(PLAYABLE_ERAS.map((era) => [era.id, era.levels] as const))("%s has a complete theme for every level", (id, levels) => {
+    const themes = LEVEL_THEMES[id];
+    expect(themes).toHaveLength(levels);
+    for (const theme of themes) {
+      expect(theme.title.length).toBeGreaterThan(0);
+      expect(theme.title.length).toBeLessThanOrEqual(40);
+      expect(theme.primer.length).toBeLessThanOrEqual(240);
+      expect(theme.takeaway.length).toBeLessThanOrEqual(190);
+      expect(theme.takeaway.length).toBeGreaterThan(20);
+    }
+    expect(new Set(themes.map((t) => t.title)).size).toBe(levels);
   });
 });

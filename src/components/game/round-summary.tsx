@@ -9,6 +9,8 @@ interface RoundSummaryProps {
   readonly update: ProgressUpdate;
   readonly bestCombo: number;
   readonly nextLevelHref: string | null;
+  /** One-line lesson of the level, from its theme. */
+  readonly takeaway?: string;
   readonly longSession: boolean;
   readonly onReplay: () => void;
 }
@@ -20,7 +22,7 @@ function headline(stars: number): { title: string; sub: string } {
   return { title: "So close!", sub: "Get 3 of 5 right to clear the level. You've seen the answers now — try again." };
 }
 
-export function RoundSummary({ mode, outcome, update, bestCombo, nextLevelHref, longSession, onReplay }: RoundSummaryProps) {
+export function RoundSummary({ mode, outcome, update, bestCombo, nextLevelHref, takeaway, longSession, onReplay }: RoundSummaryProps) {
   const { title, sub } = headline(outcome.stars);
   const artifact = update.newArtifact ? getArtifact(update.newArtifact) : undefined;
   const passed = outcome.stars >= 1;
@@ -52,6 +54,13 @@ export function RoundSummary({ mode, outcome, update, bestCombo, nextLevelHref, 
           <dd className="font-display text-2xl font-extrabold tabular-nums text-gold">+{update.xpGained}</dd>
         </div>
       </dl>
+
+      {mode === "level" && takeaway && (
+        <div className="panel mx-auto max-w-md p-4 text-left">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-cyan">What you learned</p>
+          <p className="mt-1.5 font-serif text-lg leading-snug text-white/90">{takeaway}</p>
+        </div>
+      )}
 
       {mode === "daily" && update.xpGained > outcome.score && (
         <p className="text-sm font-bold text-cyan">Daily bonus: XP doubled!</p>

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { compareEntries, dailyChoiceOrder, dailyDateKey, dailyPoints, QUESTION_TIME_MS } from "./daily";
+import { compareEntries, dailyChoiceOrder, dailyDateKey, dailyPoints, QUESTION_TIME_MS, shareText } from "./daily";
 
 describe("dailyPoints", () => {
   it("gives nothing for a wrong or late answer", () => {
@@ -39,5 +39,12 @@ describe("dailyChoiceOrder", () => {
     const a = dailyChoiceOrder("2026-11-20", "pat-001", 4);
     expect(a).toEqual(dailyChoiceOrder("2026-11-20", "pat-001", 4));
     expect([...a].sort()).toEqual([0, 1, 2, 3]);
+  });
+});
+
+describe("shareText", () => {
+  it("builds a spoiler-free grid with score and time", () => {
+    const text = shareText({ day: "2026-11-20", score: 1340, marks: [true, false, true], totalMs: 41_400 });
+    expect(text).toBe("Through Their Eyes · Daily 2026-11-20\n2/3 · 1340 pts · 41s\n🟩🟥🟩");
   });
 });

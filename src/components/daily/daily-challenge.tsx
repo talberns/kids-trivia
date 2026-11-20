@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { DAILY_QUESTION_COUNT, DAILY_XP_RATE, FEEDBACK_MS, QUESTION_TIME_MS } from "@/game/daily";
+import { DAILY_QUESTION_COUNT, DAILY_XP_RATE, FEEDBACK_MS, QUESTION_TIME_MS, shareText } from "@/game/daily";
 import { starsFor } from "@/game/engine";
 import { applyDailyResult } from "@/game/progress";
 import { getProgress, setProgress, useProgress } from "@/lib/progress-store";
@@ -53,6 +53,34 @@ async function api<T>(path: string, init?: RequestInit): Promise<T | null> {
   } catch {
     return null;
   }
+}
+
+/** Shares the spoiler-free result with the phone's share sheet, or copies it where that isn't available. */
+function ShareButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  async function share() {
+    try {
+      if (typeof navigator.share === "function") {
+        await navigator.share({ text });
+        return;
+      }
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2500);
+    } catch {
+      // Cancelled share sheet or blocked clipboard: nothing to do.
+    }
+  }
+
+  return (
+    <div>
+      <button type="button" onClick={() => void share()} className="btn-ghost focus-ring">
+        {copied ? "Copied ✓" : "Share my result"}
+      </button>
+      <p className="mt-1 text-xs text-white/45">Shows your score and a green/red grid — no questions or answers.</p>
+    </div>
+  );
 }
 
 /** The 10-question timed daily challenge with a shared leaderboard. Scoring happens on the server. */
@@ -277,6 +305,14 @@ export function DailyChallenge() {
             {state.correct} of {state.total} correct · {Math.round(state.totalMs / 1000)} seconds
             {me ? ` · #${me.rank} today` : ""}
           </p>
+          <ShareButton
+            text={shareText({
+              day: state.day,
+              score: state.score,
+              marks: state.review.map((r) => r.correct),
+              totalMs: state.totalMs,
+            })}
+          />
           <p className="text-sm text-white/55">Come back tomorrow for ten new questions.</p>
         </section>
         <Leaderboard data={board} />

@@ -292,7 +292,7 @@ export const romanJudea: QuestionInput[] = [
   {
     id: "rom-011",
     era: "roman-judea",
-    level: 3,
+    level: 4,
     category: "world",
     difficulty: 3,
     format: "multiple-choice",
@@ -316,7 +316,7 @@ export const romanJudea: QuestionInput[] = [
   {
     id: "rom-012",
     era: "roman-judea",
-    level: 3,
+    level: 4,
     category: "faith-practice",
     difficulty: 3,
     format: "true-false",
@@ -341,7 +341,7 @@ export const romanJudea: QuestionInput[] = [
   {
     id: "rom-013",
     era: "roman-judea",
-    level: 3,
+    level: 4,
     category: "archaeology",
     difficulty: 3,
     format: "multiple-choice",
@@ -367,7 +367,7 @@ export const romanJudea: QuestionInput[] = [
   {
     id: "rom-014",
     era: "roman-judea",
-    level: 3,
+    level: 4,
     category: "archaeology",
     difficulty: 3,
     format: "multiple-choice",
@@ -395,7 +395,7 @@ export const romanJudea: QuestionInput[] = [
   {
     id: "rom-015",
     era: "roman-judea",
-    level: 3,
+    level: 4,
     category: "archaeology",
     difficulty: 3,
     format: "multiple-choice",
@@ -426,7 +426,7 @@ export const romanJudea: QuestionInput[] = [
   {
     id: "rom-016",
     era: "roman-judea",
-    level: 4,
+    level: 3,
     category: "story",
     difficulty: 2,
     format: "multiple-choice",
@@ -448,7 +448,7 @@ export const romanJudea: QuestionInput[] = [
   {
     id: "rom-017",
     era: "roman-judea",
-    level: 4,
+    level: 3,
     category: "world",
     difficulty: 2,
     format: "multiple-choice",
@@ -472,7 +472,7 @@ export const romanJudea: QuestionInput[] = [
   {
     id: "rom-018",
     era: "roman-judea",
-    level: 4,
+    level: 3,
     category: "world",
     difficulty: 2,
     format: "multiple-choice",
@@ -494,7 +494,7 @@ export const romanJudea: QuestionInput[] = [
   {
     id: "rom-019",
     era: "roman-judea",
-    level: 4,
+    level: 3,
     category: "story",
     difficulty: 2,
     format: "multiple-choice",
@@ -518,7 +518,7 @@ export const romanJudea: QuestionInput[] = [
   {
     id: "rom-020",
     era: "roman-judea",
-    level: 4,
+    level: 3,
     category: "world",
     difficulty: 2,
     format: "true-false",

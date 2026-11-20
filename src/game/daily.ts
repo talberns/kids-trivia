@@ -71,3 +71,24 @@ export function pickDailyQuestions(pool: readonly Question[], dateKey: string): 
   const picked = Array.from({ length: count }, (_, i) => rotation[(start + i) % rotation.length]!);
   return picked.sort((a, b) => a.difficulty - b.difficulty);
 }
+
+export interface ShareInput {
+  readonly day: string;
+  readonly score: number;
+  readonly marks: readonly boolean[];
+  readonly totalMs: number;
+}
+
+/**
+ * A spoiler-free result to paste into a chat: a row of green/red squares (one per question),
+ * the score and the time. It never includes questions or answers.
+ */
+export function shareText({ day, score, marks, totalMs }: ShareInput): string {
+  const correct = marks.filter(Boolean).length;
+  const grid = marks.map((ok) => (ok ? "🟩" : "🟥")).join("");
+  return [
+    `Through Their Eyes · Daily ${day}`,
+    `${correct}/${marks.length} · ${score} pts · ${Math.round(totalMs / 1000)}s`,
+    grid,
+  ].join("\n");
+}

@@ -314,7 +314,7 @@ export const patriarchs: QuestionInput[] = [
   {
     id: "pat-011",
     era: "patriarchs",
-    level: 3,
+    level: 4,
     category: "faith-practice",
     difficulty: 3,
     format: "multiple-choice",
@@ -347,7 +347,7 @@ export const patriarchs: QuestionInput[] = [
   {
     id: "pat-012",
     era: "patriarchs",
-    level: 3,
+    level: 4,
     category: "daily-life",
     difficulty: 3,
     format: "multiple-choice",
@@ -379,7 +379,7 @@ export const patriarchs: QuestionInput[] = [
   {
     id: "pat-013",
     era: "patriarchs",
-    level: 3,
+    level: 4,
     category: "neighbours",
     difficulty: 3,
     format: "multiple-choice",
@@ -406,7 +406,7 @@ export const patriarchs: QuestionInput[] = [
   {
     id: "pat-014",
     era: "patriarchs",
-    level: 3,
+    level: 4,
     category: "archaeology",
     difficulty: 3,
     format: "multiple-choice",
@@ -433,7 +433,7 @@ export const patriarchs: QuestionInput[] = [
   {
     id: "pat-015",
     era: "patriarchs",
-    level: 3,
+    level: 4,
     category: "tradition",
     difficulty: 3,
     format: "multiple-choice",
@@ -468,7 +468,7 @@ export const patriarchs: QuestionInput[] = [
   {
     id: "pat-016",
     era: "patriarchs",
-    level: 4,
+    level: 3,
     category: "story",
     difficulty: 2,
     format: "multiple-choice",
@@ -493,7 +493,7 @@ export const patriarchs: QuestionInput[] = [
   {
     id: "pat-017",
     era: "patriarchs",
-    level: 4,
+    level: 3,
     category: "daily-life",
     difficulty: 2,
     format: "multiple-choice",
@@ -521,7 +521,7 @@ export const patriarchs: QuestionInput[] = [
   {
     id: "pat-018",
     era: "patriarchs",
-    level: 4,
+    level: 3,
     category: "story",
     difficulty: 2,
     format: "true-false",
@@ -551,7 +551,7 @@ export const patriarchs: QuestionInput[] = [
   {
     id: "pat-019",
     era: "patriarchs",
-    level: 4,
+    level: 3,
     category: "story",
     difficulty: 2,
     format: "multiple-choice",
@@ -574,7 +574,7 @@ export const patriarchs: QuestionInput[] = [
   {
     id: "pat-020",
     era: "patriarchs",
-    level: 4,
+    level: 3,
     category: "daily-life",
     difficulty: 2,
     format: "multiple-choice",

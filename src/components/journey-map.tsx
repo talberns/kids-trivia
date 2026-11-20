@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { Era } from "@/content/eras";
+import { getLevelTheme } from "@/content/levels";
 import { isLevelUnlocked, levelStars } from "@/game/progress";
 import { useProgress } from "@/lib/progress-store";
 import { Stars } from "./stars";
@@ -23,6 +24,24 @@ function rowsOf(levels: number): number[][] {
     rows.push(Array.from({ length: Math.min(5, levels - start + 1) }, (_, i) => start + i));
   }
   return rows;
+}
+
+/** "Next up" line: the first unlocked level the player hasn't cleared yet, with its title. */
+function NextUp({ era }: { era: Era }) {
+  const progress = useProgress();
+  for (let level = 1; level <= era.levels; level++) {
+    if (!isLevelUnlocked(progress, era.id, level)) return null;
+    if (levelStars(progress, era.id, level) === 0) {
+      const title = getLevelTheme(era.id, level)?.title;
+      if (!title) return null;
+      return (
+        <p className="text-center text-sm text-white/70">
+          Next up: <span className="font-semibold text-gold">Level {level} · {title}</span>
+        </p>
+      );
+    }
+  }
+  return null;
 }
 
 export function JourneyMap({ eras }: JourneyMapProps) {
@@ -68,11 +87,13 @@ export function JourneyMap({ eras }: JourneyMapProps) {
 
               {era.playable ? (
                 <div className="mt-5 space-y-4">
+                  <NextUp era={era} />
                   {rowsOf(era.levels).map((row) => (
                     <div key={row[0]} className="flex items-center justify-around">
                       {row.map((level, idx) => {
                         const unlocked = isLevelUnlocked(progress, era.id, level);
                         const stars = levelStars(progress, era.id, level);
+                        const themeTitle = getLevelTheme(era.id, level)?.title;
                         return (
                           <div key={level} className="flex flex-1 items-center">
                             {idx > 0 && (
@@ -88,7 +109,8 @@ export function JourneyMap({ eras }: JourneyMapProps) {
                                   className={`coin focus-ring grid size-12 place-items-center font-display text-xl sm:size-16 sm:text-2xl font-extrabold text-[#3b2600] transition-transform hover:scale-110 ${
                                     stars === 0 ? "animate-pulse-glow" : ""
                                   }`}
-                                  aria-label={`Play ${era.name}, level ${level}${stars ? `, ${stars} stars earned` : ""}`}
+                                  aria-label={`Play ${era.name}, level ${level}${themeTitle ? `: ${themeTitle}` : ""}${stars ? `, ${stars} stars earned` : ""}`}
+                                  title={themeTitle}
                                 >
                                   {level}
                                 </Link>

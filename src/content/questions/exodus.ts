@@ -285,7 +285,7 @@ export const exodus: QuestionInput[] = [
   {
     id: "exo-011",
     era: "exodus",
-    level: 3,
+    level: 4,
     category: "world",
     difficulty: 3,
     format: "multiple-choice",
@@ -319,7 +319,7 @@ export const exodus: QuestionInput[] = [
   {
     id: "exo-012",
     era: "exodus",
-    level: 3,
+    level: 4,
     category: "neighbours",
     difficulty: 3,
     format: "multiple-choice",
@@ -347,7 +347,7 @@ export const exodus: QuestionInput[] = [
   {
     id: "exo-013",
     era: "exodus",
-    level: 3,
+    level: 4,
     category: "faith-practice",
     difficulty: 3,
     format: "multiple-choice",
@@ -379,7 +379,7 @@ export const exodus: QuestionInput[] = [
   {
     id: "exo-014",
     era: "exodus",
-    level: 3,
+    level: 4,
     category: "tradition",
     difficulty: 3,
     format: "multiple-choice",
@@ -412,7 +412,7 @@ export const exodus: QuestionInput[] = [
   {
     id: "exo-015",
     era: "exodus",
-    level: 3,
+    level: 4,
     category: "archaeology",
     difficulty: 3,
     format: "multiple-choice",
@@ -446,7 +446,7 @@ export const exodus: QuestionInput[] = [
   {
     id: "exo-016",
     era: "exodus",
-    level: 4,
+    level: 3,
     category: "story",
     difficulty: 2,
     format: "multiple-choice",
@@ -473,7 +473,7 @@ export const exodus: QuestionInput[] = [
   {
     id: "exo-017",
     era: "exodus",
-    level: 4,
+    level: 3,
     category: "neighbours",
     difficulty: 2,
     format: "multiple-choice",
@@ -502,7 +502,7 @@ export const exodus: QuestionInput[] = [
   {
     id: "exo-018",
     era: "exodus",
-    level: 4,
+    level: 3,
     category: "tradition",
     difficulty: 2,
     format: "multiple-choice",
@@ -527,7 +527,7 @@ export const exodus: QuestionInput[] = [
   {
     id: "exo-019",
     era: "exodus",
-    level: 4,
+    level: 3,
     category: "daily-life",
     difficulty: 2,
     format: "multiple-choice",
@@ -557,7 +557,7 @@ export const exodus: QuestionInput[] = [
   {
     id: "exo-020",
     era: "exodus",
-    level: 4,
+    level: 3,
     category: "faith-practice",
     difficulty: 2,
     format: "true-false",

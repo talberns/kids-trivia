@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useReducer, useRef, useState } from "react";
+import type { LevelTheme } from "@/content/levels";
 import type { Question } from "@/content/schema";
 import {
   canUseFiftyFifty,
@@ -39,6 +40,7 @@ export interface RoundConfig {
   readonly title: string;
   readonly subtitle: string;
   readonly questions: readonly Question[];
+  readonly theme?: LevelTheme;
   readonly era?: string;
   readonly level?: number;
   readonly artifactId: string | null;
@@ -215,6 +217,7 @@ function Round({ config, seed, onReplay }: { config: RoundConfig; seed: number; 
           update={summary.update}
           bestCombo={state.bestCombo}
           nextLevelHref={config.nextLevelHref}
+          takeaway={config.theme?.takeaway}
           longSession={summary.longSession}
           onReplay={onReplay}
         />
@@ -275,6 +278,12 @@ function Round({ config, seed, onReplay }: { config: RoundConfig; seed: number; 
           return <li key={it.question.id} className={`h-2 flex-1 rounded-full transition-colors ${color}`} />;
         })}
       </ol>
+
+      {config.theme && state.index === 0 && state.phase === "answering" && (
+        <p className="rounded-xl bg-white/5 px-4 py-3 text-sm leading-relaxed text-white/75" data-testid="level-primer">
+          <span className="font-bold text-cyan">{config.theme.title}.</span> {config.theme.primer}
+        </p>
+      )}
 
       <section className="panel space-y-5 p-5" aria-labelledby="question-prompt">
         <div className="flex flex-wrap items-center gap-2 text-xs font-bold">
