@@ -55,3 +55,13 @@ test("after answering, the explanation comes into view before the next button", 
   const nextBox = await next.boundingBox();
   expect(headingBox && nextBox && nextBox.y > headingBox.y).toBe(true);
 });
+
+test("new eras and Roman Judea's tenth level are playable", async ({ page }) => {
+  for (const path of ["/play/early-church/1", "/play/hellenistic/5", "/play/united-monarchy/3", "/play/divided-kingdom/2", "/play/exile/4", "/play/roman-judea/10"]) {
+    await page.goto(path);
+    await expect(page.getByRole("group", { name: "Answers" }), path).toBeVisible();
+  }
+  await page.goto("/");
+  await expect(page.getByRole("link", { name: /play the early church, level 1/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /greeks & maccabees/i })).toBeVisible();
+});
