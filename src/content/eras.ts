@@ -23,7 +23,7 @@ export const ERAS: readonly Era[] = [
     emoji: "🌌",
     blurb: "Creation, Eden, the Flood and Babel, read alongside the myths of Mesopotamia.",
     playable: true,
-    levels: 15,
+    levels: 20,
   },
   {
     id: "patriarchs",
@@ -33,7 +33,7 @@ export const ERAS: readonly Era[] = [
     emoji: "⛺",
     blurb: "Abraham, Isaac, Jacob and Joseph: herders between Mesopotamia, Canaan and Egypt.",
     playable: true,
-    levels: 15,
+    levels: 20,
   },
   {
     id: "exodus",
@@ -43,7 +43,7 @@ export const ERAS: readonly Era[] = [
     emoji: "🏺",
     blurb: "Slavery in Egypt, the plagues, Passover, Sinai and forty years in the wilderness.",
     playable: true,
-    levels: 15,
+    levels: 20,
   },
   {
     id: "judges",
@@ -53,7 +53,7 @@ export const ERAS: readonly Era[] = [
     emoji: "🛡️",
     blurb: "Tribes, heroes and Philistines in the hill country of Canaan.",
     playable: true,
-    levels: 15,
+    levels: 20,
   },
   {
     id: "united-monarchy",
@@ -63,7 +63,7 @@ export const ERAS: readonly Era[] = [
     emoji: "👑",
     blurb: "Saul, David and Solomon, and the first Temple in Jerusalem.",
     playable: true,
-    levels: 15,
+    levels: 20,
   },
   {
     id: "divided-kingdom",
@@ -73,7 +73,7 @@ export const ERAS: readonly Era[] = [
     emoji: "⚔️",
     blurb: "Israel and Judah, Assyria's armies, and prophets who spoke truth to kings.",
     playable: true,
-    levels: 15,
+    levels: 20,
   },
   {
     id: "exile",
@@ -83,7 +83,7 @@ export const ERAS: readonly Era[] = [
     emoji: "🏛️",
     blurb: "Jerusalem falls; a people learns to keep faith by the rivers of Babylon.",
     playable: true,
-    levels: 15,
+    levels: 20,
   },
   {
     id: "persian",
@@ -93,7 +93,7 @@ export const ERAS: readonly Era[] = [
     emoji: "🦁",
     blurb: "Cyrus, Ezra, Nehemiah and Esther in the world's largest empire.",
     playable: true,
-    levels: 15,
+    levels: 20,
   },
   {
     id: "hellenistic",
@@ -103,7 +103,7 @@ export const ERAS: readonly Era[] = [
     emoji: "🕎",
     blurb: "Alexander's heirs, the Maccabean revolt and the story of Hanukkah.",
     playable: true,
-    levels: 15,
+    levels: 20,
   },
   {
     id: "roman-judea",
@@ -113,7 +113,7 @@ export const ERAS: readonly Era[] = [
     emoji: "🪙",
     blurb: "Herod's Temple, Roman governors, and the life of Jesus in Galilee and Jerusalem.",
     playable: true,
-    levels: 15,
+    levels: 20,
   },
   {
     id: "early-church",
@@ -123,7 +123,7 @@ export const ERAS: readonly Era[] = [
     emoji: "⛵",
     blurb: "Paul's journeys, the first communities, and the fall of Jerusalem.",
     playable: true,
-    levels: 15,
+    levels: 20,
   },
 ];
 
