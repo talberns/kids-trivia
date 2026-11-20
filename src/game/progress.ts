@@ -178,3 +178,48 @@ export function applyDailyResult(progress: Progress, outcome: RoundOutcome, toda
 export function withSound(progress: Progress, sound: boolean): Progress {
   return { ...progress, settings: { ...progress.settings, sound } };
 }
+
+const laterDate = (a: string | null, b: string | null): string | null => (a === null ? b : b === null ? a : a > b ? a : b);
+
+/**
+ * Combines two copies of a player's progress (this device and the server) without losing anything earned:
+ * best stars and score per level, highest XP, every artifact, the more recent streak and daily result.
+ * Settings come from `device`, the copy the player is using right now.
+ */
+export function mergeProgress(device: Progress, saved: Progress): Progress {
+  const levels: Progress["levels"] = { ...saved.levels };
+  for (const [key, value] of Object.entries(device.levels)) {
+    const other = levels[key];
+    levels[key] = other
+      ? { stars: Math.max(value.stars, other.stars), bestScore: Math.max(value.bestScore, other.bestScore) }
+      : value;
+  }
+
+  const a = device.streak;
+  const b = saved.streak;
+  const streak =
+    a.lastPlayed === b.lastPlayed
+      ? { lastPlayed: a.lastPlayed, count: Math.max(a.count, b.count) }
+      : laterDate(a.lastPlayed, b.lastPlayed) === a.lastPlayed
+        ? a
+        : b;
+
+  return {
+    version: 1,
+    xp: Math.max(device.xp, saved.xp),
+    levels,
+    artifacts: [...new Set([...saved.artifacts, ...device.artifacts])],
+    streak,
+    daily: {
+      lastCompleted: laterDate(device.daily.lastCompleted, saved.daily.lastCompleted),
+      bestScore: Math.max(device.daily.bestScore, saved.daily.bestScore),
+    },
+    stats: device.stats.answered >= saved.stats.answered ? device.stats : saved.stats,
+    settings: device.settings,
+  };
+}
+
+/** True when two progress records hold the same data. */
+export function sameProgress(a: Progress, b: Progress): boolean {
+  return JSON.stringify(mergeProgress(a, b)) === JSON.stringify(a) && JSON.stringify(mergeProgress(b, a)) === JSON.stringify(b);
+}

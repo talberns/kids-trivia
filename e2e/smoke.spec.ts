@@ -1,8 +1,8 @@
 import { expect, test } from "@playwright/test";
-import { signIn } from "./auth";
+import { signInAny } from "./auth";
 
 test.beforeEach(async ({ page }) => {
-  await signIn(page);
+  await signInAny(page);
 });
 
 test("journey map shows playable eras", async ({ page }) => {
@@ -41,7 +41,7 @@ test("sources page explains the method", async ({ page }) => {
 
 test("daily challenge hides the bottom navigation", async ({ page }) => {
   await page.goto("/daily");
-  await expect(page.getByRole("group", { name: "Answers" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Start the clock" })).toBeVisible();
   await expect(page.getByRole("navigation", { name: "Main" })).toHaveCount(0);
 });
 

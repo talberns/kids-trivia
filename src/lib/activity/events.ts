@@ -49,11 +49,22 @@ export const clientEventSchema = z.discriminatedUnion("type", [
 ]);
 export type ClientEvent = z.infer<typeof clientEventSchema>;
 
-export type ServerEvent = { type: "login" } | { type: "login_failed" } | { type: "logout" };
+export type ServerEvent =
+  | { type: "signup" }
+  | { type: "login" }
+  | { type: "login_failed" }
+  | { type: "logout" }
+  | { type: "password_reset" }
+  | { type: "daily_start"; day: string }
+  | { type: "daily_complete"; day: string; score: number; correct: number; total: number; seconds: number };
 export type ActivityEvent = ClientEvent | ServerEvent;
 
 export const EVENT_LABEL: Record<ActivityEvent["type"], string> = {
+  signup: "Created account",
   login: "Logged in",
+  password_reset: "Password reset by admin",
+  daily_start: "Started daily",
+  daily_complete: "Finished daily",
   login_failed: "Wrong password",
   logout: "Logged out",
   page_view: "Opened page",
@@ -80,6 +91,10 @@ export function describeEvent(type: string, data: Record<string, unknown>): stri
       return `${where} · ${String(data.questionId ?? "")} · ${data.correct ? "✓ correct" : "✗ wrong"}${data.usedFiftyFifty ? " (50/50)" : ""}`;
     case "insight_read":
       return `${where} · ${String(data.questionId ?? "")} · ${String(data.seconds)}s${data.reachedEnd ? " · read to the end" : " · skipped ahead"}`;
+    case "daily_start":
+      return `Daily challenge ${String(data.day ?? "")}`;
+    case "daily_complete":
+      return `Daily challenge ${String(data.day ?? "")} · ${String(data.correct)}/${String(data.total)} correct · ${String(data.score)} pts · ${String(data.seconds)}s`;
     case "round_complete":
       return `${where} · ${String(data.correct)}/${String(data.total)} correct · ${String(data.stars)}★ · ${String(data.score)} pts`;
     default:

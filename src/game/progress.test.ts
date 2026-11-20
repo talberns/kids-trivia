@@ -6,8 +6,10 @@ import {
   currentStreak,
   INITIAL_PROGRESS,
   isLevelUnlocked,
+  mergeProgress,
   parseProgress,
   rankFor,
+  sameProgress,
   withStreak,
 } from "./progress";
 
@@ -116,5 +118,57 @@ describe("parseProgress", () => {
   it("falls back to a fresh start on corrupt data", () => {
     expect(parseProgress({ version: 99 })).toBe(INITIAL_PROGRESS);
     expect(parseProgress("garbage")).toBe(INITIAL_PROGRESS);
+  });
+});
+
+describe("mergeProgress", () => {
+  const base = INITIAL_PROGRESS;
+  const phone = {
+    ...base,
+    xp: 900,
+    levels: { "patriarchs:1": { stars: 3, bestScore: 500 }, "exodus:1": { stars: 1, bestScore: 200 } },
+    artifacts: ["balance-weights"],
+    streak: { count: 4, lastPlayed: "2026-11-20" },
+    daily: { lastCompleted: "2026-11-20", bestScore: 1500 },
+    stats: { answered: 40, correct: 30 },
+    settings: { sound: false },
+  };
+  const laptop = {
+    ...base,
+    xp: 1200,
+    levels: { "patriarchs:1": { stars: 2, bestScore: 650 }, "patriarchs:2": { stars: 1, bestScore: 100 } },
+    artifacts: ["cylinder-seal"],
+    streak: { count: 2, lastPlayed: "2026-11-18" },
+    daily: { lastCompleted: "2026-11-18", bestScore: 1700 },
+    stats: { answered: 25, correct: 20 },
+    settings: { sound: true },
+  };
+
+  it("keeps the best of both without losing anything", () => {
+    const merged = mergeProgress(phone, laptop);
+    expect(merged.xp).toBe(1200);
+    expect(merged.levels).toEqual({
+      "patriarchs:1": { stars: 3, bestScore: 650 },
+      "patriarchs:2": { stars: 1, bestScore: 100 },
+      "exodus:1": { stars: 1, bestScore: 200 },
+    });
+    expect(new Set(merged.artifacts)).toEqual(new Set(["balance-weights", "cylinder-seal"]));
+    expect(merged.streak).toEqual({ count: 4, lastPlayed: "2026-11-20" });
+    expect(merged.daily).toEqual({ lastCompleted: "2026-11-20", bestScore: 1700 });
+    expect(merged.stats).toEqual({ answered: 40, correct: 30 });
+    expect(merged.settings).toEqual({ sound: false });
+  });
+
+  it("is stable when merged again", () => {
+    const once = mergeProgress(phone, laptop);
+    expect(mergeProgress(once, laptop)).toEqual(once);
+    expect(sameProgress(once, mergeProgress(once, phone))).toBe(true);
+    expect(sameProgress(phone, laptop)).toBe(false);
+  });
+
+  it("takes the higher count when both streaks were played the same day", () => {
+    const a = { ...base, streak: { count: 3, lastPlayed: "2026-11-20" } };
+    const b = { ...base, streak: { count: 5, lastPlayed: "2026-11-20" } };
+    expect(mergeProgress(a, b).streak.count).toBe(5);
   });
 });

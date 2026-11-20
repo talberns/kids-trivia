@@ -9,6 +9,8 @@ import { z } from "zod";
 
 export const PLAYER_COOKIE = "aq_session";
 export const ADMIN_COOKIE = "aq_admin";
+/** One-minute cookie that carries a freshly reset temporary password to the admin page. */
+export const ADMIN_FLASH_COOKIE = "aq_admin_flash";
 export const PLAYER_SESSION_DAYS = 30;
 export const ADMIN_SESSION_HOURS = 12;
 
@@ -17,6 +19,9 @@ export const NAME_MAX = 40;
 
 export const playerSessionSchema = z.object({
   kind: z.literal("player"),
+  /** Account id (UUID). */
+  userId: z.uuid(),
+  username: z.string().min(3).max(24),
   firstName: z.string().min(1).max(NAME_MAX),
   lastName: z.string().min(1).max(NAME_MAX),
   /** Random per-login id, so separate sittings can be told apart in the log. */
@@ -108,10 +113,26 @@ export function verifyAdminToken(token: string | undefined, secret: string, now 
   return verify(token, secret, adminSessionSchema, now);
 }
 
-export function newPlayerSession(firstName: string, lastName: string, now = Date.now()): PlayerSession {
+export interface SessionUser {
+  readonly id: string;
+  readonly username: string;
+  readonly firstName: string;
+  readonly lastName: string;
+}
+
+export function newPlayerSession(user: SessionUser, now = Date.now()): PlayerSession {
   const iat = Math.floor(now / 1000);
   const sid = toBase64Url(crypto.getRandomValues(new Uint8Array(12)));
-  return { kind: "player", firstName, lastName, sid, iat, exp: iat + PLAYER_SESSION_DAYS * 86_400 };
+  return {
+    kind: "player",
+    userId: user.id,
+    username: user.username,
+    firstName: user.firstName,
+    lastName: user.lastName,
+    sid,
+    iat,
+    exp: iat + PLAYER_SESSION_DAYS * 86_400,
+  };
 }
 
 export function newAdminSession(now = Date.now()): AdminSession {
@@ -132,6 +153,6 @@ export function safeNextPath(value: unknown, fallback = "/"): string {
   if (typeof value !== "string" || !value.startsWith("/") || value.startsWith("//") || value.startsWith("/\\")) {
     return fallback;
   }
-  if (value.startsWith("/login") || value.startsWith("/api/")) return fallback;
+  if (value.startsWith("/login") || value.startsWith("/signup") || value.startsWith("/api/")) return fallback;
   return value.length > 512 ? fallback : value;
 }

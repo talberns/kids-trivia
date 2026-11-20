@@ -6,7 +6,7 @@ import { ADMIN_COOKIE, PLAYER_COOKIE, verifyAdminToken, verifyPlayerToken } from
  * /admin pages need the separate admin cookie instead (Tal can open them without a player login).
  * Fails closed: with no SESSION_SECRET configured, nothing but the login page loads.
  */
-const PUBLIC_PATHS = new Set(["/login", "/api/login", "/admin/login", "/api/admin/login", "/icon.svg", "/manifest.webmanifest"]);
+const PUBLIC_PATHS = new Set(["/login", "/api/login", "/signup", "/api/signup", "/admin/login", "/api/admin/login", "/icon.svg", "/manifest.webmanifest"]);
 
 export async function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;

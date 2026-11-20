@@ -11,38 +11,41 @@ import {
 } from "./session";
 
 const SECRET = "test-secret-that-is-at-least-32-characters-long";
+const dana = { id: "8a6e0804-2bd0-4672-b79d-d97027f9071a", username: "dana", firstName: "Dana", lastName: "Levi" };
+const eve = { id: "0f8fad5b-d9cb-469f-a165-70867728950e", username: "eve", firstName: "Eve", lastName: "Hacker" };
+const amos = { id: "7c9e6679-7425-40de-944b-e07fc1f90ae7", username: "amos", firstName: "A", lastName: "B" };
 
 describe("signed tokens", () => {
   it("round-trips a player session", async () => {
-    const session = newPlayerSession("Dana", "Levi");
+    const session = newPlayerSession(dana);
     const token = await signToken(session, SECRET);
     expect(await verifyPlayerToken(token, SECRET)).toEqual(session);
   });
 
   it("rejects a token signed with another secret", async () => {
-    const token = await signToken(newPlayerSession("Dana", "Levi"), SECRET);
+    const token = await signToken(newPlayerSession(dana), SECRET);
     expect(await verifyPlayerToken(token, `${SECRET}-other`)).toBeNull();
   });
 
   it("rejects a tampered payload", async () => {
-    const token = await signToken(newPlayerSession("Dana", "Levi"), SECRET);
+    const token = await signToken(newPlayerSession(dana), SECRET);
     const [, signature] = token.split(".");
-    const forged = Buffer.from(JSON.stringify({ ...newPlayerSession("Eve", "Hacker") })).toString("base64url");
+    const forged = Buffer.from(JSON.stringify({ ...newPlayerSession(eve) })).toString("base64url");
     expect(await verifyPlayerToken(`${forged}.${signature}`, SECRET)).toBeNull();
   });
 
   it("rejects expired, empty and malformed tokens", async () => {
     const past = Date.now() - 31 * 86_400_000;
-    const expired = await signToken(newPlayerSession("Dana", "Levi", past), SECRET);
+    const expired = await signToken(newPlayerSession(dana, past), SECRET);
     expect(await verifyPlayerToken(expired, SECRET)).toBeNull();
     expect(await verifyPlayerToken(undefined, SECRET)).toBeNull();
     expect(await verifyPlayerToken("abc", SECRET)).toBeNull();
     expect(await verifyPlayerToken("a.b.c", SECRET)).toBeNull();
-    expect(await verifyPlayerToken(await signToken(newPlayerSession("A", "B"), SECRET), "")).toBeNull();
+    expect(await verifyPlayerToken(await signToken(newPlayerSession(amos), SECRET), "")).toBeNull();
   });
 
   it("keeps player and admin tokens apart", async () => {
-    const player = await signToken(newPlayerSession("Dana", "Levi"), SECRET);
+    const player = await signToken(newPlayerSession(dana), SECRET);
     const admin = await signToken(newAdminSession(), SECRET);
     expect(await verifyAdminToken(player, SECRET)).toBeNull();
     expect(await verifyPlayerToken(admin, SECRET)).toBeNull();

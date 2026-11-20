@@ -451,6 +451,149 @@ export const ARTIFACTS: readonly Artifact[] = [
       "A clay cylinder written after the Persian king Cyrus took Babylon in 539 BCE. It presents him as a liberator who returned gods and peoples to their homelands; the Bible has its own account of Cyrus allowing the exiles to return.",
     reference: "Ezra 1:1–4",
   },
+  // ───────── In the Beginning ─────────
+  {
+    id: "creation-tablet",
+    era: "primeval",
+    level: 1,
+    name: "Creation Epic Tablet",
+    emoji: "📜",
+    blurb:
+      "Clay tablets of the Babylonian creation poem known by its first words, Enuma Elish (“When on high…”). Copies were found in the library of the Assyrian king Ashurbanipal at Nineveh in the 1840s–50s.",
+  },
+  {
+    id: "babylonian-world-map",
+    era: "primeval",
+    level: 2,
+    name: "Babylonian Map of the World",
+    emoji: "🗺️",
+    blurb:
+      "A small clay tablet, probably from the 6th century BCE, showing the known world as a disc with Babylon near the centre, ringed by a “bitter river”. It shows how one ancient people pictured the earth.",
+  },
+  {
+    id: "flood-tablet",
+    era: "primeval",
+    level: 3,
+    name: "The Flood Tablet",
+    emoji: "🌊",
+    blurb:
+      "Tablet XI of the Epic of Gilgamesh, from Ashurbanipal's library, tells of a man who builds a boat, survives a great flood and sends out birds. George Smith announced his reading of it in London in 1872.",
+  },
+  {
+    id: "king-list-prism",
+    era: "primeval",
+    level: 4,
+    name: "Sumerian King List",
+    emoji: "👑",
+    blurb:
+      "A clay prism listing kings of Sumer, some before “the flood” with reigns of thousands of years. Scholars compare its long-lived rulers with the long lives in Genesis 5.",
+  },
+  {
+    id: "mud-brick-mould",
+    era: "primeval",
+    level: 5,
+    name: "Baked Brick",
+    emoji: "🧱",
+    blurb:
+      "In Mesopotamia, with little stone, builders used mud brick, and for important buildings they fired bricks in kilns and set them in bitumen. Genesis notes the builders of Babel had “brick for stone, and they used tar for mortar.”",
+    reference: "Genesis 11:3",
+  },
+  // ───────── Conquest & Judges ─────────
+  {
+    id: "collared-rim-jar",
+    era: "judges",
+    level: 1,
+    name: "Collared-Rim Jar",
+    emoji: "🏺",
+    blurb:
+      "A large storage jar with a ridge around its neck, common in the small hill-country villages of the early Iron Age (about 1200–1000 BCE). Archaeologists often link these villages with early Israel, though the jars are also found elsewhere.",
+  },
+  {
+    id: "four-room-house",
+    era: "judges",
+    level: 2,
+    name: "Four-Room House",
+    emoji: "🏠",
+    blurb:
+      "A typical Iron Age home: three long rooms side by side, often divided by rows of pillars, with a broad room across the back. The middle space may have been an open courtyard. Many scholars think animals and stores were kept on the ground floor and the family lived upstairs.",
+  },
+  {
+    id: "ox-goad",
+    era: "judges",
+    level: 3,
+    name: "Ox-Goad",
+    emoji: "🐂",
+    blurb:
+      "A long pointed stick used to drive oxen while ploughing. Judges says Shamgar son of Anath struck down Philistines with one.",
+    reference: "Judges 3:31",
+  },
+  {
+    id: "philistine-pottery",
+    era: "judges",
+    level: 4,
+    name: "Philistine Painted Pottery",
+    emoji: "🦢",
+    blurb:
+      "Red-and-black painted pottery, often decorated with birds, found at Philistine cities like Ashdod, Ashkelon and Ekron. Its style links the Philistines to the Aegean world.",
+  },
+  {
+    id: "threshing-sledge",
+    era: "judges",
+    level: 5,
+    name: "Threshing Floor",
+    emoji: "🌾",
+    blurb:
+      "A flat, hard open space where harvested grain was beaten or trampled and tossed in the wind to separate it from the chaff. In Ruth, Boaz winnows barley at night on the threshing floor.",
+    reference: "Ruth 3:2",
+  },
+  // ───────── Persia & the Return ─────────
+  {
+    id: "daric",
+    era: "persian",
+    level: 1,
+    name: "Gold Daric",
+    emoji: "🪙",
+    blurb:
+      "A gold coin of the Persian Empire showing the king as an archer, first struck under Darius I. Many English Bibles use “darics” for gifts given to rebuild the Temple.",
+    reference: "Ezra 2:69",
+  },
+  {
+    id: "signet-ring",
+    era: "persian",
+    level: 2,
+    name: "Signet Ring",
+    emoji: "💍",
+    blurb:
+      "A ring carved with its owner's seal, pressed into clay or wax to sign documents. The prophet Haggai says God will make Zerubbabel “like a signet ring”.",
+    reference: "Haggai 2:23",
+  },
+  {
+    id: "yehud-coin",
+    era: "persian",
+    level: 3,
+    name: "Yehud Coin",
+    emoji: "🪙",
+    blurb:
+      "Tiny silver coins from the 4th century BCE stamped YHD, “Yehud”, the Aramaic name used under Persian rule for the province of Judah. They show that the province had its own local coinage.",
+  },
+  {
+    id: "elephantine-papyrus",
+    era: "persian",
+    level: 4,
+    name: "Elephantine Papyrus",
+    emoji: "📜",
+    blurb:
+      "Aramaic letters and contracts from a Jewish military community on Elephantine Island in the Nile, 5th century BCE, giving a rare look at Jewish life outside Judah under Persia.",
+  },
+  {
+    id: "persepolis-relief",
+    era: "persian",
+    level: 5,
+    name: "Persepolis Relief",
+    emoji: "🏛️",
+    blurb:
+      "Stone carvings on the Apadana stairway at Persepolis show delegations from across the empire bringing gifts to the Persian king.",
+  },
 ];
 
 export function getArtifactForLevel(era: string, level: number): Artifact | undefined {

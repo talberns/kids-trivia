@@ -36,6 +36,7 @@ async function ensureSchema(sql: Sql): Promise<void> {
     )`;
     await sql`CREATE INDEX IF NOT EXISTS activity_events_created_idx ON activity_events (created_at DESC)`;
     await sql`CREATE INDEX IF NOT EXISTS activity_events_player_idx ON activity_events (player_key, created_at DESC)`;
+    await sql`ALTER TABLE activity_events ADD COLUMN IF NOT EXISTS user_id UUID`;
   })().catch((error: unknown) => {
     schemaReady = null; // retry on the next call
     throw error;
@@ -44,6 +45,8 @@ async function ensureSchema(sql: Sql): Promise<void> {
 }
 
 export interface Actor {
+  /** Account id when known; events are then grouped by account rather than by typed name. */
+  readonly userId?: string | null;
   readonly firstName: string;
   readonly lastName: string;
   readonly sessionId: string | null;
@@ -63,8 +66,9 @@ export async function recordEvent(actor: Actor, event: ActivityEvent, request?: 
   }
   try {
     await ensureSchema(sql);
-    await sql`INSERT INTO activity_events (player_key, first_name, last_name, session_id, type, data, country, user_agent)
-      VALUES (${playerKey(actor.firstName, actor.lastName)}, ${actor.firstName}, ${actor.lastName}, ${actor.sessionId},
+    const key = actor.userId ? `user:${actor.userId}` : playerKey(actor.firstName, actor.lastName);
+    await sql`INSERT INTO activity_events (player_key, user_id, first_name, last_name, session_id, type, data, country, user_agent)
+      VALUES (${key}, ${actor.userId ?? null}::uuid, ${actor.firstName}, ${actor.lastName}, ${actor.sessionId},
               ${type}, ${JSON.stringify(data)}::jsonb, ${country}, ${userAgent})`;
   } catch (error) {
     console.error("[activity] failed to record event", type, error);
