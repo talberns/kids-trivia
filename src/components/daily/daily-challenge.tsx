@@ -71,6 +71,7 @@ export function DailyChallenge() {
   const [feedback, setFeedback] = useState<{ chosen: number; result: AnswerResult; question: PublicQuestion } | null>(null);
   const [burst, setBurst] = useState(0);
   const answering = useRef(false);
+  const [submitting, setSubmitting] = useState(false);
   const rewarded = useRef(false);
 
   const loadBoard = useCallback(async () => {
@@ -85,6 +86,7 @@ export function DailyChallenge() {
       setFeedback(null);
       setDeadline(Date.now() + q.limitMs);
       answering.current = false;
+      setSubmitting(false);
     };
     if (q.startsInMs > 0) window.setTimeout(reveal, q.startsInMs);
     else reveal();
@@ -143,6 +145,7 @@ export function DailyChallenge() {
     async (choice: number) => {
       if (!question || answering.current) return;
       answering.current = true;
+      setSubmitting(true);
       setDeadline(null);
       const response = await api<{ result: AnswerResult | null; state: DailyState }>("/api/daily/answer", {
         method: "POST",
@@ -357,7 +360,7 @@ export function DailyChallenge() {
               letter={LETTERS[i] ?? "?"}
               text={choice}
               status={statusFor(i)}
-              disabled={Boolean(feedback) || answering.current}
+              disabled={Boolean(feedback) || submitting}
               onSelect={() => void submit(i)}
             />
           ))}

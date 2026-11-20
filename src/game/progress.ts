@@ -208,7 +208,7 @@ export function mergeProgress(device: Progress, saved: Progress): Progress {
     version: 1,
     xp: Math.max(device.xp, saved.xp),
     levels,
-    artifacts: [...new Set([...saved.artifacts, ...device.artifacts])],
+    artifacts: [...new Set([...device.artifacts, ...saved.artifacts])],
     streak,
     daily: {
       lastCompleted: laterDate(device.daily.lastCompleted, saved.daily.lastCompleted),
@@ -219,7 +219,14 @@ export function mergeProgress(device: Progress, saved: Progress): Progress {
   };
 }
 
-/** True when two progress records hold the same data. */
+/** Order-independent form used for comparing records (key order and artifact order don't matter). */
+function canonical(progress: Progress): string {
+  const levels = Object.fromEntries(Object.entries(progress.levels).sort(([a], [b]) => a.localeCompare(b)));
+  return JSON.stringify({ ...progress, levels, artifacts: [...progress.artifacts].sort() });
+}
+
+/** True when two progress records hold the same earned data (settings aside). */
 export function sameProgress(a: Progress, b: Progress): boolean {
-  return JSON.stringify(mergeProgress(a, b)) === JSON.stringify(a) && JSON.stringify(mergeProgress(b, a)) === JSON.stringify(b);
+  const strip = (p: Progress) => canonical({ ...p, settings: INITIAL_PROGRESS.settings });
+  return strip(mergeProgress(a, b)) === strip(a) && strip(mergeProgress(b, a)) === strip(b);
 }
