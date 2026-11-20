@@ -221,8 +221,18 @@ export function mergeProgress(device: Progress, saved: Progress): Progress {
 
 /** Order-independent form used for comparing records (key order and artifact order don't matter). */
 function canonical(progress: Progress): string {
-  const levels = Object.fromEntries(Object.entries(progress.levels).sort(([a], [b]) => a.localeCompare(b)));
-  return JSON.stringify({ ...progress, levels, artifacts: [...progress.artifacts].sort() });
+  const sortKeys = (value: unknown): unknown => {
+    if (Array.isArray(value)) return value.map(sortKeys);
+    if (value && typeof value === "object") {
+      return Object.fromEntries(
+        Object.entries(value)
+          .sort(([a], [b]) => a.localeCompare(b))
+          .map(([k, v]) => [k, sortKeys(v)]),
+      );
+    }
+    return value;
+  };
+  return JSON.stringify(sortKeys({ ...progress, artifacts: [...progress.artifacts].sort() }));
 }
 
 /** True when two progress records hold the same earned data (settings aside). */
