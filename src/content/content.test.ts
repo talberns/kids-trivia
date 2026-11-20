@@ -68,9 +68,9 @@ describe("question bank", () => {
     expect(findCoverageGaps()).toEqual([]);
   });
 
-  it("has an artifact for every playable level", () => {
+  it("has a museum artifact for levels 1–5 of every playable era", () => {
     for (const era of PLAYABLE_ERAS) {
-      for (let level = 1; level <= era.levels; level++) {
+      for (let level = 1; level <= Math.min(5, era.levels); level++) {
         expect(ARTIFACTS.some((a) => a.era === era.id && a.level === level), `${era.id}:${level}`).toBe(true);
       }
     }

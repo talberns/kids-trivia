@@ -3,14 +3,39 @@ import { PLAYABLE_ERAS } from "./eras";
 import { dailyA } from "./questions/daily-a";
 import { dailyB } from "./questions/daily-b";
 import { dailyC } from "./questions/daily-c";
+import { dailyD } from "./questions/daily-d";
+import { dividedKingdom2 } from "./questions/divided-kingdom-2";
+import { dividedKingdom3 } from "./questions/divided-kingdom-3";
 import { dividedKingdom } from "./questions/divided-kingdom";
+import { earlyChurch2 } from "./questions/early-church-2";
+import { earlyChurch3 } from "./questions/early-church-3";
 import { earlyChurch } from "./questions/early-church";
+import { exile2 } from "./questions/exile-2";
+import { exile3 } from "./questions/exile-3";
 import { exile } from "./questions/exile";
+import { exodus2 } from "./questions/exodus-2";
+import { exodus3 } from "./questions/exodus-3";
 import { exodus } from "./questions/exodus";
+import { hellenistic2 } from "./questions/hellenistic-2";
+import { hellenistic3 } from "./questions/hellenistic-3";
 import { hellenistic } from "./questions/hellenistic";
+import { judges1 } from "./questions/judges-1";
+import { judges2 } from "./questions/judges-2";
+import { judges3 } from "./questions/judges-3";
+import { patriarchs2 } from "./questions/patriarchs-2";
+import { patriarchs3 } from "./questions/patriarchs-3";
 import { patriarchs } from "./questions/patriarchs";
-import { romanJudea } from "./questions/roman-judea";
+import { persian1 } from "./questions/persian-1";
+import { persian2 } from "./questions/persian-2";
+import { persian3 } from "./questions/persian-3";
+import { primeval1 } from "./questions/primeval-1";
+import { primeval2 } from "./questions/primeval-2";
+import { primeval3 } from "./questions/primeval-3";
 import { romanJudea2 } from "./questions/roman-judea-2";
+import { romanJudea3 } from "./questions/roman-judea-3";
+import { romanJudea } from "./questions/roman-judea";
+import { unitedMonarchy2 } from "./questions/united-monarchy-2";
+import { unitedMonarchy3 } from "./questions/united-monarchy-3";
 import { unitedMonarchy } from "./questions/united-monarchy";
 import { questionSchema, type Question, type QuestionInput } from "./schema";
 
@@ -36,18 +61,43 @@ export function loadQuestionBank(raw: readonly QuestionInput[]): Question[] {
 }
 
 export const QUESTION_BANK: readonly Question[] = loadQuestionBank([
-  ...patriarchs,
-  ...exodus,
-  ...unitedMonarchy,
-  ...dividedKingdom,
-  ...exile,
-  ...hellenistic,
-  ...romanJudea,
-  ...romanJudea2,
-  ...earlyChurch,
   ...dailyA,
   ...dailyB,
   ...dailyC,
+  ...dailyD,
+  ...dividedKingdom2,
+  ...dividedKingdom3,
+  ...dividedKingdom,
+  ...earlyChurch2,
+  ...earlyChurch3,
+  ...earlyChurch,
+  ...exile2,
+  ...exile3,
+  ...exile,
+  ...exodus2,
+  ...exodus3,
+  ...exodus,
+  ...hellenistic2,
+  ...hellenistic3,
+  ...hellenistic,
+  ...judges1,
+  ...judges2,
+  ...judges3,
+  ...patriarchs2,
+  ...patriarchs3,
+  ...patriarchs,
+  ...persian1,
+  ...persian2,
+  ...persian3,
+  ...primeval1,
+  ...primeval2,
+  ...primeval3,
+  ...romanJudea2,
+  ...romanJudea3,
+  ...romanJudea,
+  ...unitedMonarchy2,
+  ...unitedMonarchy3,
+  ...unitedMonarchy,
 ]);
 
 export const PUBLISHED_QUESTIONS: readonly Question[] = QUESTION_BANK.filter(
