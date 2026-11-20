@@ -54,21 +54,6 @@ export default async function AdminPage({ searchParams }: PageProps) {
     flash = null;
   }
 
-  if (!report.ok) {
-    return (
-      <div className="panel mt-8 p-6">
-        <h1 className="font-display text-2xl font-extrabold">Activity log</h1>
-        <p className="mt-2 text-white/75">
-          {report.reason === "no-database"
-            ? "No database is connected (DATABASE_URL is not set), so nothing is being recorded."
-            : "The activity database could not be reached. Try again in a minute."}
-        </p>
-      </div>
-    );
-  }
-
-  const selected = player ? report.players.find((p) => p.playerKey === player) : undefined;
-  const events = hideViews ? report.events.filter((e) => e.type !== "page_view") : report.events;
   const query = (extra: Record<string, string | undefined>) => {
     const search = new URLSearchParams();
     const merged = { player, views: hideViews ? undefined : "1", ...extra };
@@ -76,6 +61,82 @@ export default async function AdminPage({ searchParams }: PageProps) {
     const text = search.toString();
     return text ? `/admin?${text}` : "/admin";
   };
+
+  const accounts = (
+    <section id="accounts" className="panel overflow-hidden" aria-labelledby="accounts-heading">
+      <h2 id="accounts-heading" className="px-5 pt-4 font-display text-xl font-extrabold">
+        Accounts ({users.length})
+      </h2>
+      {flash && (
+        <p role="status" className="mx-5 mt-3 rounded-xl border border-jade/40 bg-jade/10 px-4 py-3 text-sm">
+          New temporary password for <strong>@{flash.username}</strong>:{" "}
+          <code className="rounded bg-black/30 px-2 py-0.5 font-mono text-base text-gold">{flash.password}</code>
+          <span className="block text-white/60">Shown once. Give it to the player privately.</span>
+        </p>
+      )}
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[640px] text-left text-sm">
+          <thead className="text-xs uppercase tracking-wider text-white/50">
+            <tr>
+              <th className="px-5 py-2">Name</th>
+              <th className="px-3 py-2">Username</th>
+              <th className="px-3 py-2">Joined</th>
+              <th className="px-3 py-2">Last sign-in</th>
+              <th className="px-5 py-2 text-right">Password</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.length === 0 && (
+              <tr>
+                <td colSpan={5} className="px-5 py-4 text-white/60">
+                  No accounts yet.
+                </td>
+              </tr>
+            )}
+            {users.map((u) => (
+              <tr key={u.id} className="border-t border-white/5">
+                <td className="px-5 py-2 font-semibold">
+                  <Link className="focus-ring rounded hover:text-gold" href={query({ player: `user:${u.id}` })}>
+                    {u.firstName} {u.lastName}
+                  </Link>
+                </td>
+                <td className="px-3 py-2 text-white/75">@{u.username}</td>
+                <td className="px-3 py-2 text-white/60">{formatTime(u.createdAt)}</td>
+                <td className="px-3 py-2 text-white/60">{u.lastLoginAt ? formatTime(u.lastLoginAt) : "—"}</td>
+                <td className="px-5 py-2 text-right">
+                  <form method="post" action="/api/admin/reset-password">
+                    <input type="hidden" name="userId" value={u.id} />
+                    <button type="submit" className="focus-ring rounded-full bg-white/10 px-3 py-1.5 text-xs font-bold hover:bg-white/15">
+                      Reset
+                    </button>
+                  </form>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+
+  if (!report.ok) {
+    return (
+      <div className="space-y-6 pt-4">
+        <div className="panel mt-4 p-6">
+          <h1 className="font-display text-2xl font-extrabold">Activity log</h1>
+          <p className="mt-2 text-white/75">
+            {report.reason === "no-database"
+              ? "No database is connected (DATABASE_URL is not set), so nothing is being recorded."
+              : "The activity database could not be reached. Try again in a minute."}
+          </p>
+        </div>
+        {users.length > 0 && accounts}
+      </div>
+    );
+  }
+
+  const selected = player ? report.players.find((p) => p.playerKey === player) : undefined;
+  const events = hideViews ? report.events.filter((e) => e.type !== "page_view") : report.events;
 
   return (
     <div className="space-y-6 pt-4">
@@ -155,60 +216,7 @@ export default async function AdminPage({ searchParams }: PageProps) {
         </div>
       </section>
 
-      <section id="accounts" className="panel overflow-hidden" aria-labelledby="accounts-heading">
-        <h2 id="accounts-heading" className="px-5 pt-4 font-display text-xl font-extrabold">
-          Accounts ({users.length})
-        </h2>
-        {flash && (
-          <p role="status" className="mx-5 mt-3 rounded-xl border border-jade/40 bg-jade/10 px-4 py-3 text-sm">
-            New temporary password for <strong>@{flash.username}</strong>:{" "}
-            <code className="rounded bg-black/30 px-2 py-0.5 font-mono text-base text-gold">{flash.password}</code>
-            <span className="block text-white/60">Shown once. Give it to the player privately.</span>
-          </p>
-        )}
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[640px] text-left text-sm">
-            <thead className="text-xs uppercase tracking-wider text-white/50">
-              <tr>
-                <th className="px-5 py-2">Name</th>
-                <th className="px-3 py-2">Username</th>
-                <th className="px-3 py-2">Joined</th>
-                <th className="px-3 py-2">Last sign-in</th>
-                <th className="px-5 py-2 text-right">Password</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.length === 0 && (
-                <tr>
-                  <td colSpan={5} className="px-5 py-4 text-white/60">
-                    No accounts yet.
-                  </td>
-                </tr>
-              )}
-              {users.map((u) => (
-                <tr key={u.id} className="border-t border-white/5">
-                  <td className="px-5 py-2 font-semibold">
-                    <Link className="focus-ring rounded hover:text-gold" href={query({ player: `user:${u.id}` })}>
-                      {u.firstName} {u.lastName}
-                    </Link>
-                  </td>
-                  <td className="px-3 py-2 text-white/75">@{u.username}</td>
-                  <td className="px-3 py-2 text-white/60">{formatTime(u.createdAt)}</td>
-                  <td className="px-3 py-2 text-white/60">{u.lastLoginAt ? formatTime(u.lastLoginAt) : "—"}</td>
-                  <td className="px-5 py-2 text-right">
-                    <form method="post" action="/api/admin/reset-password">
-                      <input type="hidden" name="userId" value={u.id} />
-                      <button type="submit" className="focus-ring rounded-full bg-white/10 px-3 py-1.5 text-xs font-bold hover:bg-white/15">
-                        Reset
-                      </button>
-                    </form>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+      {accounts}
 
       <section className="panel overflow-hidden" aria-labelledby="events-heading">
         <div className="flex flex-wrap items-center gap-3 px-5 pt-4">

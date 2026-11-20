@@ -67,18 +67,21 @@ test("progress follows the player to another device", async ({ browser }) => {
     await page.getByRole("button", { name: /next question|see results/i }).click();
   }
   await expect(page.getByRole("heading", { level: 2 })).toBeVisible();
-  // Give the background save a moment.
+  // Wait for the background save. A round can score 0 if every guess is wrong, so compare whole records.
   await page.waitForResponse((r) => r.url().endsWith("/api/progress") && r.request().method() === "PUT");
-  const xpOnPhone = await page.evaluate(() => JSON.parse(localStorage.getItem("tte:progress:v1") ?? "{}").xp as number);
-  expect(xpOnPhone).toBeGreaterThan(0);
+  const onPhone = await page.evaluate(() => JSON.parse(localStorage.getItem("tte:progress:v1") ?? "{}") as { xp: number; levels: Record<string, unknown> });
+  expect(Object.keys(onPhone.levels)).toContain("patriarchs:1");
   await phone.close();
 
   const laptop = await browser.newContext();
   const page2 = await laptop.newPage();
   await signIn(page2, username);
+  const saved = (await (await page2.request.get("/api/progress")).json()) as { progress: { xp: number; levels: Record<string, unknown> } };
+  expect(saved.progress.xp).toBe(onPhone.xp);
+  expect(saved.progress.levels).toEqual(onPhone.levels);
   await page2.goto("/");
   const xp = page2.getByTestId("xp-total").filter({ visible: true });
-  await expect(xp).toContainText(xpOnPhone.toLocaleString("en-US"));
+  await expect(xp).toContainText(onPhone.xp.toLocaleString("en-US"));
   await laptop.close();
 });
 
