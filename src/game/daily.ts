@@ -58,9 +58,9 @@ export function dayNumber(dateKey: string): number {
 }
 
 /**
- * The daily challenge walks through one fixed shuffle of the whole pool, five questions a day.
+ * The daily challenge walks through one fixed shuffle of the whole pool, ten questions a day.
  * Everyone gets the same set on a given date, consecutive days never share a question,
- * and nothing repeats until the pool has been used up (pool size ÷ 5 days).
+ * and nothing repeats until the pool has been used up (pool size ÷ 10 days).
  */
 export function pickDailyQuestions(pool: readonly Question[], dateKey: string): Question[] {
   if (pool.length === 0) return [];
