@@ -22,6 +22,6 @@ export async function POST(request: NextRequest) {
   const parsed = clientEventSchema.safeParse(json);
   if (!parsed.success) return NextResponse.json({ error: "invalid event" }, { status: 400 });
 
-  await recordEvent({ firstName: player.firstName, lastName: player.lastName, sessionId: player.sid }, parsed.data, request);
+  await recordEvent({ userId: player.userId, firstName: player.firstName, lastName: player.lastName, sessionId: player.sid }, parsed.data, request);
   return new NextResponse(null, { status: 204 });
 }

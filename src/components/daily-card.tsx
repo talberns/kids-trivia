@@ -20,10 +20,10 @@ export function DailyCard() {
         <div className="flex-1">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-cyan">Daily challenge</p>
           <p className="font-display text-2xl font-extrabold">
-            {done ? <span className="text-white/80">Done for today ✓</span> : <span className="gold-text">2× XP bonus</span>}
+            {done ? <span className="text-white/80">Done for today ✓</span> : <span className="gold-text">Beat the clock</span>}
           </p>
           <p className="text-sm text-white/65">
-            {done ? "Come back tomorrow to keep your streak alive." : "Five questions from across the eras. New every day."}
+            {done ? "See where you rank, and come back tomorrow." : "Ten new questions every day, a timer, and a leaderboard."}
           </p>
         </div>
         <span className="text-2xl text-gold" aria-hidden>

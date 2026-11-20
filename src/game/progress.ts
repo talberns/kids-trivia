@@ -178,3 +178,65 @@ export function applyDailyResult(progress: Progress, outcome: RoundOutcome, toda
 export function withSound(progress: Progress, sound: boolean): Progress {
   return { ...progress, settings: { ...progress.settings, sound } };
 }
+
+const laterDate = (a: string | null, b: string | null): string | null => (a === null ? b : b === null ? a : a > b ? a : b);
+
+/**
+ * Combines two copies of a player's progress (this device and the server) without losing anything earned:
+ * best stars and score per level, highest XP, every artifact, the more recent streak and daily result.
+ * Settings come from `device`, the copy the player is using right now.
+ */
+export function mergeProgress(device: Progress, saved: Progress): Progress {
+  const levels: Progress["levels"] = { ...saved.levels };
+  for (const [key, value] of Object.entries(device.levels)) {
+    const other = levels[key];
+    levels[key] = other
+      ? { stars: Math.max(value.stars, other.stars), bestScore: Math.max(value.bestScore, other.bestScore) }
+      : value;
+  }
+
+  const a = device.streak;
+  const b = saved.streak;
+  const streak =
+    a.lastPlayed === b.lastPlayed
+      ? { lastPlayed: a.lastPlayed, count: Math.max(a.count, b.count) }
+      : laterDate(a.lastPlayed, b.lastPlayed) === a.lastPlayed
+        ? a
+        : b;
+
+  return {
+    version: 1,
+    xp: Math.max(device.xp, saved.xp),
+    levels,
+    artifacts: [...new Set([...device.artifacts, ...saved.artifacts])],
+    streak,
+    daily: {
+      lastCompleted: laterDate(device.daily.lastCompleted, saved.daily.lastCompleted),
+      bestScore: Math.max(device.daily.bestScore, saved.daily.bestScore),
+    },
+    stats: device.stats.answered >= saved.stats.answered ? device.stats : saved.stats,
+    settings: device.settings,
+  };
+}
+
+/** Order-independent form used for comparing records (key order and artifact order don't matter). */
+function canonical(progress: Progress): string {
+  const sortKeys = (value: unknown): unknown => {
+    if (Array.isArray(value)) return value.map(sortKeys);
+    if (value && typeof value === "object") {
+      return Object.fromEntries(
+        Object.entries(value)
+          .sort(([a], [b]) => a.localeCompare(b))
+          .map(([k, v]) => [k, sortKeys(v)]),
+      );
+    }
+    return value;
+  };
+  return JSON.stringify(sortKeys({ ...progress, artifacts: [...progress.artifacts].sort() }));
+}
+
+/** True when two progress records hold the same earned data (settings aside). */
+export function sameProgress(a: Progress, b: Progress): boolean {
+  const strip = (p: Progress) => canonical({ ...p, settings: INITIAL_PROGRESS.settings });
+  return strip(mergeProgress(a, b)) === strip(a) && strip(mergeProgress(b, a)) === strip(b);
+}

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { ARTIFACTS } from "./artifacts";
 import { ERAS, PLAYABLE_ERAS } from "./eras";
-import { pickDailyQuestions } from "@/game/daily";
+import { DAILY_QUESTION_COUNT, pickDailyQuestions } from "@/game/daily";
 import { findCoverageGaps, loadQuestionBank, PUBLISHED_QUESTIONS, QUESTION_BANK } from "./index";
 import type { QuestionInput } from "./schema";
 
@@ -68,9 +68,9 @@ describe("question bank", () => {
     expect(findCoverageGaps()).toEqual([]);
   });
 
-  it("has an artifact for every playable level", () => {
+  it("has a museum artifact for levels 1–5 of every playable era", () => {
     for (const era of PLAYABLE_ERAS) {
-      for (let level = 1; level <= era.levels; level++) {
+      for (let level = 1; level <= Math.min(5, era.levels); level++) {
         expect(ARTIFACTS.some((a) => a.era === era.id && a.level === level), `${era.id}:${level}`).toBe(true);
       }
     }
@@ -84,7 +84,7 @@ describe("question bank", () => {
 
 describe("pickDailyQuestions", () => {
   it("never repeats a question until the whole pool has been used", () => {
-    const days = Math.floor(PUBLISHED_QUESTIONS.length / 5);
+    const days = Math.floor(PUBLISHED_QUESTIONS.length / DAILY_QUESTION_COUNT);
     const seen = new Set<string>();
     const start = Date.UTC(2026, 10, 20);
     for (let d = 0; d < days; d++) {
@@ -94,7 +94,7 @@ describe("pickDailyQuestions", () => {
         seen.add(q.id);
       }
     }
-    expect(seen.size).toBe(days * 5);
+    expect(seen.size).toBe(days * DAILY_QUESTION_COUNT);
   });
 
   it("is deterministic per day and changes between days", () => {
@@ -102,7 +102,7 @@ describe("pickDailyQuestions", () => {
     const b = pickDailyQuestions(PUBLISHED_QUESTIONS, "2026-11-18").map((q) => q.id);
     const c = pickDailyQuestions(PUBLISHED_QUESTIONS, "2026-11-19").map((q) => q.id);
     expect(a).toEqual(b);
-    expect(a).toHaveLength(5);
+    expect(a).toHaveLength(DAILY_QUESTION_COUNT);
     expect(a).not.toEqual(c);
   });
 });

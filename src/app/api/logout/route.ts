@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
   const player = await getPlayer();
   if (player) {
     await recordEvent(
-      { firstName: player.firstName, lastName: player.lastName, sessionId: player.sid },
+      { userId: player.userId, firstName: player.firstName, lastName: player.lastName, sessionId: player.sid },
       { type: "logout" },
       request,
     );

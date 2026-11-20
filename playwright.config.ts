@@ -22,6 +22,6 @@ export default defineConfig({
         command: `npm run start -- -p ${PORT}`,
         port: PORT,
         reuseExistingServer: !process.env.CI,
-        env: { ...E2E_AUTH, DATABASE_URL: "" },
+        env: { ...E2E_AUTH, DATABASE_URL: "", POSTGRES_URL: "", AQ_MEMORY_DB: "1" },
       },
 });
