@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { RoundScreen } from "@/components/game/round-screen";
 import { getArtifactForLevel } from "@/content/artifacts";
-import { getEra, LEVELS_PER_ERA, PLAYABLE_ERAS } from "@/content/eras";
+import { getEra, PLAYABLE_ERAS } from "@/content/eras";
 import { getLevelQuestions } from "@/content/index";
 import { hashString } from "@/game/rng";
 
@@ -14,7 +14,7 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return PLAYABLE_ERAS.flatMap((era) =>
-    Array.from({ length: LEVELS_PER_ERA }, (_, i) => ({ era: era.id, level: String(i + 1) })),
+    Array.from({ length: era.levels }, (_, i) => ({ era: era.id, level: String(i + 1) })),
   );
 }
 
@@ -28,7 +28,7 @@ export default async function PlayPage({ params }: PageProps) {
   const { era: eraId, level: levelParam } = await params;
   const era = getEra(eraId);
   const level = Number(levelParam);
-  if (!era?.playable || !Number.isInteger(level) || level < 1 || level > LEVELS_PER_ERA) notFound();
+  if (!era?.playable || !Number.isInteger(level) || level < 1 || level > era.levels) notFound();
 
   const questions = getLevelQuestions(era.id, level);
   if (questions.length === 0) notFound();
@@ -39,12 +39,12 @@ export default async function PlayPage({ params }: PageProps) {
       config={{
         mode: "level",
         title: era.name,
-        subtitle: `Level ${level} of ${LEVELS_PER_ERA} · ${era.period}`,
+        subtitle: `Level ${level} of ${era.levels} · ${era.period}`,
         questions,
         era: era.id,
         level,
         artifactId: getArtifactForLevel(era.id, level)?.id ?? null,
-        nextLevelHref: level < LEVELS_PER_ERA ? `/play/${era.id}/${level + 1}` : null,
+        nextLevelHref: level < era.levels ? `/play/${era.id}/${level + 1}` : null,
       }}
     />
   );

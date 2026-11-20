@@ -22,6 +22,12 @@ Players include Jews, Christians, atheists and academic scholars checking our fa
 
 `theirEyes` is required. It's one or two vivid sentences from the viewpoint of someone living at the time.
 
+## Where a question appears
+
+- **Level questions** set `level` (1 to the era's `levels` in `src/content/eras.ts`). Each level needs exactly five published questions.
+- **Daily-only questions** omit `level` and set `daily: true` (ids `dly-NNN`). They never appear in a level.
+- The daily challenge walks through every published question (level and daily-only) in a fixed shuffled order, five a day, so nothing repeats until the whole bank has been used. More questions means a longer cycle.
+
 ## Confidence
 
 - `settled`: stated in the text, or firmly established by evidence.

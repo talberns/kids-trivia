@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { ARTIFACTS } from "./artifacts";
-import { LEVELS_PER_ERA, PLAYABLE_ERAS } from "./eras";
+import { ERAS, PLAYABLE_ERAS } from "./eras";
 import { pickDailyQuestions } from "@/game/daily";
 import { findCoverageGaps, loadQuestionBank, PUBLISHED_QUESTIONS, QUESTION_BANK } from "./index";
 import type { QuestionInput } from "./schema";
@@ -27,6 +27,10 @@ describe("question schema", () => {
     expect(loadQuestionBank([valid])).toHaveLength(1);
   });
 
+  it("accepts a daily-only question", () => {
+    expect(loadQuestionBank([{ ...valid, level: undefined, daily: true }])).toHaveLength(1);
+  });
+
   it.each<[string, Partial<QuestionInput>]>([
     ["answer out of range", { answer: 4 }],
     ["duplicate choices", { choices: ["A", "a", "C", "D"] }],
@@ -36,6 +40,8 @@ describe("question schema", () => {
     ["no sources", { sources: [] }],
     ["references without scripture source", { sources: [{ kind: "reference", citation: "x" }] }],
     ["bad true/false choices", { format: "true-false", choices: ["Yes", "No"] }],
+    ["both a level and daily", { daily: true }],
+    ["neither a level nor daily", { level: undefined }],
   ])("rejects %s", (_name, override) => {
     expect(() => loadQuestionBank([{ ...valid, ...override }])).toThrow(/tst-001/);
   });
@@ -46,6 +52,14 @@ describe("question schema", () => {
 });
 
 describe("question bank", () => {
+  it("only places level questions in levels that exist", () => {
+    for (const q of QUESTION_BANK) {
+      if (q.level === undefined) continue;
+      const era = ERAS.find((e) => e.id === q.era);
+      expect(q.level, q.id).toBeLessThanOrEqual(era?.levels ?? 0);
+    }
+  });
+
   it("loads every authored question", () => {
     expect(QUESTION_BANK.length).toBeGreaterThan(0);
   });
@@ -56,7 +70,7 @@ describe("question bank", () => {
 
   it("has an artifact for every playable level", () => {
     for (const era of PLAYABLE_ERAS) {
-      for (let level = 1; level <= LEVELS_PER_ERA; level++) {
+      for (let level = 1; level <= era.levels; level++) {
         expect(ARTIFACTS.some((a) => a.era === era.id && a.level === level), `${era.id}:${level}`).toBe(true);
       }
     }
@@ -69,6 +83,20 @@ describe("question bank", () => {
 });
 
 describe("pickDailyQuestions", () => {
+  it("never repeats a question until the whole pool has been used", () => {
+    const days = Math.floor(PUBLISHED_QUESTIONS.length / 5);
+    const seen = new Set<string>();
+    const start = Date.UTC(2026, 10, 20);
+    for (let d = 0; d < days; d++) {
+      const key = new Date(start + d * 86_400_000).toISOString().slice(0, 10);
+      for (const q of pickDailyQuestions(PUBLISHED_QUESTIONS, key)) {
+        expect(seen.has(q.id), `${q.id} repeated on ${key}`).toBe(false);
+        seen.add(q.id);
+      }
+    }
+    expect(seen.size).toBe(days * 5);
+  });
+
   it("is deterministic per day and changes between days", () => {
     const a = pickDailyQuestions(PUBLISHED_QUESTIONS, "2026-11-18").map((q) => q.id);
     const b = pickDailyQuestions(PUBLISHED_QUESTIONS, "2026-11-18").map((q) => q.id);

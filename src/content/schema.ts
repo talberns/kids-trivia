@@ -79,7 +79,10 @@ export const questionSchema = z
   .object({
     id: z.string().regex(/^[a-z]{3}-\d{3}$/, "id must look like 'pat-001'"),
     era: eraIdSchema,
-    level: z.number().int().min(1).max(5),
+    /** Level within the era. Omit for daily-only questions. */
+    level: z.number().int().min(1).max(20).optional(),
+    /** Daily-only: appears in the daily challenge, never in a level. */
+    daily: z.literal(true).optional(),
     category: categorySchema,
     difficulty: z.union([z.literal(1), z.literal(2), z.literal(3)]),
     format: z.enum(["multiple-choice", "true-false"]),
@@ -106,6 +109,10 @@ export const questionSchema = z
       ctx.addIssue({ code: "custom", message, path });
 
     if (q.answer >= q.choices.length) issue("answer index is out of range", ["answer"]);
+
+    if ((q.level === undefined) === (q.daily === undefined)) {
+      issue("a question needs either a level or daily: true, not both", ["level"]);
+    }
 
     if (q.format === "true-false" && (q.choices.length !== 2 || q.choices[0] !== "True" || q.choices[1] !== "False")) {
       issue('true-false questions must have choices ["True", "False"]', ["choices"]);

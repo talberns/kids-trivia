@@ -1,8 +1,17 @@
 import "server-only";
-import { LEVELS_PER_ERA, PLAYABLE_ERAS } from "./eras";
+import { PLAYABLE_ERAS } from "./eras";
+import { dailyA } from "./questions/daily-a";
+import { dailyB } from "./questions/daily-b";
+import { dailyC } from "./questions/daily-c";
+import { dividedKingdom } from "./questions/divided-kingdom";
+import { earlyChurch } from "./questions/early-church";
+import { exile } from "./questions/exile";
 import { exodus } from "./questions/exodus";
+import { hellenistic } from "./questions/hellenistic";
 import { patriarchs } from "./questions/patriarchs";
 import { romanJudea } from "./questions/roman-judea";
+import { romanJudea2 } from "./questions/roman-judea-2";
+import { unitedMonarchy } from "./questions/united-monarchy";
 import { questionSchema, type Question, type QuestionInput } from "./schema";
 
 export const QUESTIONS_PER_LEVEL = 5;
@@ -26,11 +35,27 @@ export function loadQuestionBank(raw: readonly QuestionInput[]): Question[] {
   });
 }
 
-export const QUESTION_BANK: readonly Question[] = loadQuestionBank([...patriarchs, ...exodus, ...romanJudea]);
+export const QUESTION_BANK: readonly Question[] = loadQuestionBank([
+  ...patriarchs,
+  ...exodus,
+  ...unitedMonarchy,
+  ...dividedKingdom,
+  ...exile,
+  ...hellenistic,
+  ...romanJudea,
+  ...romanJudea2,
+  ...earlyChurch,
+  ...dailyA,
+  ...dailyB,
+  ...dailyC,
+]);
 
 export const PUBLISHED_QUESTIONS: readonly Question[] = QUESTION_BANK.filter(
   (q) => q.review.status === "published",
 );
+
+/** Daily-only questions (no level). The daily challenge draws from every published question. */
+export const DAILY_ONLY_QUESTIONS: readonly Question[] = PUBLISHED_QUESTIONS.filter((q) => q.daily === true);
 
 /** Published questions for one level, easiest first. */
 export function getLevelQuestions(era: string, level: number): Question[] {
@@ -43,7 +68,7 @@ export function getLevelQuestions(era: string, level: number): Question[] {
 export function findCoverageGaps(bank: readonly Question[] = PUBLISHED_QUESTIONS): string[] {
   const gaps: string[] = [];
   for (const era of PLAYABLE_ERAS) {
-    for (let level = 1; level <= LEVELS_PER_ERA; level++) {
+    for (let level = 1; level <= era.levels; level++) {
       const count = bank.filter((q) => q.era === era.id && q.level === level).length;
       if (count !== QUESTIONS_PER_LEVEL) {
         gaps.push(`${era.id} level ${level}: ${count} published questions (need ${QUESTIONS_PER_LEVEL})`);
