@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes } from "react";
+import { useId, type InputHTMLAttributes } from "react";
 
 interface AuthFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   readonly label: string;
@@ -7,15 +7,26 @@ interface AuthFieldProps extends InputHTMLAttributes<HTMLInputElement> {
 
 /** A labelled text input styled for the sign-in and sign-up forms. */
 export function AuthField({ label, hint, ...input }: AuthFieldProps) {
+  const id = useId();
+  const hintId = `${id}-hint`;
+  // The hint sits outside the label so the field's accessible name is just the label.
   return (
-    <label className="block space-y-1.5">
-      <span className="text-sm font-bold text-white/80">{label}</span>
+    <div className="space-y-1.5">
+      <label htmlFor={id} className="block text-sm font-bold text-white/80">
+        {label}
+      </label>
       <input
         {...input}
+        id={id}
+        aria-describedby={hint ? hintId : undefined}
         className="focus-ring w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-base text-white placeholder:text-white/30"
       />
-      {hint && <span className="block text-xs text-white/50">{hint}</span>}
-    </label>
+      {hint && (
+        <p id={hintId} className="text-xs text-white/50">
+          {hint}
+        </p>
+      )}
+    </div>
   );
 }
 
